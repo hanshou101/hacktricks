@@ -323,7 +323,7 @@ Find a domain admin credential on the box and use that token: _token::elevate /d
 
 **TS::Sessions** – List TS/RDP sessions.
 
-![](https://adsecurity.org/wp-content/uploads/2017/11/Mimikatz-TS-Sessions.png)
+![](https://www.baidu.com/favicon.ico) [comment]: <> (![]&#40;https://adsecurity.org/wp-content/uploads/2017/11/Mimikatz-TS-Sessions.png)
 
 ### Vault
 
