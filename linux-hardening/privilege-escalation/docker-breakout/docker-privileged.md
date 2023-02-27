@@ -20,8 +20,8 @@ When you run a container as privileged these are the protections you are disabli
 
 In a privileged container, all the **devices can be accessed in `/dev/`**. Therefore you can **escape** by **mounting** the disk of the host.
 
-{% tabs %}
-{% tab title="Inside default container" %}
+
+
 ```bash
 # docker run --rm -it alpine sh
 ls /dev
@@ -30,7 +30,7 @@ core     full     null     pts      shm      stdin    tty      zero
 ```
 {% endtab %}
 
-{% tab title="Inside Privileged Container" %}
+
 ```bash
 # docker run --rm --privileged -it alpine sh
 ls /dev
@@ -47,8 +47,8 @@ cpu              nbd0             pts              stdout           tty27       
 
 Kernel file systems provide a mechanism for a **process to alter the way the kernel runs.** By default, we **don't want container processes to modify the kernel**, so we mount kernel file systems as read-only within the container.
 
-{% tabs %}
-{% tab title="Inside default container" %}
+
+
 ```bash
 # docker run --rm -it alpine sh
 mount | grep '(ro'
@@ -59,7 +59,7 @@ cpuacct on /sys/fs/cgroup/cpuacct type cgroup (ro,nosuid,nodev,noexec,relatime,c
 ```
 {% endtab %}
 
-{% tab title="Inside Privileged Container" %}
+
 ```bash
 # docker run --rm --privileged -it alpine sh
 mount  | grep '(ro'
@@ -75,8 +75,8 @@ The **/proc** file system is namespace-aware, and certain writes can be allowed,
 **tmpfs** is a file system that stores all the files in virtual memory. tmpfs doesn't create any files on your hard drive. So if you unmount a tmpfs file system, all the files residing in it are lost for ever.
 
 
-{% tabs %}
-{% tab title="Inside default container" %}
+
+
 ```bash
 # docker run --rm -it alpine sh
 mount  | grep /proc.*tmpfs
@@ -86,7 +86,7 @@ tmpfs on /proc/keys type tmpfs (rw,nosuid,size=65536k,mode=755)
 ```
 {% endtab %}
 
-{% tab title="Inside Privileged Container" %}
+
 ```bash
 # docker run --rm --privileged -it alpine sh
 mount  | grep /proc.*tmpfs
@@ -102,8 +102,8 @@ Container engines launch the containers with a **limited number of capabilities*
 [linux-capabilities.md](../linux-capabilities.md)
 
 
-{% tabs %}
-{% tab title="Inside default container" %}
+
+
 ```bash
 # docker run --rm -it alpine sh
 apk add -U libcap; capsh --print
@@ -114,7 +114,7 @@ Bounding set =cap_chown,cap_dac_override,cap_fowner,cap_fsetid,cap_kill,cap_setg
 ```
 {% endtab %}
 
-{% tab title="Inside Privileged Container" %}
+
 ```bash
 # docker run --rm --privileged -it alpine sh
 apk add -U libcap; capsh --print
@@ -136,8 +136,8 @@ You can manipulate the capabilities available to a container without running in 
 [seccomp.md](seccomp.md)
 
 
-{% tabs %}
-{% tab title="Inside default container" %}
+
+
 ```bash
 # docker run --rm -it alpine sh
 grep Seccomp /proc/1/status
@@ -146,7 +146,7 @@ Seccomp_filters:	1
 ```
 {% endtab %}
 
-{% tab title="Inside Privileged Container" %}
+
 ```bash
 # docker run --rm --privileged -it alpine sh
 grep Seccomp /proc/1/status
@@ -195,8 +195,8 @@ When you run with the `--privileged` flag, **SELinux labels are disabled**, and 
 
 Namespaces are **NOT affected** by the `--privileged` flag. Even though they don't have the security constraints enabled, they **do not see all of the processes on the system or the host network, for example**. Users can disable individual namespaces by using the **`--pid=host`, `--net=host`, `--ipc=host`, `--uts=host`** container engines flags.
 
-{% tabs %}
-{% tab title="Inside default privileged container" %}
+
+
 ```bash
 # docker run --rm --privileged -it alpine sh
 ps -ef
@@ -206,7 +206,7 @@ PID   USER     TIME  COMMAND
 ```
 {% endtab %}
 
-{% tab title="Inside --pid=host Container" %}
+
 ```bash
 # docker run --rm --privileged --pid=host -it alpine sh
 ps -ef

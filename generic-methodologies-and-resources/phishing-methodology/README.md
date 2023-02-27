@@ -351,26 +351,7 @@ I would recommend to **send the test emails to 10min mails addresses** in order 
 * Make sure you have checked "**Add Tracking Image**"
 * Write the **email template** (you can use variables like in the following example):
 
-```markup
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:black">Dear {{\.FirstName}} {{\.LastName}},</span></p>
 
-<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:black">As you may be aware, due to the large number of employees working from home, the "PLATFORM NAME" platform is being migrated to a new domain with an improved and more secure version. To finalize account migration, please use the following link to log into the new HR portal and move your account to the new site: <a href="{{\.URL}}"> "PLATFORM NAME" login portal </a><br />
-<br />
-Please Note: We require all users to move their accounts by 04/01/2021. Failure to confirm account migration may prevent you from logging into the application after the migration process is complete.<br />
-<br />
-Regards,</span></p>
-
-WRITE HERE SOME SIGNATURE OF SOMEONE FROM THE COMPANY
-
-<p>{{\.Tracker}}</p>
-</body>
-</html>
-```
 
 Note that **in order to increase the credibility of the email**, it's recommended to use some signature from an email from the client. Suggestions:
 

@@ -33,8 +33,8 @@ This lab is concerned with a simple PoC code that allows:
 
 Below is the PoC for both the server and the client:
 
-{% tabs %}
-{% tab title="namedPipeServer.cpp" %}
+
+
 ```cpp
 #include "pch.h"
 #include <Windows.h>
@@ -69,7 +69,7 @@ int main() {
 ```
 {% endtab %}
 
-{% tab title="namedPipeClient.cpp" %}
+
 ```cpp
 #include "pch.h"
 #include <iostream>

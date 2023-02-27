@@ -16,8 +16,8 @@
 
 In the following section you can find the code of the files we are going to use to prepare the environment
 
-{% tabs %}
-{% tab title="sharedvuln.c" %}
+
+
 ```c
 #include <stdio.h>
 #include "libcustom.h"
@@ -30,7 +30,7 @@ int main(){
 ```
 {% endtab %}
 
-{% tab title="libcustom.h" %}
+
 ```c
 #include <stdio.h>
 
@@ -38,7 +38,7 @@ void vuln_func();
 ```
 {% endtab %}
 
-{% tab title="libcustom.c" %}
+
 ```c
 #include <stdio.h>
 

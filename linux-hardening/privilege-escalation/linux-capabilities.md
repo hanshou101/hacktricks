@@ -1386,8 +1386,8 @@ kill -s SIGUSR1 <nodejs-ps>
 
 If **`python`** has this capability it will be able to listen on any port and even connect from it to any other port (some services require connections from specific privileges ports)
 
-{% tabs %}
-{% tab title="Listen" %}
+
+
 ```python
 import socket
 s=socket.socket()
@@ -1400,7 +1400,7 @@ while True:
 ```
 {% endtab %}
 
-{% tab title="Connect" %}
+
 ```python
 import socket
 s=socket.socket()
