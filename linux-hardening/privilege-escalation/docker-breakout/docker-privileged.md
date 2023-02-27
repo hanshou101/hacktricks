@@ -28,7 +28,7 @@ ls /dev
 console  fd       mqueue   ptmx     random   stderr   stdout   urandom
 core     full     null     pts      shm      stdin    tty      zero
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -40,8 +40,8 @@ core             mqueue           ptmx             stdin            tty26       
 cpu              nbd0             pts              stdout           tty27            tty47            ttyS0
 [...]
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Read-only kernel file systems
 
@@ -57,15 +57,15 @@ cpuset on /sys/fs/cgroup/cpuset type cgroup (ro,nosuid,nodev,noexec,relatime,cpu
 cpu on /sys/fs/cgroup/cpu type cgroup (ro,nosuid,nodev,noexec,relatime,cpu)
 cpuacct on /sys/fs/cgroup/cpuacct type cgroup (ro,nosuid,nodev,noexec,relatime,cpuacct)
 ```
-{% endtab %}
+
 
 
 ```bash
 # docker run --rm --privileged -it alpine sh
 mount  | grep '(ro'
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Masking over kernel file systems
 
@@ -84,15 +84,15 @@ tmpfs on /proc/acpi type tmpfs (ro,relatime)
 tmpfs on /proc/kcore type tmpfs (rw,nosuid,size=65536k,mode=755)
 tmpfs on /proc/keys type tmpfs (rw,nosuid,size=65536k,mode=755)
 ```
-{% endtab %}
+
 
 
 ```bash
 # docker run --rm --privileged -it alpine sh
 mount  | grep /proc.*tmpfs
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Linux capabilities
 
@@ -112,7 +112,7 @@ Current: cap_chown,cap_dac_override,cap_fowner,cap_fsetid,cap_kill,cap_setgid,ca
 Bounding set =cap_chown,cap_dac_override,cap_fowner,cap_fsetid,cap_kill,cap_setgid,cap_setuid,cap_setpcap,cap_net_bind_service,cap_net_raw,cap_sys_chroot,cap_mknod,cap_audit_write,cap_setfcap
 [...]
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -123,8 +123,8 @@ Current: =eip cap_perfmon,cap_bpf,cap_checkpoint_restore-eip
 Bounding set =cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_kill,cap_setgid,cap_setuid,cap_setpcap,cap_linux_immutable,cap_net_bind_service,cap_net_broadcast,cap_net_admin,cap_net_raw,cap_ipc_lock,cap_ipc_owner,cap_sys_module,cap_sys_rawio,cap_sys_chroot,cap_sys_ptrace,cap_sys_pacct,cap_sys_admin,cap_sys_boot,cap_sys_nice,cap_sys_resource,cap_sys_time,cap_sys_tty_config,cap_mknod,cap_lease,cap_audit_write,cap_audit_control,cap_setfcap,cap_mac_override,cap_mac_admin,cap_syslog,cap_wake_alarm,cap_block_suspend,cap_audit_read
 [...]
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 You can manipulate the capabilities available to a container without running in `--privileged` mode by using the `--cap-add` and `--cap-drop` flags.
 
@@ -144,7 +144,7 @@ grep Seccomp /proc/1/status
 Seccomp:	2
 Seccomp_filters:	1
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -153,8 +153,8 @@ grep Seccomp /proc/1/status
 Seccomp:	0
 Seccomp_filters:	0
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ```bash
 # You can manually disable seccomp in docker with
@@ -204,7 +204,7 @@ PID   USER     TIME  COMMAND
     1 root      0:00 sh
    18 root      0:00 ps -ef
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -216,8 +216,8 @@ PID   USER     TIME  COMMAND
     3 root      0:00 [rcu_gp]ount | grep /proc.*tmpfs
 [...]
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### User namespace
 

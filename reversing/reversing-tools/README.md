@@ -158,7 +158,7 @@ Then, you need to **attach a debugger** \(Ida or x64dbg\) to the process and put
 The releases github page contains zips containing the compiled releases: [https://github.com/OALabs/BlobRunner/releases/tag/v0.0.5](https://github.com/OALabs/BlobRunner/releases/tag/v0.0.5)  
 You can find a slightly modified version of Blobrunner in the following link. In order to compile it just **create a C/C++ project in Visual Studio Code, copy and paste the code and build it**.
 
-{% page-ref page="blobrunner.md" %}
+
 
 ## Debugging a shellcode with jmp2it
 

@@ -1398,7 +1398,7 @@ while True:
         output = connection.recv(1024).strip();
         print(output)
 ```
-{% endtab %}
+
 
 
 ```python
@@ -1407,8 +1407,8 @@ s=socket.socket()
 s.bind(('0.0.0.0',500))
 s.connect(('10.10.10.10',500))
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ## CAP\_NET\_RAW
 

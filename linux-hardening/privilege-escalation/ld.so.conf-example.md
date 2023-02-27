@@ -28,7 +28,7 @@ int main(){
     return 0;
 }
 ```
-{% endtab %}
+
 
 
 ```c
@@ -36,7 +36,7 @@ int main(){
 
 void vuln_func();
 ```
-{% endtab %}
+
 
 
 ```c
@@ -47,8 +47,8 @@ void say_hi()
     puts("Hi");
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 1. **Create** those files in your machine in the same folder
 2. **Compile** the **library**: `gcc -shared -o libcustom.so -fPIC libcustom.c`

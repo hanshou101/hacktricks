@@ -44,7 +44,7 @@ python3 vol.py —h
 ```
 Download the executable from https://www.volatilityfoundation.org/26
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -52,8 +52,8 @@ git clone https://github.com/volatilityfoundation/volatility.git
 cd volatility
 python setup.py install
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ## Volatility Commands
 
@@ -161,7 +161,7 @@ Extract SAM hashes, [domain cached credentials](../../../windows-hardening/steal
 ./vol.py -f file.dmp windows.cachedump.Cachedump #Grab domain cache hashes inside the registry
 ./vol.py -f file.dmp windows.lsadump.Lsadump #Grab lsa secrets
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -169,8 +169,8 @@ volatility --profile=Win7SP1x86_23418 hashdump -f file.dmp #Grab common windows 
 volatility --profile=Win7SP1x86_23418 cachedump -f file.dmp #Grab domain cache hashes inside the registry
 volatility --profile=Win7SP1x86_23418 lsadump -f file.dmp #Grab lsa secrets
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ## Memory Dump
 
@@ -202,7 +202,7 @@ python3 vol.py -f file.dmp windows.pstree.PsTree # Get processes tree (not hidde
 python3 vol.py -f file.dmp windows.pslist.PsList # Get process list (EPROCESS)
 python3 vol.py -f file.dmp windows.psscan.PsScan # Get hidden process list(malware)
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -211,8 +211,8 @@ volatility --profile=PROFILE pslist -f file.dmp # Get process list (EPROCESS)
 volatility --profile=PROFILE psscan -f file.dmp # Get hidden process list(malware)
 volatility --profile=PROFILE psxview -f file.dmp # Get hidden process list
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Dump proc
 
@@ -221,14 +221,14 @@ volatility --profile=PROFILE psxview -f file.dmp # Get hidden process list
 ```bash
 ./vol.py -f file.dmp windows.dumpfiles.DumpFiles --pid <pid> #Dump the .exe and dlls of the process in the current directory
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=Win7SP1x86_23418 procdump --pid=3152 -n --dump-dir=. -f file.dmp
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Command line
 
@@ -239,15 +239,15 @@ Anything suspicious was executed?
 ```bash
 python3 vol.py -f file.dmp windows.cmdline.CmdLine #Display process command-line arguments
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=PROFILE cmdline -f file.dmp #Display process command-line arguments
 volatility --profile=PROFILE consoles -f file.dmp #command history by scanning for _CONSOLE_INFORMATION
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 Commands entered into cmd.exe are processed by **conhost.exe** (csrss.exe prior to Windows 7). So even if an attacker managed to **kill the cmd.exe** **prior** to us obtaining a memory **dump**, there is still a good chance of **recovering history** of the command line session from **conhost.exe’s memory**. If you find **something weird** (using the console's modules), try to **dump** the **memory** of the **conhost.exe associated** process and **search** for **strings** inside it to extract the command lines.
 
@@ -260,7 +260,7 @@ Get the env variables of each running process. There could be some interesting v
 ```bash
 python3 vol.py -f file.dmp windows.envars.Envars [--pid <pid>] #Display process environment variables
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -268,8 +268,8 @@ volatility --profile=PROFILE envars -f file.dmp [--pid <pid>] #Display process e
 
 volatility --profile=PROFILE -f file.dmp linux_psenv [-p <pid>] #Get env of process. runlevel var means the runlevel where the proc is initated 
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Token privileges
 
@@ -284,7 +284,7 @@ python3 vol.py -f file.dmp windows.privileges.Privs [--pid <pid>]
 #Get all processes with interesting privileges
 python3 vol.py -f file.dmp windows.privileges.Privs | grep "SeImpersonatePrivilege\|SeAssignPrimaryPrivilege\|SeTcbPrivilege\|SeBackupPrivilege\|SeRestorePrivilege\|SeCreateTokenPrivilege\|SeLoadDriverPrivilege\|SeTakeOwnershipPrivilege\|SeDebugPrivilege"
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -293,8 +293,8 @@ volatility --profile=Win7SP1x86_23418 privs --pid=3152 -f file.dmp | grep Enable
 #Get all processes with interesting privileges
 volatility --profile=Win7SP1x86_23418 privs -f file.dmp | grep "SeImpersonatePrivilege\|SeAssignPrimaryPrivilege\|SeTcbPrivilege\|SeBackupPrivilege\|SeRestorePrivilege\|SeCreateTokenPrivilege\|SeLoadDriverPrivilege\|SeTakeOwnershipPrivilege\|SeDebugPrivilege"
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### SIDs
 
@@ -307,15 +307,15 @@ It could be interesting to list the processes using a privileges SID (and the pr
 ./vol.py -f file.dmp windows.getsids.GetSIDs [--pid <pid>] #Get SIDs of processes
 ./vol.py -f file.dmp windows.getservicesids.GetServiceSIDs #Get the SID of services
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=Win7SP1x86_23418 getsids -f file.dmp #Get the SID owned by each process
 volatility --profile=Win7SP1x86_23418 getservicesids -f file.dmp #Get the SID of each service
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Handles
 
@@ -326,14 +326,14 @@ Useful to know to which other files, keys, threads, processes... a **process has
 ```bash
 vol.py -f file.dmp windows.handles.Handles [--pid <pid>]
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=Win7SP1x86_23418 -f file.dmp handles [--pid=<pid>]
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### DLLs
 
@@ -343,15 +343,15 @@ volatility --profile=Win7SP1x86_23418 -f file.dmp handles [--pid=<pid>]
 ./vol.py -f file.dmp windows.dlllist.DllList [--pid <pid>] #List dlls used by each
 ./vol.py -f file.dmp windows.dumpfiles.DumpFiles --pid <pid> #Dump the .exe and dlls of the process in the current directory process
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=Win7SP1x86_23418 dlllist --pid=3152 -f file.dmp #Get dlls of a proc
 volatility --profile=Win7SP1x86_23418 dlldump --pid=3152 --dump-dir=. -f file.dmp #Dump dlls of a proc
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Strings per processes
 
@@ -363,7 +363,7 @@ Volatility allows us to check which process a string belongs to.
 strings file.dmp > /tmp/strings.txt
 ./vol.py -f /tmp/file.dmp windows.strings.Strings --strings-file /tmp/strings.txt
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -373,8 +373,8 @@ volatility -f /tmp/file.dmp windows.strings.Strings --string-file /tmp/strings.t
 volatility -f /tmp/file.dmp --profile=Win81U1x64 memdump -p 3532 --dump-dir .
 strings 3532.dmp > strings_file
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 It also allows to search for strings inside a process using the yarascan module:
 
@@ -384,14 +384,14 @@ It also allows to search for strings inside a process using the yarascan module:
 ./vol.py -f file.dmp windows.vadyarascan.VadYaraScan --yara-rules "https://" --pid 3692 3840 3976 3312 3084 2784
 ./vol.py -f file.dmp yarascan.YaraScan --yara-rules "https://"
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=Win7SP1x86_23418 yarascan -Y "https://" -p 3692,3840,3976,3312,3084,2784
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### UserAssist
 
@@ -402,14 +402,14 @@ volatility --profile=Win7SP1x86_23418 yarascan -Y "https://" -p 3692,3840,3976,3
 ```bash
 ./vol.py -f file.dmp windows.registry.userassist.UserAssist
 ```
-{% endtab %}
+
 
 
 ```
 volatility --profile=Win7SP1x86_23418 -f file.dmp userassist
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ​
 
@@ -427,7 +427,7 @@ volatility --profile=Win7SP1x86_23418 -f file.dmp userassist
 ./vol.py -f file.dmp windows.svcscan.SvcScan #List services
 ./vol.py -f file.dmp windows.getservicesids.GetServiceSIDs #Get the SID of services
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -436,8 +436,8 @@ volatility --profile=Win7SP1x86_23418 svcscan -f file.dmp
 #Get name of the services and SID (slow)
 volatility --profile=Win7SP1x86_23418 getservicesids -f file.dmp
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ## Network
 
@@ -447,7 +447,7 @@ volatility --profile=Win7SP1x86_23418 getservicesids -f file.dmp
 ./vol.py -f file.dmp windows.netscan.NetScan
 #For network info of linux use volatility2
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -464,8 +464,8 @@ volatility --profile=SomeLinux -f file.dmp linux_arp #ARP table
 volatility --profile=SomeLinux -f file.dmp linux_list_raw #Processes using promiscuous raw sockets (comm between processes)
 volatility --profile=SomeLinux -f file.dmp linux_route_cache
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ## Registry hive
 
@@ -477,15 +477,15 @@ volatility --profile=SomeLinux -f file.dmp linux_route_cache
 ./vol.py -f file.dmp windows.registry.hivelist.HiveList #List roots
 ./vol.py -f file.dmp windows.registry.printkey.PrintKey #List roots and get initial subkeys
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=Win7SP1x86_23418 -f file.dmp hivelist #List roots
 volatility --profile=Win7SP1x86_23418 -f file.dmp printkey #List roots and get initial subkeys
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Get a value
 
@@ -494,7 +494,7 @@ volatility --profile=Win7SP1x86_23418 -f file.dmp printkey #List roots and get i
 ```bash
 ./vol.py -f file.dmp windows.registry.printkey.PrintKey --key "Software\Microsoft\Windows NT\CurrentVersion"
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -502,8 +502,8 @@ volatility --profile=Win7SP1x86_23418 printkey -K "Software\Microsoft\Windows NT
 # Get Run binaries registry value
 volatility -f file.dmp --profile=Win7SP1x86 printkey -o 0x9670e9d0 -K 'Software\Microsoft\Windows\CurrentVersion\Run'
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Dump
 
@@ -523,15 +523,15 @@ volatility --profile=Win7SP1x86_23418 hivedump -f file.dmp
 ```bash
 #See vol2
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=SomeLinux -f file.dmp linux_mount
 volatility --profile=SomeLinux -f file.dmp linux_recover_filesystem #Dump the entire filesystem (if possible)
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Scan/dump
 
@@ -541,7 +541,7 @@ volatility --profile=SomeLinux -f file.dmp linux_recover_filesystem #Dump the en
 ./vol.py -f file.dmp windows.filescan.FileScan #Scan for files inside the dump
 ./vol.py -f file.dmp windows.dumpfiles.DumpFiles --physaddr <0xAAAAA> #Offset from previous command
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -553,8 +553,8 @@ volatility --profile=SomeLinux -f file.dmp linux_enumerate_files
 volatility --profile=SomeLinux -f file.dmp linux_find_file -F /path/to/file
 volatility --profile=SomeLinux -f file.dmp linux_find_file -i 0xINODENUMBER -O /path/to/dump/file
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Master File Table
 
@@ -563,14 +563,14 @@ volatility --profile=SomeLinux -f file.dmp linux_find_file -i 0xINODENUMBER -O /
 ```bash
 # I couldn't find any plugin to extract this information in volatility3
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=Win7SP1x86_23418 mftparser -f file.dmp
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 The NTFS file system contains a file called the _master file table_, or MFT. There is at least one entry in the MFT for every file on an NTFS file system volume, including the MFT itself. **All information about a file, including its size, time and date stamps, permissions, and data content**, is stored either in MFT entries, or in space outside the MFT that is described by MFT entries. From [here](https://docs.microsoft.com/en-us/windows/win32/fileio/master-file-table).
 
@@ -582,7 +582,7 @@ The NTFS file system contains a file called the _master file table_, or MFT. The
 #vol3 allows to search for certificates inside the registry
 ./vol.py -f file.dmp windows.registry.certificates.Certificates
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -590,8 +590,8 @@ The NTFS file system contains a file called the _master file table_, or MFT. The
 #Interesting options for this modules are: --pid, --name, --ssl
 volatility --profile=Win7SP1x86_23418 dumpcerts --dump-dir=. -f file.dmp
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ## Malware
 
@@ -610,7 +610,7 @@ volatility --profile=Win7SP1x86_23418 dumpcerts --dump-dir=. -f file.dmp
 ./vol.py -f file.dmp linux.check_modules.Check_modules #Compares module list to sysfs info, if available
 ./vol.py -f file.dmp linux.tty_check.tty_check #Checks tty devices for hooks
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -628,8 +628,8 @@ volatility --profile=SomeLinux -f file.dmp linux_check_modules
 volatility --profile=SomeLinux -f file.dmp linux_check_tty
 volatility --profile=SomeLinux -f file.dmp linux_keyboard_notifiers #Keyloggers
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Scanning with yara
 
@@ -647,7 +647,7 @@ python malware_yara_rules.py
 #All
 ./vol.py -f file.dmp yarascan.YaraScan --yara-file /tmp/malware_rules.yar
 ```
-{% endtab %}
+
 
 
 ```bash
@@ -656,8 +656,8 @@ mkdir rules
 python malware_yara_rules.py
 volatility --profile=Win7SP1x86_23418 yarascan -y malware_rules.yar -f ch2.dmp | grep "Rule:" | grep -v "Str_Win32" | sort | uniq
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ## MISC
 
@@ -670,14 +670,14 @@ If you want to use external plugins make sure that the folders related to the pl
 ```bash
 ./vol.py --plugin-dirs "/tmp/plugins/" [...]
 ```
-{% endtab %}
+
 
 
 ```bash
  volatilitye --plugins="/tmp/plugins/" [...]
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 #### Autoruns
 
@@ -694,15 +694,15 @@ Download it from [https://github.com/tomchop/volatility-autoruns](https://github
 ```
 ./vol.py -f file.dmp windows.mutantscan.MutantScan
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=Win7SP1x86_23418 mutantscan -f file.dmp
 volatility --profile=Win7SP1x86_23418 -f file.dmp handles -p <PID> -t mutant
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Symlinks
 
@@ -711,14 +711,14 @@ volatility --profile=Win7SP1x86_23418 -f file.dmp handles -p <PID> -t mutant
 ```bash
 ./vol.py -f file.dmp windows.symlinkscan.SymlinkScan
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=Win7SP1x86_23418 -f file.dmp symlinkscan
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Bash
 
@@ -729,14 +729,14 @@ It's possible to **read from memory the bash history.** You could also dump the 
 ```
 ./vol.py -f file.dmp linux.bash.Bash
 ```
-{% endtab %}
+
 
 
 ```
 volatility --profile=Win7SP1x86_23418 -f file.dmp linux_bash
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### TimeLine
 
@@ -745,14 +745,14 @@ volatility --profile=Win7SP1x86_23418 -f file.dmp linux_bash
 ```bash
 ./vol.py -f file.dmp timeLiner.TimeLiner
 ```
-{% endtab %}
+
 
 
 ```
 volatility --profile=Win7SP1x86_23418 -f timeliner
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Drivers
 
@@ -761,14 +761,14 @@ volatility --profile=Win7SP1x86_23418 -f timeliner
 ```
 ./vol.py -f file.dmp windows.driverscan.DriverScan
 ```
-{% endtab %}
+
 
 
 ```bash
 volatility --profile=Win7SP1x86_23418 -f file.dmp driverscan
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### Get clipboard
 

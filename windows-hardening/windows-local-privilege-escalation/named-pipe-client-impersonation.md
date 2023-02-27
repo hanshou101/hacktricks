@@ -67,7 +67,7 @@ int main() {
 	return 0;
 }
 ```
-{% endtab %}
+
 
 
 ```cpp
@@ -96,8 +96,8 @@ int main()
 	return 0;
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ## Execution
 
