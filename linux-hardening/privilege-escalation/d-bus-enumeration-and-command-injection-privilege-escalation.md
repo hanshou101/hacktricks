@@ -355,7 +355,7 @@ _Note that in `htb.oouch.Block.Block`, the first part (`htb.oouch.Block`) refere
 
 ## C code
 
-{% code title="d-bus_server.c" %}
+
 ```c
 //sudo apt install pkgconf
 // sudo apt install libsystemd-dev
@@ -496,7 +496,7 @@ finish:
         return r < 0 ? EXIT_FAILURE : EXIT_SUCCESS;
 }
 ```
-{% endcode %}
+
 
 
 <details>

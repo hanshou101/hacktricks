@@ -24,7 +24,7 @@ A very dangerous privilege to assign to any user - it allows the user to load ke
 
 However, the below code allows enabling that privilege fairly easily:
 
-{% code title="privileges.cpp" %}
+
 ```c
 #include "stdafx.h"
 #include <windows.h>
@@ -70,7 +70,7 @@ int main()
     return 0;
 }
 ```
-{% endcode %}
+
 
 We compile the above, execute and the privilege `SeLoadDriverPrivilege` is now enabled:
 

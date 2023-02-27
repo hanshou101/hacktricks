@@ -28,14 +28,14 @@ You can use the `mimilib.dll` binary provided by Mimikatz. **This will log insid
 Drop the dll in `C:\Windows\System32\`\
 Get a list existing LSA Security Packages:
 
-{% code title="attacker@target" %}
+
 ```bash
 PS C:\> reg query hklm\system\currentcontrolset\control\lsa\ /v "Security Packages"
 
 HKEY_LOCAL_MACHINE\system\currentcontrolset\control\lsa
     Security Packages    REG_MULTI_SZ    kerberos\0msv1_0\0schannel\0wdigest\0tspkg\0pku2u
 ```
-{% endcode %}
+
 
 Add `mimilib.dll` to the Security Support Provider list (Security Packages):
 

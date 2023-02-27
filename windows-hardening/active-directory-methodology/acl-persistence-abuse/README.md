@@ -427,7 +427,7 @@ If we observe the Scheduled Tasks of the `Misconfigured Policy` GPO, we can see 
 
 Below is the XML file that got created by `New-GPOImmediateTask` that represents our evil scheduled task in the GPO:
 
-{% code title="\offense.local\SysVol\offense.local\Policies\{DDC640FF-634A-4442-BC2E-C05EED132F0C}\Machine\Preferences\ScheduledTasks\ScheduledTasks.xml" %}
+
 ```markup
 <?xml version="1.0" encoding="utf-8"?>
 <ScheduledTasks clsid="{CC63F200-7309-4ba0-B154-A71CD118DBCC}">
@@ -486,13 +486,13 @@ Below is the XML file that got created by `New-GPOImmediateTask` that represents
     </ImmediateTaskV2>
 </ScheduledTasks>
 ```
-{% endcode %}
+
 
 ### Users and Groups <a href="#users-and-groups" id="users-and-groups"></a>
 
 The same privilege escalation could be achieved by abusing the GPO Users and Groups feature. Note in the below file, line 6 where the user `spotless` is added to the local `administrators` group - we could change the user to something else, add another one or even add the user to another group/multiple groups since we can amend the policy configuration file in the shown location due to the GPO delegation assigned to our user `spotless`:
 
-{% code title="\offense.local\SysVol\offense.local\Policies\{DDC640FF-634A-4442-BC2E-C05EED132F0C}\Machine\Preferences\Groups" %}
+
 ```markup
 <?xml version="1.0" encoding="utf-8"?>
 <Groups clsid="{3125E937-EB16-4b4c-9934-544FC6D24D26}">
@@ -505,7 +505,7 @@ The same privilege escalation could be achieved by abusing the GPO Users and Gro
     </Group>
 </Groups>
 ```
-{% endcode %}
+
 
 Additionally, we could think about leveraging logon/logoff scripts, using registry for autoruns, installing .msi, edit services and similar code execution avenues.
 

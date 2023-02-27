@@ -653,7 +653,7 @@ A **StartupItem** is a **directory** that gets **placed** in one of these two fo
 
 After placing a new directory in one of these two locations, **two more items** need to be placed inside that directory. These two items are a **rc script** **and a plist** that holds a few settings. This plist must be called “**StartupParameters.plist**”.
 
-{% code title="StartupParameters.plist" %}
+
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -670,9 +670,9 @@ After placing a new directory in one of these two locations, **two more items** 
 </dict>
 </plist>
 ```
-{% endcode %}
 
-{% code title="superservicename" %}
+
+
 ```bash
 #!/bin/sh
 . /etc/rc.common
@@ -691,7 +691,7 @@ RestartService(){
 
 RunService "$1"
 ```
-{% endcode %}
+
 
 ### /etc/rc.common
 

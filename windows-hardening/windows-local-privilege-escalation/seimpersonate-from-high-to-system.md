@@ -26,7 +26,7 @@ Running in a High Integrity process you can **indicate the PID of a process runn
 impersonateuser.exe 1234
 ```
 
-{% code title="impersonateuser.cpp" %}
+
 ```cpp
 #include <windows.h>
 #include <iostream>
@@ -155,7 +155,7 @@ int main(int argc, char** argv) {
 	return 0;
 }
 ```
-{% endcode %}
+
 
 ## Error
 

@@ -24,7 +24,7 @@ From [wikipedia](https://en.wikipedia.org/wiki/Chroot#Limitations): The chroot m
 
 Therefore, if you are **root** inside a chroot you **can escape** creating **another chroot**. However, in several cases inside the first chroot you won't be able to execute the chroot command, therefore you will need to compile a binary like the following one and run it:
 
-{% code title="break_chroot.c" %}
+
 ```c
 #include <sys/stat.h>
 #include <stdlib.h>
@@ -43,7 +43,7 @@ int main(void)
     system("/bin/bash");
 }
 ```
-{% endcode %}
+
 
 Using **python**:
 

