@@ -47,9 +47,9 @@ docker images
 docker run -it -v /:/host/ ubuntu:18.04 chroot /host/ bash
 ```
 
-{% hint style="info" %}
+
 In case the **docker socket is in an unexpected place** you can still communicate with it using the **`docker`** command with the parameter **`-H unix:///path/to/docker.sock`**
-{% endhint %}
+
 
 # Container Capabilities
 
@@ -63,9 +63,9 @@ capsh --print
 
 In the following page you can **learn more about linux capabilities** and how to abuse them:
 
-{% content-ref url="linux-capabilities.md" %}
+
 [linux-capabilities.md](linux-capabilities.md)
-{% endcontent-ref %}
+
 
 # `--privileged` flag
 
@@ -462,13 +462,13 @@ host> /tmp/bash
  -p #This will give you a shell as root
 ```
 
-{% hint style="info" %}
+
 Note that maybe you cannot mount the folder `/tmp` but you can mount a **different writable folder**. You can find writable directories using: `find / -writable -type d 2>/dev/null`
 
 **Note that not all the directories in a linux machine will support the suid bit!** In order to check which directories support the suid bit run `mount | grep -v "nosuid"` For example usually `/dev/shm` , `/run` , `/proc` , `/sys/fs/cgroup` and `/var/lib/lxcfs` don't support the suid bit.
 
 Note also that if you can **mount `/etc`** or any other folder **containing configuration files**, you may change them from the docker container as root in order to **abuse them in the host** and escalate privileges (maybe modifying `/etc/shadow`)
-{% endhint %}
+
 
 ## Unchecked JSON Structure
 
@@ -523,37 +523,37 @@ $ debugfs /dev/sda1
 
 This is not a technique to breakout from a Docker container but a security feature that Docker uses and you should know about as it might prevent you from breaking out from docker:
 
-{% content-ref url="seccomp.md" %}
+
 [seccomp.md](seccomp.md)
-{% endcontent-ref %}
+
 
 ## AppArmor in Docker
 
 This is not a technique to breakout from a Docker container but a security feature that Docker uses and you should know about as it might prevent you from breaking out from docker:
 
-{% content-ref url="apparmor.md" %}
+
 [apparmor.md](apparmor.md)
-{% endcontent-ref %}
+
 
 ## AuthZ & AuthN
 
 An authorization plugin **approves** or **denies** **requests** to the Docker **daemon** based on both the current **authentication** context and the **command** **context**. The **authentication** **context** contains all **user details** and the **authentication** **method**. The **command context** contains all the **relevant** **request** data.
 
-{% content-ref url="broken-reference" %}
+
 [Broken link](broken-reference)
-{% endcontent-ref %}
+
 
 ## gVisor
 
 **gVisor** is an application kernel, written in Go, that implements a substantial portion of the Linux system surface. It includes an [Open Container Initiative (OCI)](https://www.opencontainers.org) runtime called `runsc` that provides an **isolation boundary between the application and the host kernel**. The `runsc` runtime integrates with Docker and Kubernetes, making it simple to run sandboxed containers.
 
-{% embed url="https://github.com/google/gvisor" %}
+
 
 # Kata Containers
 
 **Kata Containers** is an open source community working to build a secure container runtime with lightweight virtual machines that feel and perform like containers, but provide** stronger workload isolation using hardware virtualization** technology as a second layer of defense.
 
-{% embed url="https://katacontainers.io/" %}
+
 
 ## Use containers securely
 

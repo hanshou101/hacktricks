@@ -6,7 +6,7 @@
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 <details>
 
@@ -64,9 +64,9 @@ While obtaining the basic information you should check for weird things like:
 To obtain the memory of the running system, it's recommended to use [**LiME**](https://github.com/504ensicsLabs/LiME).\
 To **compile** it, you need to use the **same kernel** that the victim machine is using.
 
-{% hint style="info" %}
+
 Remember that you **cannot install LiME or any other thing** in the victim machine as it will make several changes to it
-{% endhint %}
+
 
 So, if you have an identical version of Ubuntu you can use `apt-get install lime-forensics-dkms`\
 In other cases, you need to download [**LiME**](https://github.com/504ensicsLabs/LiME) from github and compile it with correct kernel headers. To **obtain the exact kernel headers** of the victim machine, you can just **copy the directory** `/lib/modules/<kernel version>` to your machine, and then **compile** LiME using them:
@@ -167,7 +167,7 @@ ThisisTheMasterSecret
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ## Search for known Malware
 
@@ -187,9 +187,9 @@ debsums | grep -v "OK$" #apt-get install debsums
 
 Read the following page to learn about tools that can be useful to find malware:
 
-{% content-ref url="malware-analysis.md" %}
+
 [malware-analysis.md](malware-analysis.md)
-{% endcontent-ref %}
+
 
 ## Search installed programs
 
@@ -230,7 +230,7 @@ find /sbin/ –exec rpm -qf {} \; | grep "is not"
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ## Recover Deleted Running Binaries
 
@@ -306,9 +306,9 @@ Interesting system logins:
 * **/var/log/xferlog**: keeps FTP file transfer sessions. Includes info like file names and user-initiated FTP transfers.
 * **/var/log/\*** : You should always check for unexpected logs in this directory
 
-{% hint style="info" %}
+
 Linux system logs and audit subsystems may be disabled or deleted in an intrusion or malware incident. Because logs on Linux systems generally contain some of the most useful information about malicious activities, intruders routinely delete them. Therefore, when examining available log files, it is important to look for gaps or out of order entries that might be an indication of deletion or tampering.
-{% endhint %}
+
 
 ### Command History
 
@@ -371,7 +371,7 @@ More examples and info inside the github: [https://github.com/snovvcrash/usbrip]
 Use [**Trickest**](https://trickest.io/) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ## Review User Accounts and Logon Activities
 
@@ -398,9 +398,9 @@ To deal with such anti-forensic techniques, it is necessary to pay **careful att
 You can check the most recent files of a folder using `ls -laR --sort=time /bin`\
 You can check the inodes of the files inside a folder using `ls -lai /bin |sort -n`
 
-{% hint style="info" %}
+
 Note that an **attacker** can **modify** the **time** to make **files appear** **legitimate**, but he **cannot** modify the **inode**. If you find that a **file** indicates that it was created and modified at the **same time** as the rest of the files in the same folder, but the **inode** is **unexpectedly bigger**, then the **timestamps of that file were modified**.
-{% endhint %}
+
 
 ## Compare files of different filesystem versions
 
@@ -457,4 +457,4 @@ Do you work in a **cybersecurity company**? Do you want to see your **company ad
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+

@@ -16,9 +16,9 @@
 
 If you **don't know what are Windows Access Tokens** read this page before continuing:
 
-{% content-ref url="../access-tokens.md" %}
+
 [access-tokens.md](../access-tokens.md)
-{% endcontent-ref %}
+
 
 **Maybe you could be able to escalate privileges abusing the tokens you already have**
 
@@ -26,13 +26,13 @@ If you **don't know what are Windows Access Tokens** read this page before conti
 
 Any process holding this privilege can **impersonate** (but not create) any **token** for which it is able to gethandle. You can get a **privileged token** from a **Windows service** (DCOM) making it perform an **NTLM authentication** against the exploit, then execute a process as **SYSTEM**. Exploit it with [juicy-potato](https://github.com/ohpe/juicy-potato), [RogueWinRM ](https://github.com/antonioCoco/RogueWinRM)(needs winrm disabled), [SweetPotato](https://github.com/CCob/SweetPotato), [PrintSpoofer](https://github.com/itm4n/PrintSpoofer):
 
-{% content-ref url="../roguepotato-and-printspoofer.md" %}
-[roguepotato-and-printspoofer.md](../roguepotato-and-printspoofer.md)
-{% endcontent-ref %}
 
-{% content-ref url="../juicypotato.md" %}
+[roguepotato-and-printspoofer.md](../roguepotato-and-printspoofer.md)
+
+
+
 [juicypotato.md](../juicypotato.md)
-{% endcontent-ref %}
+
 
 ### SeAssignPrimaryPrivilege (3.1.2)
 
@@ -56,9 +56,9 @@ You can **abuse this privilege** with:
 * following **IppSec** in [https://www.youtube.com/watch?v=IfCysW0Od8w\&t=2610\&ab\_channel=IppSec](https://www.youtube.com/watch?v=IfCysW0Od8w\&t=2610\&ab\_channel=IppSec)
 * Or as explained in the **escalating privileges with Backup Operators** section of:
 
-{% content-ref url="../../active-directory-methodology/privileged-groups-and-token-privileges.md" %}
+
 [privileged-groups-and-token-privileges.md](../../active-directory-methodology/privileged-groups-and-token-privileges.md)
-{% endcontent-ref %}
+
 
 ### SeRestorePrivilege (3.1.5)
 
@@ -79,9 +79,9 @@ As you don't have access to write to HKLM, you have to **use HKCU**. But HKCU do
 So, you have to **create all that path inside HKCU and set the ImagePath** (path to the binary that is going to be executed) **and Type** (SERVICE\_KERNEL\_DRIVER 0x00000001).\
 
 
-{% content-ref url="abuse-seloaddriverprivilege.md" %}
+
 [abuse-seloaddriverprivilege.md](abuse-seloaddriverprivilege.md)
-{% endcontent-ref %}
+
 
 ### SeTakeOwnershipPrivilege (3.1.8)
 

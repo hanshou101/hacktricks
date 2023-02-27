@@ -24,17 +24,17 @@ If you have access over an AD in linux (or bash in Windows) you can try [https:/
 
 You can also check the following page to learn **other ways to enumerate AD from linux**:
 
-{% content-ref url="../../network-services-pentesting/pentesting-ldap.md" %}
+
 [pentesting-ldap.md](../../network-services-pentesting/pentesting-ldap.md)
-{% endcontent-ref %}
+
 
 ### FreeIPA
 
 It is an open source **alternative** to Microsoft Windows **Active** **Directory**, primarily used as an integrated management solution for **Unix** environments. Learn more about it in:
 
-{% content-ref url="../freeipa-pentesting.md" %}
+
 [freeipa-pentesting.md](../freeipa-pentesting.md)
-{% endcontent-ref %}
+
 
 ## Playing with tickets
 
@@ -42,9 +42,9 @@ It is an open source **alternative** to Microsoft Windows **Active** **Directory
 
 In this page you are going to find different places were you could **find kerberos tickets inside a linux host**, in the following page you can learn how to transform this CCache tickets formats to Kirbi (the format you need to use in Windows) and also how to perform a PTT attack:
 
-{% content-ref url="../../windows-hardening/active-directory-methodology/pass-the-ticket.md" %}
+
 [pass-the-ticket.md](../../windows-hardening/active-directory-methodology/pass-the-ticket.md)
-{% endcontent-ref %}
+
 
 ### CCACHE ticket reuse from /tmp
 

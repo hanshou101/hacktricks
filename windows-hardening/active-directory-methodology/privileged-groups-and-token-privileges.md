@@ -265,9 +265,9 @@ Another way to **abuse DnsAdmins** group privileges is by creating a **WPAD reco
 
 After **disabling the global query** block list and creating a **WPAD record**, **every machine** running WPAD with default settings will have its **traffic proxied through our attack machine**. We could use a tool such as \*\*\*\* [**Responder**](https://github.com/lgandx/Responder) **or** [**Inveigh**](https://github.com/Kevin-Robertson/Inveigh) **to perform traffic spoofing**, and attempt to capture password hashes and crack them offline or perform an SMBRelay attack.
 
-{% content-ref url="../../generic-methodologies-and-resources/pentesting-network/spoofing-llmnr-nbt-ns-mdns-dns-and-wpad-and-relay-attacks.md" %}
+
 [spoofing-llmnr-nbt-ns-mdns-dns-and-wpad-and-relay-attacks.md](../../generic-methodologies-and-resources/pentesting-network/spoofing-llmnr-nbt-ns-mdns-dns-and-wpad-and-relay-attacks.md)
-{% endcontent-ref %}
+
 
 ## Event Log Readers
 
@@ -331,9 +331,9 @@ Next, we can replace this file with a **malicious `maintenanceservice.exe`**, **
 C:\htb> sc.exe start MozillaMaintenance
 ```
 
-{% hint style="info" %}
+
 This vector has been mitigated by the March 2020 Windows security updates, which changed behavior relating to hard links.
-{% endhint %}
+
 
 ## Organization Management
 
@@ -349,9 +349,9 @@ The members of this gorup are granted:
 * **Log on locally to a Domain Controller** and shut it down
 * Permissions to **manage**, create, share, and delete **printers connected to a Domain Controller**
 
-{% hint style="warning" %}
+
 If the command `whoami /priv`, doesn't show the **`SeLoadDriverPrivilege`** from an unelevated context, you need to bypass UAC.
-{% endhint %}
+
 
 Get **members** of the group:
 
@@ -361,9 +361,9 @@ Get-NetGroupMember -Identity "Print Operators" -Recurse
 
 Check in this page how to abuse the SeLoadDriverPrivilege to privesc:
 
-{% content-ref url="../windows-local-privilege-escalation/privilege-escalation-abusing-tokens/abuse-seloaddriverprivilege.md" %}
+
 [abuse-seloaddriverprivilege.md](../windows-local-privilege-escalation/privilege-escalation-abusing-tokens/abuse-seloaddriverprivilege.md)
-{% endcontent-ref %}
+
 
 ## Remote Desktop Users
 
@@ -377,9 +377,9 @@ Get-NetLocalGroupMember -ComputerName <pc name> -GroupName "Remote Desktop Users
 
 More info about **RDP**:
 
-{% content-ref url="../../network-services-pentesting/pentesting-rdp.md" %}
+
 [pentesting-rdp.md](../../network-services-pentesting/pentesting-rdp.md)
-{% endcontent-ref %}
+
 
 ## Remote Management Users
 
@@ -392,9 +392,9 @@ Get-NetLocalGroupMember -ComputerName <pc name> -GroupName "Remote Management Us
 
 More info about **WinRM**:
 
-{% content-ref url="../../network-services-pentesting/5985-5986-pentesting-winrm.md" %}
+
 [5985-5986-pentesting-winrm.md](../../network-services-pentesting/5985-5986-pentesting-winrm.md)
-{% endcontent-ref %}
+
 
 ## Server Operators <a href="#server-operators" id="server-operators"></a>
 
@@ -418,33 +418,33 @@ Get-NetGroupMember -Identity "Server Operators" -Recurse
 
 ## References <a href="#references" id="references"></a>
 
-{% embed url="https://ired.team/offensive-security-experiments/active-directory-kerberos-abuse/privileged-accounts-and-token-privileges" %}
 
-{% embed url="https://www.tarlogic.com/en/blog/abusing-seloaddriverprivilege-for-privilege-escalation/" %}
 
-{% embed url="https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/appendix-b--privileged-accounts-and-groups-in-active-directory" %}
 
-{% embed url="https://docs.microsoft.com/en-us/windows/desktop/secauthz/enabling-and-disabling-privileges-in-c--" %}
 
-{% embed url="https://adsecurity.org/?p=3658" %}
 
-{% embed url="http://www.harmj0y.net/blog/redteaming/abusing-gpo-permissions/" %}
 
-{% embed url="https://www.tarlogic.com/en/blog/abusing-seloaddriverprivilege-for-privilege-escalation/" %}
 
-{% embed url="https://rastamouse.me/2019/01/gpo-abuse-part-1/" %}
 
-{% embed url="https://github.com/killswitch-GUI/HotLoad-Driver/blob/master/NtLoadDriver/EXE/NtLoadDriver-C%2B%2B/ntloaddriver.cpp#L13" %}
 
-{% embed url="https://github.com/tandasat/ExploitCapcom" %}
 
-{% embed url="https://github.com/TarlogicSecurity/EoPLoadDriver/blob/master/eoploaddriver.cpp" %}
 
-{% embed url="https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys" %}
 
-{% embed url="https://posts.specterops.io/a-red-teamers-guide-to-gpos-and-ous-f0d03976a31e" %}
 
-{% embed url="https://undocumented.ntinternals.net/index.html?page=UserMode%2FUndocumented%20Functions%2FExecutable%20Images%2FNtLoadDriver.html" %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <details>
 

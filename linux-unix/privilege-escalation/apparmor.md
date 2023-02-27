@@ -89,9 +89,9 @@ Then, in a different console perform all the actions that the binary will usuall
 
 Then, in the first console press "**s**" and then in the recorded actions indicate if you want to ignore, allow, or whatever. When you have finished press "**f**" and the new profile will be created in _/etc/apparmor.d/path.to.binary_
 
-{% hint style="info" %}
+
 Using the arrow keys you can select what you want to allow/deny/whatever
-{% endhint %}
+
 
 ## aa-easyprof
 
@@ -122,9 +122,9 @@ sudo aa-easyprof /path/to/binary
 }
 ```
 
-{% hint style="info" %}
+
 Note that by default in a created profile nothing is allowed, so everything is denied. You will need to add lines like `/etc/passwd r,` to allow the binary read `/etc/passwd` for example.
-{% endhint %}
+
 
 You can then **enforce** the new profile with
 
@@ -140,9 +140,9 @@ The following tool will read the logs and ask the user if he wants to permit som
 sudo aa-logprof
 ```
 
-{% hint style="info" %}
+
 Using the arrow keys you can select what you want to allow/deny/whatever
-{% endhint %}
+
 
 ## Managing a Profile
 
@@ -243,9 +243,9 @@ Note that you can **add/remove** **capabilities** to the docker container (this 
 * `--cap-add=ALL`_ _give_ _all caps
 * `--cap-drop=ALL --cap-add=SYS_PTRACE` drop all caps and only give `SYS_PTRACE`
 
-{% hint style="info" %}
+
 Usually, when you **find** that you have a **privileged capability** available **inside** a **docker** container **but** some part of the **exploit isn't working**, this will be because docker **apparmor will be preventing it**.
-{% endhint %}
+
 
 ## AppArmor Docker breakout
 

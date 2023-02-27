@@ -62,17 +62,17 @@ If you just have access to an AD environment but you don't have any credentials/
   * `smbclient -U '%' -L //<DC IP> && smbclient -U 'guest%' -L //`
   * A more detailed guide on how to enumerate a SMB server can be found here:
 
-{% content-ref url="../../network-services-pentesting/pentesting-smb.md" %}
+
 [pentesting-smb.md](../../network-services-pentesting/pentesting-smb.md)
-{% endcontent-ref %}
+
 
 * **Enumerate Ldap**
   * `nmap -n -sV --script "ldap* and not brute" -p 389 <DC IP>`
   * A more detailed guide on how to enumerate LDAP can be found here (pay **special attention to the anonymous access**):
 
-{% content-ref url="../../network-services-pentesting/pentesting-ldap.md" %}
+
 [pentesting-ldap.md](../../network-services-pentesting/pentesting-ldap.md)
-{% endcontent-ref %}
+
 
 * **Poison the network**
   * Gather credentials [**impersonating services with Responder**](../../generic-methodologies-and-resources/pentesting-network/spoofing-llmnr-nbt-ns-mdns-dns-and-wpad-and-relay-attacks.md)
@@ -117,11 +117,11 @@ Invoke-PasswordSprayOWA -ExchHostname [ip] -UserList .\valid.txt -Password Summe
 Get-GlobalAddressList -ExchHostname [ip] -UserName [domain]\[username] -Password Summer2021 -OutFile gal.txt
 ```
 
-{% hint style="warning" %}
+
 You can find lists of usernames in [**this github repo**](https://github.com/danielmiessler/SecLists/tree/master/Usernames/Names) \*\*\*\* and this one ([**statistically-likely-usernames**](https://github.com/insidetrust/statistically-likely-usernames)).
 
 However, you should have the **name of the people working on the company** from the recon step you should have performed before this. With the name and surname you could used the script [**namemash.py**](https://gist.github.com/superkojiman/11076951) to generate potential valid usernames.
-{% endhint %}
+
 
 ### Knowing one or several usernames
 
@@ -131,17 +131,17 @@ Ok, so you know you have already a valid username but no passwords... Then try:
 * [**Password Spraying**](password-spraying.md): Let's try the most **common passwords** with each of the discovered users, maybe some user is using a bad password (keep in mind the password policy!).
   * Note that you can also **spray OWA servers** to try to get access to the users mail servers.
 
-{% content-ref url="password-spraying.md" %}
+
 [password-spraying.md](password-spraying.md)
-{% endcontent-ref %}
+
 
 ### LLMNR/NBT-NS Poisoning
 
 You might be able to **obtain** some challenge **hashes** to crack **poisoning** some protocols of the **network**:
 
-{% content-ref url="../../generic-methodologies-and-resources/pentesting-network/spoofing-llmnr-nbt-ns-mdns-dns-and-wpad-and-relay-attacks.md" %}
+
 [spoofing-llmnr-nbt-ns-mdns-dns-and-wpad-and-relay-attacks.md](../../generic-methodologies-and-resources/pentesting-network/spoofing-llmnr-nbt-ns-mdns-dns-and-wpad-and-relay-attacks.md)
-{% endcontent-ref %}
+
 
 ### NTML Relay
 
@@ -151,9 +151,9 @@ If you have managed to enumerate the active directory you will have **more email
 
 If you can **access other PCs or shares** with the **null or guest user** you could **place files** (like a SCF file) that if somehow accessed will t**rigger an NTML authentication against you** so you can **steal** the **NTLM challenge** to crack it:
 
-{% content-ref url="../ntlm/places-to-steal-ntlm-creds.md" %}
+
 [places-to-steal-ntlm-creds.md](../ntlm/places-to-steal-ntlm-creds.md)
-{% endcontent-ref %}
+
 
 ## Enumerating Active Directory WITH credentials/session
 
@@ -161,9 +161,9 @@ For this phase you need to have **compromised the credentials or a session of a 
 
 Before start the authenticated enumeration you should know what is the **Kerberos double hop problem.**
 
-{% content-ref url="kerberos-double-hop-problem.md" %}
+
 [kerberos-double-hop-problem.md](kerberos-double-hop-problem.md)
-{% endcontent-ref %}
+
 
 ### Enumeration
 
@@ -194,9 +194,9 @@ Regarding [**ASREPRoast**](asreproast.md) you can now find every possible vulner
 The goal of Kerberoasting is to harvest **TGS tickets for services that run on behalf of domain user accounts**. Part of these TGS tickets are **encrypted wit keys derived from user passwords**. As a consequence, their credentials could be **cracked offline**.\
 More about this in:
 
-{% content-ref url="kerberoast.md" %}
+
 [kerberoast.md](kerberoast.md)
-{% endcontent-ref %}
+
 
 ### Remote connexion (RDP, SSH, FTP, Win-RM, etc)
 
@@ -234,17 +234,17 @@ Now that you have some basic credentials you should check if you can **find** an
 
 If you can **access other PCs or shares** you could **place files** (like a SCF file) that if somehow accessed will t**rigger an NTML authentication against you** so you can **steal** the **NTLM challenge** to crack it:
 
-{% content-ref url="../ntlm/places-to-steal-ntlm-creds.md" %}
+
 [places-to-steal-ntlm-creds.md](../ntlm/places-to-steal-ntlm-creds.md)
-{% endcontent-ref %}
+
 
 ### CVE-2021-1675/CVE-2021-34527 PrintNightmare
 
 This vulnerability allowed any authenticated user to **compromise the domain controller**.
 
-{% content-ref url="printnightmare.md" %}
+
 [printnightmare.md](printnightmare.md)
-{% endcontent-ref %}
+
 
 ## Privilege escalation on Active Directory WITH privileged credentials/session
 
@@ -266,17 +266,17 @@ You need to use some **tool** that will **perform** the **NTLM authentication us
 
 This attack aims to **use the user NTLM hash to request Kerberos tickets**, as an alternative to the common Pass The Hash over NTLM protocol. Therefore, this could be especially **useful in networks where NTLM protocol is disabled** and only **Kerberos is allowed** as authentication protocol.
 
-{% content-ref url="over-pass-the-hash-pass-the-key.md" %}
+
 [over-pass-the-hash-pass-the-key.md](over-pass-the-hash-pass-the-key.md)
-{% endcontent-ref %}
+
 
 ### Pass the Ticket
 
 This attack is similar to Pass the Key, but instead of using hashes to request a ticket, the **ticket itself is stolen** and used to authenticate as its owner.
 
-{% content-ref url="pass-the-ticket.md" %}
+
 [pass-the-ticket.md](pass-the-ticket.md)
-{% endcontent-ref %}
+
 
 ### Credentials Reuse
 
@@ -288,9 +288,9 @@ If you have the **hash** or **password** of a **local administrato**r you should
 crackmapexec smb --local-auth 10.10.10.10/23 -u administrator -H 10298e182387f9cab376ecd08491764a0 | grep +
 ```
 
-{% hint style="warning" %}
+
 Note that this is quite **noisy** and **LAPS** would **mitigate** it.
-{% endhint %}
+
 
 ### MSSQL Abuse & Trusted Links
 
@@ -298,9 +298,9 @@ If a user has privileges to **access MSSQL instances**, he could be able to use 
 Also, if a MSSQL instance is trusted (database link) by a different MSSQL instance. If the user has privileges over the trusted database, he is going to be able to **use the trust relationship to execute queries also in the other instance**. These trusts can be chained and at some point the user might be able to find a misconfigured database where he can execute commands.\
 **The links between databases work even across forest trusts.**
 
-{% content-ref url="abusing-ad-mssql.md" %}
+
 [abusing-ad-mssql.md](abusing-ad-mssql.md)
-{% endcontent-ref %}
+
 
 ### Unconstrained Delegation
 
@@ -308,34 +308,34 @@ If you find any Computer object with the attribute [ADS\_UF\_TRUSTED\_FOR\_DELEG
 So, if a **Domain Admin logins onto the computer**, you will be able to dump his TGT and impersonate him using [Pass the Ticket](pass-the-ticket.md).\
 Thanks to constrained delegation you could even **automatically compromise a Print Server** (hopefully it will be a DC).
 
-{% content-ref url="unconstrained-delegation.md" %}
+
 [unconstrained-delegation.md](unconstrained-delegation.md)
-{% endcontent-ref %}
+
 
 ### Constrained Delegation
 
 If a user or computer is allowed for "Constrained Delegation" it will be able to **impersonate any user to access some services in a computer**.\
 Then, if you **compromise the hash** of this user/computer you will be able to **impersonate any user** (even domain admins) to access some services.
 
-{% content-ref url="constrained-delegation.md" %}
+
 [constrained-delegation.md](constrained-delegation.md)
-{% endcontent-ref %}
+
 
 ### Resourced-based Constrain Delegation
 
 It's possible to gain code execution with **elevated privileges on a remote computer if you have WRITE privilege** on that computer's AD object.
 
-{% content-ref url="resource-based-constrained-delegation.md" %}
+
 [resource-based-constrained-delegation.md](resource-based-constrained-delegation.md)
-{% endcontent-ref %}
+
 
 ### ACLs Abuse
 
 The compromised user could have some **interesting privileges over some domain objects** that could let you **move** laterally/**escalate** privileges.
 
-{% content-ref url="acl-persistence-abuse/" %}
+
 [acl-persistence-abuse](acl-persistence-abuse/)
-{% endcontent-ref %}
+
 
 ### Printer Spooler service abuse
 
@@ -347,33 +347,33 @@ If you can find any **Spool service listening** inside the domain, you may be ab
 If **other users** **access** the **compromised** machine, it's possible to **gather credentials from memory** and even **inject beacons in their processes** to impersonate them.\
 Usually users will access the system via RDP, so here you have how to performa couple of attacks over third party RDP sessions:
 
-{% content-ref url="rdp-sessions-abuse.md" %}
+
 [rdp-sessions-abuse.md](rdp-sessions-abuse.md)
-{% endcontent-ref %}
+
 
 ### LAPS
 
 **LAPS** allows you to **manage the local Administrator password** (which is **randomised**, unique, and **changed regularly**) on domain-joined computers. These passwords are centrally stored in Active Directory and restricted to authorised users using ACLs. If you have **enough permission to read these passwords you could move to other computers**.
 
-{% content-ref url="laps.md" %}
+
 [laps.md](laps.md)
-{% endcontent-ref %}
+
 
 ### Certificate Theft
 
 Gathering certificates from the compromised machine could be a way to escalate privileges inside the environment:
 
-{% content-ref url="ad-certificates/certificate-theft.md" %}
+
 [certificate-theft.md](ad-certificates/certificate-theft.md)
-{% endcontent-ref %}
+
 
 ### Certificate Templates Abuse
 
 If vulnerable templates are configured it's possible to abuse them to escalate privileges:
 
-{% content-ref url="ad-certificates/domain-escalation.md" %}
+
 [domain-escalation.md](ad-certificates/domain-escalation.md)
-{% endcontent-ref %}
+
 
 ## Post-exploitation with high privilege account
 
@@ -410,41 +410,41 @@ For example you could:
 
 The Silver ticket attack is based on **crafting a valid TGS for a service once the NTLM hash of service is owned** (like the **PC account hash**). Thus, it is possible to **gain access to that service** by forging a custom TGS **as any user** (like privileged access to a computer).
 
-{% content-ref url="silver-ticket.md" %}
+
 [silver-ticket.md](silver-ticket.md)
-{% endcontent-ref %}
+
 
 ### Golden Ticket
 
 A valid **TGT as any user** can be created **using the NTLM hash of the krbtgt AD account**. The advantage of forging a TGT instead of TGS is being **able to access any service** (or machine) in the domain ad the impersonated user.
 
-{% content-ref url="golden-ticket.md" %}
+
 [golden-ticket.md](golden-ticket.md)
-{% endcontent-ref %}
+
 
 ### Diamond Ticket
 
 These are like golden tickets forged in a way that **bypasses common golden tickets detection mechanisms.**
 
-{% content-ref url="diamond-ticket.md" %}
+
 [diamond-ticket.md](diamond-ticket.md)
-{% endcontent-ref %}
+
 
 ### **Certificates Account Persistence**
 
 **Having certificates of an account or being able to request them** is a very good way to be able to persist in the users account (even if he changes the password):
 
-{% content-ref url="ad-certificates/account-persistence.md" %}
+
 [account-persistence.md](ad-certificates/account-persistence.md)
-{% endcontent-ref %}
+
 
 ### **Certificates Domain Persistence**
 
 **Using certificates is also possible to persist with high privileges inside the domain:**
 
-{% content-ref url="ad-certificates/domain-persistence.md" %}
+
 [domain-persistence.md](ad-certificates/domain-persistence.md)
-{% endcontent-ref %}
+
 
 ### AdminSDHolder Group
 
@@ -457,60 +457,60 @@ And if someone tries to delete this user from the Domain Admins (for example) in
 
 There is a **local administrator** account inside each **DC**. Having admin privileges in this machine, you can use mimikatz to **dump the local Administrator hash**. Then, modifying a registry to **activate this password** so you can remotely access to this local Administrator user.
 
-{% content-ref url="dsrm-credentials.md" %}
+
 [dsrm-credentials.md](dsrm-credentials.md)
-{% endcontent-ref %}
+
 
 ### ACL Persistence
 
 You could **give** some **special permissions** to a **user** over some specific domain objects that will let the user **escalate privileges in the future**.
 
-{% content-ref url="acl-persistence-abuse/" %}
+
 [acl-persistence-abuse](acl-persistence-abuse/)
-{% endcontent-ref %}
+
 
 ### Security Descriptors
 
 The **security descriptors** are used to **store** the **permissions** an **object** have **over** an **object**. If you can just **make** a **little change** in the **security descriptor** of an object, you can obtain very interesting privileges over that object without needing to be member of a privileged group.
 
-{% content-ref url="security-descriptors.md" %}
+
 [security-descriptors.md](security-descriptors.md)
-{% endcontent-ref %}
+
 
 ### Skeleton Key
 
 **Modify LSASS** in memory to create a **master password** that will work for any account in the domain.
 
-{% content-ref url="skeleton-key.md" %}
+
 [skeleton-key.md](skeleton-key.md)
-{% endcontent-ref %}
+
 
 ### Custom SSP
 
 [Learn what is a SSP (Security Support Provider) here.](../authentication-credentials-uac-and-efs.md#security-support-provider-interface-sspi)\
 You can create you **own SSP** to **capture** in **clear text** the **credentials** used to access the machine.\\
 
-{% content-ref url="custom-ssp.md" %}
+
 [custom-ssp.md](custom-ssp.md)
-{% endcontent-ref %}
+
 
 ### DCShadow
 
 It registers a **new Domain Controller** in the AD and uses it to **push attributes** (SIDHistory, SPNs...) on specified objects **without** leaving any **logs** regarding the **modifications**. You **need DA** privileges and be inside the **root domain**.\
 Note that if you use wrong data, pretty ugly logs will appear.
 
-{% content-ref url="dcshadow.md" %}
+
 [dcshadow.md](dcshadow.md)
-{% endcontent-ref %}
+
 
 ### LAPS Persistence
 
 Previously we have discussed about how to escalate privileges if you have **enough permission to read LAPS passwords**. However, these passwords can also be used to **maintain persistence**.\
 Check:
 
-{% content-ref url="laps.md" %}
+
 [laps.md](laps.md)
-{% endcontent-ref %}
+
 
 ## Forest Privilege Escalation - Domain Trusts
 
@@ -574,7 +574,7 @@ WhenCreated     : 2/19/2021 1:28:00 PM
 WhenChanged     : 2/19/2021 1:28:00 PM
 ```
 
-{% hint style="warning" %}
+
 There are **2 trusted keys**, one for _Child --> Parent_ and another one for _Parent_ --> _Child_.\
 You can the one used by the current domain them with:
 
@@ -582,15 +582,15 @@ You can the one used by the current domain them with:
 Invoke-Mimikatz -Command '"lsadump::trust /patch"' -ComputerName dc.my.domain.local
 Invoke-Mimikatz -Command '"lsadump::dcsync /user:dcorp\mcorp$"'
 ```
-{% endhint %}
+
 
 #### SID-History Injection
 
 Escalate as Enterprise admin to the child/parent domain abusing the trust with SID-History injection:
 
-{% content-ref url="sid-history-injection.md" %}
+
 [sid-history-injection.md](sid-history-injection.md)
-{% endcontent-ref %}
+
 
 #### Exploit writeable Configuration NC
 
@@ -618,9 +618,9 @@ WhenChanged     : 2/19/2021 10:50:56 PM
 
 In this scenario **your domain is trusted** by an external one giving you **undetermined permissions** over it. You will need to find **which principals of your domain have which access over the external domain** and then try to exploit it:
 
-{% content-ref url="external-forest-domain-oneway-inbound.md" %}
+
 [external-forest-domain-oneway-inbound.md](external-forest-domain-oneway-inbound.md)
-{% endcontent-ref %}
+
 
 ### External Forest Domain - One-Way (Outbound)
 
@@ -640,18 +640,18 @@ In this scenario **your domain** is **trusting** some **privileges** to principa
 
 However, when a **domain is trusted** by the trusting domain, the trusted domain **creates a user** with a **predictable name** that uses as **password the trusted password**. Which means that it's possible to **access a user from the trusting domain to get inside the trusted one** to enumerate it and try to escalate more privileges:
 
-{% content-ref url="external-forest-domain-one-way-outbound.md" %}
+
 [external-forest-domain-one-way-outbound.md](external-forest-domain-one-way-outbound.md)
-{% endcontent-ref %}
+
 
 Another way to compromise the trusted domain is to find a [**SQL trusted link**](abusing-ad-mssql.md#mssql-trusted-links) created in the **opposite direction** of the domain trust (which isn't very common).
 
 Another way to compromise the trusted domain is to wait in a machine where a **user from the trusted domain can access** to login via **RDP**. Then, the attacker could inject code in the RDP session process and **access the origin domain of the victim** from there.\
 Moreover, if the **victim mounted his hard drive**, from the **RDP session** process the attacker could store **backdoors** in the **startup folder of the hard drive**. This technique is called **RDPInception.**
 
-{% content-ref url="rdp-sessions-abuse.md" %}
+
 [rdp-sessions-abuse.md](rdp-sessions-abuse.md)
-{% endcontent-ref %}
+
 
 ### Domain trust abuse mitigation
 
@@ -668,7 +668,7 @@ Moreover, if the **victim mounted his hard drive**, from the **RDP session** pro
 
 ## AD -> Cloud & Cloud -> AD
 
-{% embed url="https://cloud.hacktricks.xyz/pentesting-cloud/azure-security/az-lateral-movements/azure-ad-connect-hybrid-identity" %}
+
 
 ## Some General Defenses
 

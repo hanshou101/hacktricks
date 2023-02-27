@@ -160,13 +160,13 @@ There are several ways to **force NTLM authentication "remotely"**, for example,
 
 **Check these ideas and more in the following pages:**
 
-{% content-ref url="../../windows-hardening/active-directory-methodology/printers-spooler-service-abuse.md" %}
-[printers-spooler-service-abuse.md](../../windows-hardening/active-directory-methodology/printers-spooler-service-abuse.md)
-{% endcontent-ref %}
 
-{% content-ref url="../../windows-hardening/ntlm/places-to-steal-ntlm-creds.md" %}
+[printers-spooler-service-abuse.md](../../windows-hardening/active-directory-methodology/printers-spooler-service-abuse.md)
+
+
+
 [places-to-steal-ntlm-creds.md](../../windows-hardening/ntlm/places-to-steal-ntlm-creds.md)
-{% endcontent-ref %}
+
 
 ### NTLM Relay
 

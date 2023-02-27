@@ -20,33 +20,33 @@
 
 **If you don't know what are Windows Access Tokens, read the following page before continuing:**
 
-{% content-ref url="access-tokens.md" %}
+
 [access-tokens.md](access-tokens.md)
-{% endcontent-ref %}
+
 
 ### ACLs - DACLs/SACLs/ACEs
 
 **If you don't know what is any of the acronyms used in the heading of this section, read the following page before continuing**:
 
-{% content-ref url="acls-dacls-sacls-aces.md" %}
+
 [acls-dacls-sacls-aces.md](acls-dacls-sacls-aces.md)
-{% endcontent-ref %}
+
 
 ### Integrity Levels
 
 **If you don't know what are integrity levels in Windows you should read the following page before continuing:**
 
-{% content-ref url="integrity-levels.md" %}
+
 [integrity-levels.md](integrity-levels.md)
-{% endcontent-ref %}
+
 
 ## Windows Security Controls
 
 There are different things in Windows that could **prevent you from enumerating the system**, run executables or even **detect your activities**. You should **read** the following **page** and **enumerate** all these **defenses** **mechanisms** before starting the privilege escalation enumeration:
 
-{% content-ref url="../authentication-credentials-uac-and-efs.md" %}
+
 [authentication-credentials-uac-and-efs.md](../authentication-credentials-uac-and-efs.md)
-{% endcontent-ref %}
+
 
 ## System Info
 
@@ -258,15 +258,15 @@ Just execute the created binary to escalate privileges.
 
 Read this tutorial to learn how to create a MSI wrapper using this tools. Note that you can wrap a "**.bat**" file if you **just** want to **execute** **command lines**
 
-{% content-ref url="msi-wrapper.md" %}
+
 [msi-wrapper.md](msi-wrapper.md)
-{% endcontent-ref %}
+
 
 ### Create MSI with WIX
 
-{% content-ref url="create-msi-with-wix.md" %}
+
 [create-msi-with-wix.md](create-msi-with-wix.md)
-{% endcontent-ref %}
+
 
 ### Create MSI with Visual Studio
 
@@ -315,9 +315,9 @@ reg query HKLM\Software\Policies\Microsoft\Windows\EventLog\EventForwarding\Subs
 
 **LAPS** allows you to **manage the local Administrator password** (which is **randomised**, unique, and **changed regularly**) on domain-joined computers. These passwords are centrally stored in Active Directory and restricted to authorised users using ACLs. If your user is given enough permissions you might be able to read the passwords of the local admins.
 
-{% content-ref url="../active-directory-methodology/laps.md" %}
+
 [laps.md](../active-directory-methodology/laps.md)
-{% endcontent-ref %}
+
 
 ### WDigest
 
@@ -380,18 +380,18 @@ Get-LocalGroupMember Administrators | ft Name, PrincipalSource
 
 If you **belongs to some privileged group you may be able to escalate privileges**. Learn about privileged groups and how to abuse them to escalate privileges here:
 
-{% content-ref url="../active-directory-methodology/privileged-groups-and-token-privileges.md" %}
+
 [privileged-groups-and-token-privileges.md](../active-directory-methodology/privileged-groups-and-token-privileges.md)
-{% endcontent-ref %}
+
 
 ### Token manipulation
 
 **Learn more** about what is a **token** in this page: [**Windows Tokens**](../authentication-credentials-uac-and-efs.md#access-tokens).\
 Check the following page to **learn about interesting tokens** and how to abuse them:
 
-{% content-ref url="privilege-escalation-abusing-tokens/" %}
+
 [privilege-escalation-abusing-tokens](privilege-escalation-abusing-tokens/)
-{% endcontent-ref %}
+
 
 ### Logged users / Sessions
 
@@ -605,9 +605,9 @@ reg add HKLM\SYSTEM\CurrentControlSet\services\<service_name> /v ImagePath /t RE
 
 If you have this permission over a registry this means to **you can create sub registries from this one**. In case of Windows services this is **enough to execute arbitrary code:**
 
-{% content-ref url="appenddata-addsubdirectory-permission-over-service-registry.md" %}
+
 [appenddata-addsubdirectory-permission-over-service-registry.md](appenddata-addsubdirectory-permission-over-service-registry.md)
-{% endcontent-ref %}
+
 
 ### Unquoted Service Paths
 
@@ -699,9 +699,9 @@ Get-ChildItem 'C:\Program Files\*','C:\Program Files (x86)\*' | % { try { Get-Ac
 **Check if you can overwrite some registry or binary that is going to be executed by a different user.**\
 **Read** the **following page** to learn more about interesting **autoruns locations to escalate privileges**:
 
-{% content-ref url="privilege-escalation-with-autorun-binaries.md" %}
+
 [privilege-escalation-with-autorun-binaries.md](privilege-escalation-with-autorun-binaries.md)
-{% endcontent-ref %}
+
 
 ### Drivers
 
@@ -877,9 +877,9 @@ Get-ChildItem -Hidden C:\Users\username\AppData\Roaming\Microsoft\Credentials\
 You can use **mimikatz module** `dpapi::cred` with the appropiate `/masterkey` to decrypt.\
 You can **extract many DPAPI** **masterkeys** from **memory** with the `sekurlsa::dpapi` module (if you are root).
 
-{% content-ref url="dpapi-extracting-passwords.md" %}
+
 [dpapi-extracting-passwords.md](dpapi-extracting-passwords.md)
-{% endcontent-ref %}
+
 
 ### PowerShell Credentials
 
@@ -1062,9 +1062,9 @@ If `ssh-agent` service is not running and you want it to automatically start on 
 Get-Service ssh-agent | Set-Service -StartupType Automatic -PassThru | Start-Service
 ```
 
-{% hint style="info" %}
+
 It looks like this technique isn't valid anymore. I tried to create some ssh keys, add them with `ssh-add` and login via ssh to a machine. The registry HKCU\Software\OpenSSH\Agent\Keys doesn't exist and procmon didn't identify the use of `dpapi.dll` during the asymmetric key authentication.
-{% endhint %}
+
 
 ### Unattended files
 
@@ -1356,9 +1356,9 @@ Basically, if you can **overwrite any of the DLLs** that are going to be execute
 
 To learn how attackers use COM Hijacking as a persistence mechanism check:
 
-{% content-ref url="com-hijacking.md" %}
+
 [com-hijacking.md](com-hijacking.md)
-{% endcontent-ref %}
+
 
 ### **Generic Password search in files and registry**
 
@@ -1439,15 +1439,15 @@ while($true)
 
 Read this to **learn about Integrity Levels**:
 
-{% content-ref url="integrity-levels.md" %}
+
 [integrity-levels.md](integrity-levels.md)
-{% endcontent-ref %}
+
 
 Then **read this to learn about UAC and UAC bypasses:**
 
-{% content-ref url="../windows-security-controls/uac-user-account-control.md" %}
+
 [uac-user-account-control.md](../windows-security-controls/uac-user-account-control.md)
-{% endcontent-ref %}
+
 
 ## **From High Integrity to System**
 
@@ -1488,7 +1488,7 @@ If you manages to **hijack a dll** being **loaded** by a **process** running as 
 
 ### **From Administrator or Network Service to System**
 
-{% embed url="https://github.com/sailay1996/RpcSsImpersonator" %}
+
 
 ### From LOCAL SERVICE or NETWORK SERVICE to full privs
 

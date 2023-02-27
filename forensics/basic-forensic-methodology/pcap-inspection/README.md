@@ -16,11 +16,11 @@
 
 [**RootedCON**](https://www.rootedcon.com/) is the most relevant cybersecurity event in **Spain** and one of the most important in **Europe**. With **the mission of promoting technical knowledge**, this congress is a boiling meeting point for technology and cybersecurity professionals in every discipline.
 
-{% embed url="https://www.rootedcon.com/" %}
 
-{% hint style="info" %}
+
+
 A note about **PCAP** vs **PCAPNG**: there are two versions of the PCAP file format; **PCAPNG is newer and not supported by all tools**. You may need to convert a file from PCAPNG to PCAP using Wireshark or another compatible tool, in order to work with it in some other tools.
-{% endhint %}
+
 
 ## Online tools for pcaps
 
@@ -34,15 +34,15 @@ The following tools are useful to extract statistics, files, etc.
 
 ### Wireshark
 
-{% hint style="info" %}
+
 **If you are going to analyze a PCAP you basically must to know how to use Wireshark**
-{% endhint %}
+
 
 You can find some Wireshark tricks in:
 
-{% content-ref url="wireshark-tricks.md" %}
+
 [wireshark-tricks.md](wireshark-tricks.md)
-{% endcontent-ref %}
+
 
 ### Xplico Framework
 
@@ -107,9 +107,9 @@ ngrep -I packets.pcap "^GET" "port 80 and tcp and host 192.168 and dst host 192.
 
 Using common carving techniques can be useful to extract files and information from the pcap:
 
-{% content-ref url="../partitions-file-systems-carving/file-data-carving-recovery-tools.md" %}
+
 [file-data-carving-recovery-tools.md](../partitions-file-systems-carving/file-data-carving-recovery-tools.md)
-{% endcontent-ref %}
+
 
 ### Capturing credentials
 
@@ -119,7 +119,7 @@ You can use tools like [https://github.com/lgandx/PCredz](https://github.com/lga
 
 [**RootedCON**](https://www.rootedcon.com/) is the most relevant cybersecurity event in **Spain** and one of the most important in **Europe**. With **the mission of promoting technical knowledge**, this congress is a boiling meeting point for technology and cybersecurity professionals in every discipline.
 
-{% embed url="https://www.rootedcon.com/" %}
+
 
 ## Check Exploits/Malware
 
@@ -154,9 +154,9 @@ suricata -r packets.pcap -c /etc/suricata/suricata.yaml -k none -v -l log
 
 Check if you can find any fingerprint of a known malware:
 
-{% content-ref url="../malware-analysis.md" %}
+
 [malware-analysis.md](../malware-analysis.md)
-{% endcontent-ref %}
+
 
 ## Zeek
 
@@ -237,17 +237,17 @@ rita show-exploded-dns -H --limit 10 zeek_logs
 
 ## Other pcap analysis tricks
 
-{% content-ref url="dnscat-exfiltration.md" %}
+
 [dnscat-exfiltration.md](dnscat-exfiltration.md)
-{% endcontent-ref %}
 
-{% content-ref url="wifi-pcap-analysis.md" %}
+
+
 [wifi-pcap-analysis.md](wifi-pcap-analysis.md)
-{% endcontent-ref %}
 
-{% content-ref url="usb-keystrokes.md" %}
+
+
 [usb-keystrokes.md](usb-keystrokes.md)
-{% endcontent-ref %}
+
 
 ​
 
@@ -255,7 +255,7 @@ rita show-exploded-dns -H --limit 10 zeek_logs
 
 [**RootedCON**](https://www.rootedcon.com/) is the most relevant cybersecurity event in **Spain** and one of the most important in **Europe**. With **the mission of promoting technical knowledge**, this congress is a boiling meeting point for technology and cybersecurity professionals in every discipline.
 
-{% embed url="https://www.rootedcon.com/" %}
+
 
 <details>
 

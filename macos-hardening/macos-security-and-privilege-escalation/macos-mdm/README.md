@@ -34,9 +34,9 @@ Administrators can leverage DEP to automatically enroll devices in their organiz
 * Most useful when the **device** is **brand new**
 * Can also be useful for **reprovisioning** workflows (**wiped** with fresh install of the OS)
 
-{% hint style="danger" %}
+
 Unfortunately, if an organization has not taken additional steps to **protect their MDM enrollment**, a simplified end-user enrollment process through DEP can also mean a simplified process for **attackers to enroll a device of their choosing in the organization’s MDM** server, assuming the "identity" of a corporate device.
-{% endhint %}
+
 
 ### Basics What is SCEP (Simple Certificate Enrolment Protocol)?
 
@@ -195,9 +195,9 @@ Typically, **activation profile** provided by an MDM vendor will **include the f
 As previously commented, in order to try to enrol a device into an organization **only a Serial Number belonging to that Organization is needed**. Once the device is enrolled, several organizations will install sensitive data on the new device: certificates, applications, WiFi passwords, VPN configurations [and so on](https://developer.apple.com/enterprise/documentation/Configuration-Profile-Reference.pdf).\
 Therefore, this could be a dangerous entrypoint for attackers if the enrolment process isn't correctly protected:
 
-{% content-ref url="enrolling-devices-in-other-organisations.md" %}
+
 [enrolling-devices-in-other-organisations.md](enrolling-devices-in-other-organisations.md)
-{% endcontent-ref %}
+
 
 ## **References**
 

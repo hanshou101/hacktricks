@@ -56,10 +56,10 @@ lxc list #List containers
 lxc config device add privesc host-root disk source=/ path=/mnt/root recursive=true
 ```
 
-{% hint style="danger" %}
+
 If you find this error _**Error: No storage pool found. Please create a new storage pool**_\
 Run **`lxd init`** and **repeat** the previous chunk of commands
-{% endhint %}
+
 
 Execute the container:
 
@@ -113,7 +113,7 @@ lxc exec test bash
 
 ## Other Refs
 
-{% embed url="https://reboare.github.io/lxd/lxd-escape.html" %}
+
 
 <details>
 

@@ -16,7 +16,7 @@
 
 If you are interested in **hacking carer** and hack the unhackable - **we are hiring!** (_fluent polish written and spoken required_).
 
-{% embed url="https://www.stmcyber.com/careers" %}
+
 
 ## Definition
 
@@ -221,7 +221,7 @@ BOOL APIENTRY DllMain (HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReser
 
 If you are interested in **hacking carer** and hack the unhackable - **we are hiring!** (_fluent polish written and spoken required_).
 
-{% embed url="https://www.stmcyber.com/careers" %}
+
 
 <details>
 

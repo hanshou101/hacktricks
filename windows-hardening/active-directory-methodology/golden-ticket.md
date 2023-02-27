@@ -63,9 +63,9 @@ Unfortunately, the TGT's lifetime is not logged in 4769's, so you won't find thi
 
 In order to **bypass this detection** check the diamond tickets:
 
-{% content-ref url="diamond-ticket.md" %}
+
 [diamond-ticket.md](diamond-ticket.md)
-{% endcontent-ref %}
+
 
 ### Mitigation
 

@@ -71,13 +71,13 @@ The params this function expects are:
 
 # Dynamic Analysis
 
-{% hint style="warning" %}
-Note that in order to debug binaries, **SIP needs to be disabled** (`csrutil disable` or `csrutil enable --without debug`) or to copy the binaries to a temporary folder and **remove the signature** with `codesign --remove-signature <binary-path>` or allow the debugging of the binary (you can use [this script](https://gist.github.com/carlospolop/a66b8d72bb8f43913c4b5ae45672578b))
-{% endhint %}
 
-{% hint style="warning" %}
+Note that in order to debug binaries, **SIP needs to be disabled** (`csrutil disable` or `csrutil enable --without debug`) or to copy the binaries to a temporary folder and **remove the signature** with `codesign --remove-signature <binary-path>` or allow the debugging of the binary (you can use [this script](https://gist.github.com/carlospolop/a66b8d72bb8f43913c4b5ae45672578b))
+
+
+
 Note that in order to **instrument system binarie**s, (such as `cloudconfigurationd`) on macOS, **SIP must be disabled** (just removing the signature won't work).
-{% endhint %}
+
 
 ## dtruss
 
@@ -213,7 +213,7 @@ lldb -n malware.bin --waitfor
 | **print object (po)**         | <p>This will print the object referenced by the param</p><p>po $raw</p><p><code>{</code></p><p> <code>dnsChanger =  {</code></p><p>   <code>"affiliate" = "";</code></p><p>   <code>"blacklist_dns" = ();</code></p><p>Note that most of Apple’s Objective-C APIs or methods return objects, and thus should be displayed via the “print object” (po) command. If po doesn't produce a meaningful output use <code>x/b</code><br></p> |
 | **memory write**              | memory write 0x100600000 -s 4 0x41414141 #Write AAAA in that address                                                                                                                                                                                                                                                                                                                                                                  |
 
-{% hint style="info" %}
+
 When calling the **`objc_sendMsg`** function, the **rsi** register holds the **name of the method** as a null-terminated (“C”) string. To print the name via lldb do:
 
 `(lldb) x/s $rsi: 0x1000f1576: "startMiningWithPort:password:coreCount:slowMemory:currency:"`
@@ -222,7 +222,7 @@ When calling the **`objc_sendMsg`** function, the **rsi** register holds the **n
 `(char *) $1 = 0x00000001000f1576 "startMiningWithPort:password:coreCount:slowMemory:currency:"`
 
 `(lldb) reg read $rsi: rsi = 0x00000001000f1576  "startMiningWithPort:password:coreCount:slowMemory:currency:"`
-{% endhint %}
+
 
 ## Anti-Dynamic Analysis
 

@@ -52,9 +52,9 @@ With a logic analyzer:
 
 The easiest way to identify the correct baud rate is to look at the **TX pin’s output and try to read the data**. If the data you receive isn’t readable, switch to the next possible baud rate until the data becomes readable. You can use a USB-to-serial adapter or a multipurpose device like Bus Pirate to do this, paired with a helper script, such as [baudrate.py](https://github.com/devttys0/baudrate/). The most common baud rates are 9600, 38400, 19200, 57600, and 115200.
 
-{% hint style="danger" %}
+
 It's important to note that in this protocol you need to connect the TX of one device to the RX of the other!
-{% endhint %}
+
 
 # Bus Pirate
 

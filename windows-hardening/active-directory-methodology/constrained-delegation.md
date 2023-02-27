@@ -63,11 +63,11 @@ tgt::ask /user:dcorp-adminsrv$ /domain:dollarcorp.moneycorp.local /rc4:8c6264140
 ```
 {% endcode %}
 
-{% hint style="warning" %}
+
 There are **other ways to obtain a TGT ticket** or the **RC4** or **AES256** without being SYSTEM in the computer like the Printer Bug and unconstrain delegation, NTLM relaying and Active Directory Certificate Service abuse
 
 **Just having that TGT ticket (or hashed) you can perform this attack without compromising the whole computer.**
-{% endhint %}
+
 
 {% code title="Using Rubeus" %}
 ```bash

@@ -53,9 +53,9 @@ If the TGT if from a domain controller, you could perform a[ **DCSync attack**](
 
 **Here are other ways to try to force an authentication:**
 
-{% content-ref url="printers-spooler-service-abuse.md" %}
+
 [printers-spooler-service-abuse.md](printers-spooler-service-abuse.md)
-{% endcontent-ref %}
+
 
 ### Mitigation
 

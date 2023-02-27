@@ -39,9 +39,9 @@ Possible problems:
 
 This kind of attack is similar to **Pass the Key**, but instead of using hashes to request for a ticket, the ticket itself is stolen and used to authenticate as its owner.
 
-{% hint style="warning" %}
+
 When a TGT is requested, event `4768: A Kerberos authentication ticket (TGT) was requested` is generated. You can see from the output above that the KeyType is **RC4-HMAC** (0x17), but the default type for Windows is now **AES256** (0x12).
-{% endhint %}
+
 
 ```bash
 .\Rubeus.exe asktgt /user:<USERNAME> /domain:<DOMAIN> /aes256:HASH /nowrap /opsec

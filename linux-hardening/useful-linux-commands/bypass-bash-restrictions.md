@@ -18,7 +18,7 @@
 Use [**Trickest**](https://trickest.io/) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ## Common Limitations Bypasses
 
@@ -340,9 +340,9 @@ ln /f*
 
 If you are inside a filesystem with the **read-only and noexec protections** there are still ways to **execute arbitrary binaries**. One of them is by the use of **DDexec**, yo can find an explanation of the technique in:
 
-{% content-ref url="../bypass-linux-shell-restrictions/ddexec.md" %}
+
 [ddexec.md](../bypass-linux-shell-restrictions/ddexec.md)
-{% endcontent-ref %}
+
 
 ## References & More
 
@@ -357,7 +357,7 @@ If you are inside a filesystem with the **read-only and noexec protections** the
 Use [**Trickest**](https://trickest.io/) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 <details>
 

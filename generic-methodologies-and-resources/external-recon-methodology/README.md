@@ -15,7 +15,7 @@
 <img src="../../.gitbook/assets/i3.png" alt="" data-size="original">\
 **Bug bounty tip**: **sign up** for **Intigriti**, a premium **bug bounty platform created by hackers, for hackers**! Join us at [**https://go.intigriti.com/hacktricks**](https://go.intigriti.com/hacktricks) today, and start earning bounties up to **$100,000**!
 
-{% embed url="https://go.intigriti.com/hacktricks" %}
+
 
 ## Assets discoveries
 
@@ -187,7 +187,7 @@ _Note that sometimes the domain is hosted inside an IP that is not controlled by
 <img src="../../.gitbook/assets/i3.png" alt="" data-size="original">\
 **Bug bounty tip**: **sign up** for **Intigriti**, a premium **bug bounty platform created by hackers, for hackers**! Join us at [**https://go.intigriti.com/hacktricks**](https://go.intigriti.com/hacktricks) today, and start earning bounties up to **$100,000**!
 
-{% embed url="https://go.intigriti.com/hacktricks" %}
+
 
 ## Subdomains
 
@@ -446,9 +446,9 @@ echo www | subzuf facebook.com
 
 Check this blog post I wrote about how to **automate the subdomain discovery** from a domain using **Trickest workflows** so I don't need to launch manually a bunch of tools in my computer:
 
-{% embed url="https://trickest.com/blog/full-subdomain-discovery-using-workflow/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
 
-{% embed url="https://trickest.com/blog/full-subdomain-brute-force-discovery-using-workflow/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
+
 
 ### **VHosts / Virtual Hosts**
 
@@ -476,9 +476,9 @@ vhostbrute.py --url="example.com" --remoteip="10.1.1.15" --base="www.example.com
 VHostScan -t example.com
 ```
 
-{% hint style="info" %}
+
 With this technique you may even be able to access internal/hidden endpoints.
-{% endhint %}
+
 
 ### **CORS Brute Force**
 
@@ -603,9 +603,9 @@ You can use the **tool** [**Leakos**](https://github.com/carlospolop/Leakos) to 
 
 Check also this **page** for potential **github dorks** you could also search for in the organization you are attacking:
 
-{% content-ref url="github-leaked-secrets.md" %}
+
 [github-leaked-secrets.md](github-leaked-secrets.md)
-{% endcontent-ref %}
+
 
 ### Pastes Leaks
 
@@ -628,9 +628,9 @@ If you found that the company has **open-source code** you can **analyse** it an
 
 **Depending on the language** there are different **tools** you can use:
 
-{% content-ref url="../../network-services-pentesting/pentesting-web/code-review-tools.md" %}
+
 [code-review-tools.md](../../network-services-pentesting/pentesting-web/code-review-tools.md)
-{% endcontent-ref %}
+
 
 There are also free services that allow you to **scan public repositories**, such as:
 
@@ -674,7 +674,7 @@ There are several tools out there that will perform part of the proposed actions
 <img src="../../.gitbook/assets/i3.png" alt="" data-size="original">\
 **Bug bounty tip**: **sign up** for **Intigriti**, a premium **bug bounty platform created by hackers, for hackers**! Join us at [**https://go.intigriti.com/hacktricks**](https://go.intigriti.com/hacktricks) today, and start earning bounties up to **$100,000**!
 
-{% embed url="https://go.intigriti.com/hacktricks" %}
+
 
 <details>
 

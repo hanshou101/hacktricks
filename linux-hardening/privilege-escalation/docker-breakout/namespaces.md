@@ -219,9 +219,9 @@ cat /proc/self/uid_map
 
 Each cgroup namespace has its **own set of cgroup root directories**. These root directories are the base points for the relative locations displayed in the corresponding records in the `/proc/[pid]/cgroup` file. When a process creates a new cgroup namespace using clone(2) or unshare(2) with the CLONE\_NEWCGROUP flag, its current cgroups directories become the cgroup root directories of the new namespace. (This applies both for the cgroups version 1 hierarchies and the cgroups version 2 unified hierarchy.)
 
-{% content-ref url="cgroups.md" %}
+
 [cgroups.md](cgroups.md)
-{% endcontent-ref %}
+
 
 ## References
 

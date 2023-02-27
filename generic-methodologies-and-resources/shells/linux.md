@@ -337,13 +337,13 @@ Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new
 
 ## Bibliography
 
-{% embed url="https://highon.coffee/blog/reverse-shell-cheat-sheet/" %}
 
-{% embed url="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell" %}
 
-{% embed url="https://tcm1911.github.io/posts/whois-and-finger-reverse-shell/" %}
 
-{% embed url="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md" %}
+
+
+
+
 
 <details>
 

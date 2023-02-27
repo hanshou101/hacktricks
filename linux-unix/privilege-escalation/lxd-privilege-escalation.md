@@ -81,7 +81,7 @@ lxc exec test bash
 
 # Other Refs
 
-{% embed url="https://reboare.github.io/lxd/lxd-escape.html" caption="" %}
+
 
 
 

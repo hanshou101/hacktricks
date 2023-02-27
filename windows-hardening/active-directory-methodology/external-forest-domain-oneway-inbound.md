@@ -80,9 +80,9 @@ You can use **Powerview functions** to **enumerate** the **other domain** using 
 Get-DomainUser -SPN -Domain domain_name.local | select SamAccountName
 ```
 
-{% content-ref url="./" %}
+
 [.](./)
-{% endcontent-ref %}
+
 
 ## Impersonation
 
@@ -100,13 +100,13 @@ You could also abuse [**SID History**](sid-history-injection.md) across a forest
 
 If a user is migrated **from one forest to another** and **SID Filtering is not enabled**, it becomes possible to **add a SID from the other forest**, and this **SID** will be **added** to the **user's token** when authenticating **across the trust**.
 
-{% hint style="warning" %}
+
 As a reminder, you can get the signing key with
 
 ```powershell
 Invoke-Mimikatz -Command '"lsadump::trust /patch"' -ComputerName dc.domain.local
 ```
-{% endhint %}
+
 
 You could **sign with** the **trusted** key a **TGT impersonating** the user of the current domain.
 

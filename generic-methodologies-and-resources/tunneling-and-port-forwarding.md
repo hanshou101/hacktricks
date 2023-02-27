@@ -14,9 +14,9 @@
 
 ## Nmap tip
 
-{% hint style="warning" %}
+
 **ICMP** and **SYN** scans cannot be tunnelled through socks proxies, so we must **disable ping discovery** (`-Pn`) and specify **TCP scans** (`-sT`) for this to work.
-{% endhint %}
+
 
 ## **Bash**
 
@@ -183,9 +183,9 @@ proxychains nmap -n -Pn -sT -p445,3389,5985 10.10.17.25
 
 ### rPort2Port
 
-{% hint style="warning" %}
+
 In this case, the **port is opened in the beacon host**, not in the Team Server and the traffic is sent to the Team Server and from there to the indicated host:port
-{% endhint %}
+
 
 ```bash
 rportfwd [bind port] [forward host] [forward port]
@@ -200,9 +200,9 @@ To note:
 
 ### rPort2Port local
 
-{% hint style="warning" %}
+
 In this case, the **port is opened in the beacon host**, not in the Team Server and the **traffic is sent to the Cobalt Strike client** (not to the Team Server) and from there to the indicated host:port
-{% endhint %}
+
 
 ```
 rportfwd_local [bind port] [forward host] [forward port]

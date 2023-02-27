@@ -146,7 +146,7 @@ Then, looking to this ca see when the execution was stopped in the dll you want 
 
 # ARM & MIPS
 
-{% embed url="https://github.com/nongiach/arm\_now" %}
+
 
 # Shellcodes
 

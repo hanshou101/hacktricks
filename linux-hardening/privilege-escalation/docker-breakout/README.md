@@ -6,7 +6,7 @@
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 <details>
 
@@ -123,7 +123,7 @@ When I changed Docker host, I had to move the root keys and repository keys to o
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ## Containers Security Improvements
 
@@ -141,9 +141,9 @@ Docker makes use of the following Linux kernel Namespaces to achieve Container i
 
 For **more information about the namespaces** check the following page:
 
-{% content-ref url="namespaces.md" %}
+
 [namespaces.md](namespaces.md)
-{% endcontent-ref %}
+
 
 ### cgroups
 
@@ -166,25 +166,25 @@ ls -l /proc/<PID>/ns #Get the Group and the namespaces (some may be uniq to the 
 
 Capabilities allow **finer control for the capabilities that can be allowed** for root user. Docker uses the Linux kernel capability feature to **limit the operations that can be done inside a Container** irrespective of the type of user.
 
-{% content-ref url="../linux-capabilities.md" %}
+
 [linux-capabilities.md](../linux-capabilities.md)
-{% endcontent-ref %}
+
 
 ### Seccomp in Docker
 
 This is a security feature that allows Docker to **limit the syscalls** that can be used inside the container:
 
-{% content-ref url="seccomp.md" %}
+
 [seccomp.md](seccomp.md)
-{% endcontent-ref %}
+
 
 ### AppArmor in Docker
 
 **AppArmor** is a kernel enhancement to confine **containers** to a **limited** set of **resources** with **per-program profiles**.:
 
-{% content-ref url="apparmor.md" %}
+
 [apparmor.md](apparmor.md)
-{% endcontent-ref %}
+
 
 ### SELinux in Docker
 
@@ -192,17 +192,17 @@ This is a security feature that allows Docker to **limit the syscalls** that can
 
 Container engines launch **container processes with a single confined SELinux label**, usually `container_t`, and then set the container inside of the container to be labeled `container_file_t`. The SELinux policy rules basically say that the **`container_t` processes can only read/write/execute files labeled `container_file_t`**.
 
-{% content-ref url="../selinux.md" %}
+
 [selinux.md](../selinux.md)
-{% endcontent-ref %}
+
 
 ### AuthZ & AuthN
 
 An authorization plugin **approves** or **denies** **requests** to the Docker **daemon** based on both the current **authentication** context and the **command** **context**. The **authentication** **context** contains all **user details** and the **authentication** **method**. The **command context** contains all the **relevant** **request** data.
 
-{% content-ref url="authz-and-authn-docker-access-authorization-plugin.md" %}
+
 [authz-and-authn-docker-access-authorization-plugin.md](authz-and-authn-docker-access-authorization-plugin.md)
-{% endcontent-ref %}
+
 
 ## Interesting Docker Flags
 
@@ -210,9 +210,9 @@ An authorization plugin **approves** or **denies** **requests** to the Docker **
 
 In the following page you can learn **what does the `--privileged` flag imply**:
 
-{% content-ref url="docker-privileged.md" %}
+
 [docker-privileged.md](docker-privileged.md)
-{% endcontent-ref %}
+
 
 ### --security-opt
 
@@ -251,7 +251,7 @@ For more **`--security-opt`** options check: [https://docs.docker.com/engine/ref
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ## Other Security Considerations
 
@@ -312,13 +312,13 @@ If you’re using [Kubernetes](https://kubernetes.io/docs/concepts/configuration
 
 **gVisor** is an application kernel, written in Go, that implements a substantial portion of the Linux system surface. It includes an [Open Container Initiative (OCI)](https://www.opencontainers.org) runtime called `runsc` that provides an **isolation boundary between the application and the host kernel**. The `runsc` runtime integrates with Docker and Kubernetes, making it simple to run sandboxed containers.
 
-{% embed url="https://github.com/google/gvisor" %}
+
 
 ### Kata Containers
 
 **Kata Containers** is an open source community working to build a secure container runtime with lightweight virtual machines that feel and perform like containers, but provide **stronger workload isolation using hardware virtualization** technology as a second layer of defense.
 
-{% embed url="https://katacontainers.io/" %}
+
 
 ### Summary Tips
 
@@ -341,17 +341,17 @@ If you’re using [Kubernetes](https://kubernetes.io/docs/concepts/configuration
 
 If you are **inside a docker container** or you have access to a user in the **docker group**, you could try to **escape and escalate privileges**:
 
-{% content-ref url="docker-breakout-privilege-escalation/" %}
+
 [docker-breakout-privilege-escalation](docker-breakout-privilege-escalation/)
-{% endcontent-ref %}
+
 
 ## Docker Authentication Plugin Bypass
 
 If you have access to the docker socket or have access to a user in the **docker group but your actions are being limited by a docker auth plugin**, check if you can **bypass it:**
 
-{% content-ref url="authz-and-authn-docker-access-authorization-plugin.md" %}
+
 [authz-and-authn-docker-access-authorization-plugin.md](authz-and-authn-docker-access-authorization-plugin.md)
-{% endcontent-ref %}
+
 
 ## Hardening Docker
 
@@ -388,4 +388,4 @@ If you have access to the docker socket or have access to a user in the **docker
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+

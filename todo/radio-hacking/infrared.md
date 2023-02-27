@@ -48,11 +48,11 @@ It is also known as Manchester encoding. The logical value is defined by the pol
 
 **4. Combination of previous ones and other exotics**
 
-{% hint style="info" %}
+
 There are IR protocols that are **trying to become universal** for several types of devices. The most famous ones are RC5 and NEC. Unfortunately, the most famous **does not mean the most common**. In my environment, I met just two NEC remotes and no RC5 ones.
 
 Manufacturers love to use their own unique IR protocols, even within the same range of devices (for example, TV-boxes). Therefore, remotes from different companies and sometimes from different models from the same company, are unable to work with other devices of the same type.
-{% endhint %}
+
 
 ### Exploring an IR signal
 
@@ -81,9 +81,9 @@ This will avoid that a machine set as 20ºC is increased to 21ºC with one remot
 
 You can attack Infrared with Flipper Zero:
 
-{% content-ref url="flipper-zero/fz-infrared.md" %}
+
 [fz-infrared.md](flipper-zero/fz-infrared.md)
-{% endcontent-ref %}
+
 
 ## References
 

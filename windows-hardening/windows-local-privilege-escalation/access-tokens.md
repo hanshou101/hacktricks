@@ -110,9 +110,9 @@ Using the _**incognito**_\*\* module\*\* of metasploit if you have enough privil
 
 Learn which **token privileges can be abused to escalate privileges:**
 
-{% content-ref url="privilege-escalation-abusing-tokens/" %}
+
 [privilege-escalation-abusing-tokens](privilege-escalation-abusing-tokens/)
-{% endcontent-ref %}
+
 
 Take a look to [**all the possible token privileges and some definitions on this external page**](https://github.com/gtworek/Priv2Admin).
 

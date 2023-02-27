@@ -27,9 +27,9 @@ Therefore, I expect that in **HackTricks** you will find **all** the **security 
 
 Just check my **linkedin**: [https://www.linkedin.com/in/carlos-polop-martin/](https://www.linkedin.com/in/carlos-polop-martin/)
 
-{% hint style="warning" %}
+
 If you find that HackTricks is very useful for you, please consider **supporting it!**
-{% endhint %}
+
 
 <details>
 

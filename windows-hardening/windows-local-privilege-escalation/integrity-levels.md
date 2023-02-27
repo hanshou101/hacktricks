@@ -82,9 +82,9 @@ C:\Users\Public\asd.txt
 Access is denied.
 ```
 
-{% hint style="info" %}
+
 **Therefore, when a file has a minimum integrity level, in order to modify it you need to be running at least in that integrity level.**
-{% endhint %}
+
 
 ## Integrity Levels in Binaries
 

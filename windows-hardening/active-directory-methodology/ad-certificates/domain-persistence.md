@@ -50,9 +50,9 @@ Rubeus.exe asktgt /user:localdomain /certificate:C:\ForgeCert\localadmin.pfx /pa
 certipy auth -pfx administrator_forged.pfx -dc-ip 172.16.126.128
 ```
 
-{% hint style="warning" %}
+
 **Note**: The target **user** specified when forging the certificate needs to be **active/enabled** in AD and **able to authenticate** since an authentication exchange will still occur as this user. Trying to forge a certificate for the krbtgt account, for example, will not work.
-{% endhint %}
+
 
 This forged certificate will be **valid** until the end date specified and as **long as the root CA certificate is valid** (usually from 5 to **10+ years**). It's also valid for **machines**, so combined with **S4U2Self**, an attacker can **maintain persistence on any domain machine** for as long as the CA certificate is valid.\
 Moreover, the **certificates generated** with this method **cannot be revoked** as CA is not aware of them.

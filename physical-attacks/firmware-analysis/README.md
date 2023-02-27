@@ -82,9 +82,9 @@ If you don't find much with those tools check the **entropy** of the image with 
 
 Moreover, you can use these tools to extract **files embedded inside the firmware**:
 
-{% content-ref url="../../forensics/basic-forensic-methodology/partitions-file-systems-carving/file-data-carving-recovery-tools.md" %}
+
 [file-data-carving-recovery-tools.md](../../forensics/basic-forensic-methodology/partitions-file-systems-carving/file-data-carving-recovery-tools.md)
-{% endcontent-ref %}
+
 
 Or [**binvis.io**](https://binvis.io/#/) ([code](https://code.google.com/archive/p/binvis/)) to inspect the file.
 
@@ -193,19 +193,19 @@ Tools that search for this kind of information (even if you always should take a
 * [**ByteSweep-go**](https://gitlab.com/bytesweep/bytesweep-go): This is a complete rewrite of the original ByteSweep project in Go.
 * [**EMBA**](https://github.com/e-m-b-a/emba): _EMBA_ is designed as the central firmware analysis tool for penetration testers. It supports the complete security analysis process starting with the _firmware extraction_ process, doing _static analysis_ and _dynamic analysis_ via emulation and finally generating a report. _EMBA_ automatically discovers possible weak spots and vulnerabilities in firmware. Examples are insecure binaries, old and outdated software components, potentially vulnerable scripts or hard-coded passwords.
 
-{% hint style="warning" %}
+
 Inside the filesystem you can also find **source code** of programs (that you should always **check**), but also **compiled binaries**. These programs might be somehow exposed and you should **decompile** and **check** them for potential vulnerabilities.
 
 Tools like [**checksec.sh**](https://github.com/slimm609/checksec.sh) can be useful to find unprotected binaries. For Windows binaries you could use [**PESecurity**](https://github.com/NetSPI/PESecurity).
-{% endhint %}
+
 
 ## Emulating Firmware
 
 The idea to emulate the Firmware is to be able to perform a **dynamic analysis** of the device **running** or of a **single program**.
 
-{% hint style="info" %}
+
 At times, partial or full emulation **may not work due to a hardware or architecture dependencies**. If the architecture and endianness match a device owned such as a raspberry pie, the root filesystem or specific binary can be transferred to the device for further testing. This method also applies to pre built virtual machines using the same architecture and endianness as the target.
-{% endhint %}
+
 
 ### Binary Emulation
 
@@ -271,15 +271,15 @@ If **network services** are exposed you should try to attack them. In hacktricks
 
 You should check if you can **attack the bootloader** to get a root shell:
 
-{% content-ref url="bootloader-testing.md" %}
+
 [bootloader-testing.md](bootloader-testing.md)
-{% endcontent-ref %}
+
 
 You should test if the device is doing any kind of **firmware integrity tests**, if not this would allow attackers to offer backdored firmwares, install them in devices other people owns or even deploy them remotely if there is any firmware update vulnerability:
 
-{% content-ref url="firmware-integrity.md" %}
+
 [firmware-integrity.md](firmware-integrity.md)
-{% endcontent-ref %}
+
 
 Firmware update vulnerabilities usually occurs because, the **integrity** of the **firmware** might **not** be **validated**, use **unencrypted** **network** protocols, use of **hardcoded** **credentials**, an **insecure authentication** to the cloud component that hosts the firmware, and even excessive and insecure **logging** (sensitive data), allow **physical updates** without verifications.
 

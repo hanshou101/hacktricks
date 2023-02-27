@@ -45,9 +45,9 @@ If the private key is non-exportable, CAPI and CNG will not allow extraction of 
 
 More info about DPAPI in:
 
-{% content-ref url="../../windows-local-privilege-escalation/dpapi-extracting-passwords.md" %}
+
 [dpapi-extracting-passwords.md](../../windows-local-privilege-escalation/dpapi-extracting-passwords.md)
-{% endcontent-ref %}
+
 
 Windows **stores certificate private keys using DPAPI**. Microsoft breaks out the storage locations for user and machine private keys. When manually decrypting the encrypted DPAPI blobs, a developer needs to understand which cryptography API the OS used as the private key file structure differs between the two APIs. When using SharpDPAPI, it automatically accounts for these file format differences.&#x20;
 

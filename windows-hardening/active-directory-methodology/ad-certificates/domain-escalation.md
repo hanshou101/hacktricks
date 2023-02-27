@@ -25,9 +25,9 @@
 * The **certificate template allows requesters to specify a subjectAltName in the CSR:**
   * **AD** will **use** the identity specified by a certificate’s **subjectAltName** (SAN) field **if** it is **present**. Consequently, if a requester can specify the SAN in a CSR, the requester can **request a certificate as anyone** (e.g., a domain admin user). The certificate template’s AD object **specifies** if the requester **can specify the SAN** in its **`mspki-certificate-name-`**`flag` property. The `mspki-certificate-name-flag` property is a **bitmask** and if the **`CT_FLAG_ENROLLEE_SUPPLIES_SUBJECT`** flag is **present**, a **requester can specify the SAN.**
 
-{% hint style="danger" %}
+
 These settings allow a **low-privileged user to request a certificate with an arbitrary SAN**, allowing the low-privileged user to authenticate as any principal in the domain via Kerberos or SChannel.
-{% endhint %}
+
 
 This is often enabled, for example, to allow products or deployment services to generate HTTPS certificates or host certificates on the fly. Or because of lack of knowledge.
 
@@ -233,10 +233,10 @@ If you find this setting in your environment, you can **remove this flag** with:
 certutil -config "CA_HOST\CA_NAME" -setreg policy\EditFlags -EDITF_ATTRIBUTESUBJECTALTNAME2
 ```
 
-{% hint style="warning" %}
+
 After the May 2022 security updates, new **certificates** will have a **securiy extension** that **embeds** the **requester's `objectSid` property**. For ESC1, this property will be reflected from the SAN specified, but with **ESC6**, this property reflects the **requester's `objectSid`**, and not from the SAN.\
 As such, **to abuse ESC6**, the environment must be **vulnerable to ESC10** (Weak Certificate Mappings), where the **SAN is preferred over the new security extension**.
-{% endhint %}
+
 
 ## Vulnerable Certificate Authority Access Control - ESC7
 
@@ -290,9 +290,9 @@ Certify.exe download /ca:dc.theshire.local\theshire-DC-CA /id:336
 
 #### Explanation
 
-{% hint style="warning" %}
+
 In the **previous attack** **`Manage CA`** permissions was used to **enable** the **EDITF\_ATTRIBUTESUBJECTALTNAME2** flag to perform the **ESC6 attack**, but this will not have any effect until the CA service (`CertSvc`) is restarted. When a user has the `Manage CA` access right, the user is also allowed to **restart the service**. However, it **does not mean that the user can restart the service remotely**. Furthermore, E**SC6 might not work out of the box** in most patched environments due to the May 2022 security updates.
-{% endhint %}
+
 
 Therefore, another attack is presented here.
 
@@ -372,9 +372,9 @@ Certipy v4.0.0 - by Oliver Lyak (ly4k)
 
 ### Explanation
 
-{% hint style="info" %}
+
 In summary, if an environment has **AD CS installed**, along with a **vulnerable web enrollment endpoint** and at least one **certificate template published** that allows for **domain computer enrollment and client authentication** (like the default **`Machine`** template), then an **attacker can compromise ANY computer with the spooler service running**!
-{% endhint %}
+
 
 AD CS supports several **HTTP-based enrollment methods** via additional AD CS server roles that administrators can install. These HTTPbased certificate enrollment interfaces are all **vulnerable NTLM relay attacks**. Using NTLM relay, an attacker on a **compromised machine can impersonate any inbound-NTLM-authenticating AD account**. While impersonating the victim account, an attacker could access these web interfaces and **request a client authentication certificate based on the `User` or `Machine` certificate templates**.
 
@@ -385,15 +385,15 @@ Common **problems** with NTLM relay attacks are that the **NTLM sessions are usu
 
 However, abusing a NTLM relay attack to obtain a certificate to the user solves this limitations, as the session will live as long as the certificate is valid and the certificate can be used to use services **enforcing NTLM signing**. To know how to use an stolen cert check:
 
-{% content-ref url="account-persistence.md" %}
+
 [account-persistence.md](account-persistence.md)
-{% endcontent-ref %}
+
 
 Another limitation of NTLM relay attacks is that they **require a victim account to authenticate to an attacker-controlled machine**. An attacker could wait or could try to **force** it:
 
-{% content-ref url="../printers-spooler-service-abuse.md" %}
+
 [printers-spooler-service-abuse.md](../printers-spooler-service-abuse.md)
-{% endcontent-ref %}
+
 
 ### **Abuse**
 

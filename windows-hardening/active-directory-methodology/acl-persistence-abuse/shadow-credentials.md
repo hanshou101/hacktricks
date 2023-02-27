@@ -72,9 +72,9 @@ Add a new value to the **`msDS-KeyCredentialLink`** attribute of a target object
 
 Example: **`Whisker.exe add /target:computername$ /domain:constoso.local /dc:dc1.contoso.local /path:C:\path\to\file.pfx /password:P@ssword1`**
 
-{% hint style="info" %}
+
 More options on the [**Readme**](https://github.com/eladshamir/Whisker).
-{% endhint %}
+
 
 ## [ShadowSpray](https://github.com/Dec0ne/ShadowSpray/)
 

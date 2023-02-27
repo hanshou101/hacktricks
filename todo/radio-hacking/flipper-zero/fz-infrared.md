@@ -16,9 +16,9 @@
 
 For more info about how Infrared works check:
 
-{% content-ref url="../infrared.md" %}
+
 [infrared.md](../infrared.md)
-{% endcontent-ref %}
+
 
 ## IR Signal Receiver in Flipper Zero <a href="#ir-signal-receiver-in-flipper-zero" id="ir-signal-receiver-in-flipper-zero"></a>
 

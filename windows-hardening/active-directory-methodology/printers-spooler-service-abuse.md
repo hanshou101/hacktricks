@@ -65,7 +65,7 @@ If an attacker has already compromised a computer with [Unconstrained Delegation
 
 ## RCP Force authentication
 
-{% embed url="https://github.com/p0dalirius/Coercer" %}
+
 
 ## PrivExchange
 

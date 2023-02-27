@@ -20,9 +20,9 @@
 
 Go to the following link to learn **what is containerd** and `ctr`:
 
-{% content-ref url="../../network-services-pentesting/2375-pentesting-docker.md" %}
+
 [2375-pentesting-docker.md](../../network-services-pentesting/2375-pentesting-docker.md)
-{% endcontent-ref %}
+
 
 ## PE 1
 
@@ -59,9 +59,9 @@ You can run a privileged container as:
 
 Then you can use some of the techniques mentioned in the following page to **escape from it abusing privileged capabilities**:
 
-{% content-ref url="docker-breakout/" %}
+
 [docker-breakout](docker-breakout/)
-{% endcontent-ref %}
+
 
 <details>
 

@@ -36,7 +36,7 @@ You can check their **blog** in [**https://blog.stmcyber.com**](https://blog.stm
 
 [**RootedCON**](https://www.rootedcon.com) is the most relevant cybersecurity event in **Spain** and one of the most important in **Europe**. With **the mission of promoting technical knowledge**, this congress is a boiling meeting point for technology and cybersecurity professionals in every discipline.
 
-{% embed url="https://www.rootedcon.com/" %}
+
 
 ### [Intigriti](https://www.intigriti.com)
 
@@ -46,7 +46,7 @@ You can check their **blog** in [**https://blog.stmcyber.com**](https://blog.stm
 
 **Bug bounty tip**: **sign up** for **Intigriti**, a premium **bug bounty platform created by hackers, for hackers**! Join us at [**https://go.intigriti.com/hacktricks**](https://go.intigriti.com/hacktricks) today, and start earning bounties up to **$100,000**!
 
-{% embed url="https://go.intigriti.com/hacktricks" %}
+
 
 ### [Trickest](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks)
 
@@ -57,7 +57,7 @@ Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=ba
 
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ### [HACKENPROOF](https://hackenproof.com/)
 
@@ -76,7 +76,7 @@ Gain reputation points with each verified bug and conquer the top of the weekly 
 
 [**Sign up on HackenProof**](https://hackenproof.com/register?referral\_code=i\_E6M25i\_Um9gB56o-XsIA) to start earning from your hacks!
 
-{% embed url="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fwww.hackenproof.com%2F&screen_name=hackenproof" %}
+
 
 ### [WebSec](https://websec.nl/)
 
@@ -90,7 +90,7 @@ Another cool thing about WebSec is that unlike the industry average WebSec is **
 
 In addition to the above WebSec is also a **committed supporter of HackTricks.**
 
-{% embed url="https://www.youtube.com/watch?v=Zq2JycGDCPM" %}
+
 
 ### [SYN CUBES](https://www.syncubes.com/)
 
@@ -98,7 +98,7 @@ In addition to the above WebSec is also a **committed supporter of HackTricks.**
 
 **Security Skills as a Service** platform bridges the current skill set gap by combining **global offensive security talent with smart automation**, providing real-time data you need to make informed decisions.
 
-{% embed url="https://www.syncubes.com/" %}
+
 
 ## License
 
@@ -107,7 +107,7 @@ In addition to the above WebSec is also a **committed supporter of HackTricks.**
 
 ## **Disclaimer**
 
-{% hint style="danger" %}
+
 This book, 'HackTricks,' is intended for educational and informational purposes only. The content within this book is provided on an 'as is' basis, and the authors and publishers make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the information, products, services, or related graphics contained within this book. Any reliance you place on such information is therefore strictly at your own risk.
 
 The authors and publishers shall in no event be liable for any loss or damage, including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this book.
@@ -117,7 +117,7 @@ Furthermore, the techniques and tips described in this book are provided for edu
 The user is solely responsible for any actions taken based on the information contained within this book, and should always seek professional advice and assistance when attempting to implement any of the techniques or tips described herein.
 
 By using this book, the user agrees to release the authors and publishers from any and all liability and responsibility for any damages, losses, or harm that may result from the use of this book or any of the information contained within it.
-{% endhint %}
+
 
 <details>
 

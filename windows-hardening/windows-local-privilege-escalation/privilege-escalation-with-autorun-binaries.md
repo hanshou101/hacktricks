@@ -16,7 +16,7 @@
 
 If you are interested in **hacking carer** and hack the unhackable - **we are hiring!** (_fluent polish written and spoken required_).
 
-{% embed url="https://www.stmcyber.com/careers" %}
+
 
 ## WMIC
 
@@ -57,9 +57,9 @@ Get-ChildItem "C:\Users\$env:USERNAME\Start Menu\Programs\Startup"
 
 ## Registry
 
-{% hint style="info" %}
+
 Note: The **Wow6432Node** registry entry indicates that you are running a 64-bit Windows version. The operating system uses this key to display a separate view of HKEY\_LOCAL\_MACHINE\SOFTWARE for 32-bit applications that run on 64-bit Windows versions.
-{% endhint %}
+
 
 ### Runs
 
@@ -97,13 +97,13 @@ Run and RunOnce registry keys cause programs to run each time that a user logs o
 
 It's not created by default on Windows Vista and newer. Registry run key entries can reference programs directly or list them as a dependency. For example, it is possible to load a DLL at logon using a "Depend" key with RunOnceEx: `reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\temp\evil[.]dll"`
 
-{% hint style="info" %}
-**Exploit 1**: If you can write inside any of the mentioned registry inside **HKLM** you can escalate privileges when a different user logs in.
-{% endhint %}
 
-{% hint style="info" %}
+**Exploit 1**: If you can write inside any of the mentioned registry inside **HKLM** you can escalate privileges when a different user logs in.
+
+
+
 **Exploit 2**: If you can overwrite any of the binaries indicated on any of the registry inside **HKLM** you can modify that binary with a backdoor when a different user logs in and escalate privileges.
-{% endhint %}
+
 
 ```bash
 #CMD
@@ -170,9 +170,9 @@ Get-ItemProperty -Path 'Registry::HKCU\Software\Wow6432Node\Microsoft\Windows\Ru
 
 Any shortcut created to the location pointed by subkey Startup will launch the service during logon/reboot. Start up location is specified both at Local Machine and Current User.
 
-{% hint style="info" %}
+
 If you can overwrite any \[User] Shell Folder under **HKLM**, you will e able to point it to a folder controlled by you and place a backdoor that will be executed anytime a user logs in the system escalating privileges.
-{% endhint %}
+
 
 ```bash
 reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" /v "Common Startup"
@@ -200,9 +200,9 @@ Get-ItemProperty -Path 'Registry::HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVers
 Get-ItemProperty -Path 'Registry::HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon' -Name "Shell"
 ```
 
-{% hint style="info" %}
+
 If you can overwrite the registry value or the binary you will be able to escalate privileges.
-{% endhint %}
+
 
 ### Policy Settings
 
@@ -233,17 +233,17 @@ You can, however, create a boot option so that you don't have to press F8, then 
 
 Info from [here](https://www.itprotoday.com/cloud-computing/how-can-i-add-boot-option-starts-alternate-shell).
 
-{% hint style="info" %}
+
 **Exploit 1:** If you can modify this registry key you can point your backdoor
-{% endhint %}
 
-{% hint style="info" %}
+
+
 **Exploit 2 (PATH write permissions)**: If you have write permission on any folder of the system **PATH** before _C:\Windows\system32_ (or if you can change it) you can create a cmd.exe file and if someone initiates the machine in Safe Mode your backdoor will be executed.
-{% endhint %}
 
-{% hint style="info" %}
+
+
 **Exploit 3 (PATH write permissions and boot.ini write permissions)**: If you can write boot.ini, you can automate the startup in safe mode for the next reboot.
-{% endhint %}
+
 
 ```bash
 reg query HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot /v AlternateShell
@@ -268,9 +268,9 @@ Inside those keys you will find more keys and each for those will home some inte
   * Format: Any valid command line, e.g. “notepad”
   * This is the command that is executed if Active Setup determines this component needs to run during logon.
 
-{% hint style="info" %}
+
 If you could write/overwrite on any Key with _**IsInstalled == "1"**_ the key **StubPath**, you could point it to a backdoor and escalate privileges. Also, if you could overwrite any **binary** pointed by any **StubPath** key you could be able to escalate privileges.
-{% endhint %}
+
 
 ```bash
 reg query "HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components" /s /v StubPath
@@ -355,7 +355,7 @@ Find more Autoruns like registries in [https://www.microsoftpressstore.com/artic
 
 If you are interested in **hacking carer** and hack the unhackable - **we are hiring!** (_fluent polish written and spoken required_).
 
-{% embed url="https://www.stmcyber.com/careers" %}
+
 
 <details>
 

@@ -18,7 +18,7 @@
 Use [**Trickest**](https://trickest.io/) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ## Automatic Enumeration & Escape
 
@@ -55,13 +55,13 @@ nsenter --target 1 --mount --uts --ipc --net --pid -- bash
 docker run -it -v /:/host/ --cap-add=ALL --security-opt apparmor=unconfined --security-opt seccomp=unconfined --security-opt label:disable --pid=host --userns=host --uts=host --cgroupns=host ubuntu chroot /host/ bash
 ```
 
-{% hint style="info" %}
+
 In case the **docker socket is in an unexpected place** you can still communicate with it using the **`docker`** command with the parameter **`-H unix:///path/to/docker.sock`**
-{% endhint %}
+
 
 Docker daemon might be also [listening in a port (by default 2375, 2376)](../../../../network-services-pentesting/2375-pentesting-docker.md) or on Systemd-based systems, communication with the Docker daemon can occur over the Systemd socket `fd://`.
 
-{% hint style="info" %}
+
 Additionally, pay attention to the runtime sockets of other high-level runtimes:
 
 * dockershim: `unix:///var/run/dockershim.sock`
@@ -70,7 +70,7 @@ Additionally, pay attention to the runtime sockets of other high-level runtimes:
 * frakti: `unix:///var/run/frakti.sock`
 * rktlet: `unix:///var/run/rktlet.sock`
 * ...
-{% endhint %}
+
 
 ## Capabilities Abuse Escape
 
@@ -84,9 +84,9 @@ capsh --print
 
 In the following page you can **learn more about linux capabilities** and how to abuse them to escape/escalate privileges:
 
-{% content-ref url="../../linux-capabilities.md" %}
+
 [linux-capabilities.md](../../linux-capabilities.md)
-{% endcontent-ref %}
+
 
 ## Escape from Privileged Containers
 
@@ -103,9 +103,9 @@ A privileged container can be created with the flag `--privileged` or disabling 
 
 The `--privileged` flag introduces significant security concerns, and the exploit relies on launching a docker container with it enabled. When using this flag, containers have full access to all devices and lack restrictions from seccomp, AppArmor, and Linux capabilities. You can r**ead all the effects of `--privileged`** in this page:
 
-{% content-ref url="../docker-privileged.md" %}
+
 [docker-privileged.md](../docker-privileged.md)
-{% endcontent-ref %}
+
 
 ### Privileged + hostPID
 
@@ -253,17 +253,17 @@ cat /output
 
 Find an **explanation of the technique** in:
 
-{% content-ref url="docker-release_agent-cgroups-escape.md" %}
+
 [docker-release\_agent-cgroups-escape.md](docker-release\_agent-cgroups-escape.md)
-{% endcontent-ref %}
+
 
 #### Privileged Escape Abusing release\_agent without known the relative path - PoC3
 
 In the previous exploits the **absolute path of the continer inside the hosts filesystem is disclosed**. However, this isn’t always the case. In cases where you **don’t know the absolute path of the continer inside the host** you can use this technique:
 
-{% content-ref url="release_agent-exploit-relative-paths-to-pids.md" %}
+
 [release\_agent-exploit-relative-paths-to-pids.md](release\_agent-exploit-relative-paths-to-pids.md)
-{% endcontent-ref %}
+
 
 ```bash
 #!/bin/sh
@@ -368,9 +368,9 @@ The abuse of these files may allow that:
 
 However, you can find **other sensitive files** to check for in this page:
 
-{% content-ref url="sensitive-mounts.md" %}
+
 [sensitive-mounts.md](sensitive-mounts.md)
-{% endcontent-ref %}
+
 
 ### Arbitrary Mounts
 
@@ -470,9 +470,9 @@ cat /proc/635813/fd/4
 
 You can also **kill processes and cause a DoS**.
 
-{% hint style="warning" %}
+
 If you somehow has privileged **access over a process outside of the container**, you could run something like `nsenter --target <pid> --all` or `nsenter --target <pid> --mount --net --pid --cgroup` to **run a shell with the same ns restrictions** (hopefully none) **as that process.**
-{% endhint %}
+
 
 ### hostNetwork
 
@@ -491,9 +491,9 @@ Like in the following examples:
 
 You will be able also to access **network services binded to localhost** inside the host or even access the **metadata permissions of the node** (which might be different those a container can access):
 
-{% content-ref url="broken-reference/" %}
+
 [broken-reference](broken-reference/)
-{% endcontent-ref %}
+
 
 ### hostIPC
 
@@ -516,7 +516,7 @@ The second technique explained in the post [https://labs.f-secure.com/blog/abusi
 Use [**Trickest**](https://trickest.io/) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ## CVEs
 
@@ -533,9 +533,9 @@ This will trigger the payload which is present in the main.go file.
 
 For more information: [https://blog.dragonsector.pl/2019/02/cve-2019-5736-escape-from-docker-and.html](https://blog.dragonsector.pl/2019/02/cve-2019-5736-escape-from-docker-and.html)
 
-{% hint style="info" %}
+
 There are other CVEs the container can be vulnerable too, you can find a list in [https://0xn3va.gitbook.io/cheat-sheets/container/escaping/cve-list](https://0xn3va.gitbook.io/cheat-sheets/container/escaping/cve-list)
-{% endhint %}
+
 
 ## Breakout Templates
 
@@ -567,7 +567,7 @@ If you are in **userspace** (**no kernel exploit** involved) the way to find new
 Use [**Trickest**](https://trickest.io/) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 <details>
 

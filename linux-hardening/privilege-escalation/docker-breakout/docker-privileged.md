@@ -71,9 +71,9 @@ mount  | grep '(ro'
 
 The **/proc** file system is namespace-aware, and certain writes can be allowed, so we don't mount it read-only. However, specific directories in the /proc file system need to be **protected from writing**, and in some instances, **from reading**. In these cases, the container engines mount **tmpfs** file systems over potentially dangerous directories, preventing processes inside of the container from using them.
 
-{% hint style="info" %}
+
 **tmpfs** is a file system that stores all the files in virtual memory. tmpfs doesn't create any files on your hard drive. So if you unmount a tmpfs file system, all the files residing in it are lost for ever.
-{% endhint %}
+
 
 {% tabs %}
 {% tab title="Inside default container" %}
@@ -98,9 +98,9 @@ mount  | grep /proc.*tmpfs
 
 Container engines launch the containers with a **limited number of capabilities** to control what goes on inside of the container by default. **Privileged** ones have **all** the **capabilities** accesible. To learn about capabilities read:
 
-{% content-ref url="../linux-capabilities.md" %}
+
 [linux-capabilities.md](../linux-capabilities.md)
-{% endcontent-ref %}
+
 
 {% tabs %}
 {% tab title="Inside default container" %}
@@ -132,9 +132,9 @@ You can manipulate the capabilities available to a container without running in 
 
 **Seccomp** is useful to **limit** the **syscalls** a container can call. A default seccomp profile is enabled by default when running docker containers, but in privileged mode it is disabled. Learn more about Seccomp here:
 
-{% content-ref url="seccomp.md" %}
+
 [seccomp.md](seccomp.md)
-{% endcontent-ref %}
+
 
 {% tabs %}
 {% tab title="Inside default container" %}
@@ -167,9 +167,9 @@ Also, note that when Docker (or other CRIs) are used in a **Kubernetes** cluster
 
 **AppArmor** is a kernel enhancement to confine **containers** to a **limited** set of **resources** with **per-program profiles**. When you run with the `--privileged` flag, this protection is disabled.
 
-{% content-ref url="apparmor.md" %}
+
 [apparmor.md](apparmor.md)
-{% endcontent-ref %}
+
 
 ```bash
 # You can manually disable seccomp in docker with
@@ -180,9 +180,9 @@ Also, note that when Docker (or other CRIs) are used in a **Kubernetes** cluster
 
 When you run with the `--privileged` flag, **SELinux labels are disabled**, and the container runs with the **label that the container engine was executed with**. This label is usually `unconfined` and has **full access to the labels that the container engine does**. In rootless mode, the container runs with `container_runtime_t`. In root mode, it runs with `spc_t`.
 
-{% content-ref url="../selinux.md" %}
+
 [selinux.md](../selinux.md)
-{% endcontent-ref %}
+
 
 ```bash
 # You can manually disable selinux in docker with

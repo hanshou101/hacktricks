@@ -143,13 +143,13 @@ Then, looking to this ca see when the execution was stopped in the dll you want 
 
 [**Cheat Engine**](https://www.cheatengine.org/downloads.php) is a useful program to find where important values are saved inside the memory of a running game and change them. More info in:
 
-{% content-ref url="cheat-engine.md" %}
+
 [cheat-engine.md](cheat-engine.md)
-{% endcontent-ref %}
+
 
 ## ARM & MIPS
 
-{% embed url="https://github.com/nongiach/arm_now" %}
+
 
 ## Shellcodes
 
@@ -161,9 +161,9 @@ Then, you need to **attach a debugger** (Ida or x64dbg) to the process and put a
 The releases github page contains zips containing the compiled releases: [https://github.com/OALabs/BlobRunner/releases/tag/v0.0.5](https://github.com/OALabs/BlobRunner/releases/tag/v0.0.5)\
 You can find a slightly modified version of Blobrunner in the following link. In order to compile it just **create a C/C++ project in Visual Studio Code, copy and paste the code and build it**.
 
-{% content-ref url="blobrunner.md" %}
+
 [blobrunner.md](blobrunner.md)
-{% endcontent-ref %}
+
 
 ### Debugging a shellcode with jmp2it
 
@@ -266,9 +266,9 @@ This will resolve the names of the functions.
 
 In this page you can find how to get the python code from an ELF/EXE python compiled binary:
 
-{% content-ref url="../../forensics/basic-forensic-methodology/specific-software-file-type-tricks/.pyc.md" %}
+
 [.pyc.md](../../forensics/basic-forensic-methodology/specific-software-file-type-tricks/.pyc.md)
-{% endcontent-ref %}
+
 
 ## GBA - Game Body Advance
 
@@ -385,7 +385,7 @@ So, in this challenge, knowing the values of the buttons, you needed to **press 
 
 ## Game Boy
 
-{% embed url="https://www.youtube.com/watch?v=VVbRe7wr3G4" %}
+
 
 ## Courses
 

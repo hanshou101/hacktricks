@@ -48,10 +48,10 @@ To **use that certificate**, one can then **upload** the `.pfx` to a target and 
 Rubeus.exe asktgt /user:harmj0y /certificate:C:\Temp\cert.pfx /password:CertPass!
 ```
 
-{% hint style="warning" %}
+
 Combined with the technique outlined in the [**THEFT5**](certificate-theft.md#ntlm-credential-theft-via-pkinit-theft5) section, an attacker can also persistently **obtain the account’s NTLM hash**, which the attacker could use to authenticate via **pass-the-hash** or **crack** to obtain the **plaintext** **password**. \
 This is an alternative method of **long-term credential theft** that does **not touch LSASS** and is possible from a **non-elevated context.**
-{% endhint %}
+
 
 ## Machine Persistence via Certificates - PERSIST2
 

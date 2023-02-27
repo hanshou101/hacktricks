@@ -97,9 +97,9 @@ This is a list of techniques to force NTLM authentications to steal credentials 
 
 You may be able to **force a windows machine to authenticate to an arbitrary machine** using a privileged account. Read the following page to learn more:
 
-{% content-ref url="../active-directory-methodology/printers-spooler-service-abuse.md" %}
+
 [printers-spooler-service-abuse.md](../active-directory-methodology/printers-spooler-service-abuse.md)
-{% endcontent-ref %}
+
 
 ## LFI
 

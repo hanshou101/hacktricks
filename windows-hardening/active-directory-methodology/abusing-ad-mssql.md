@@ -86,9 +86,9 @@ Check in the page mentioned in the **following section how to do this manually.*
 
 ### MSSQL Basic Hacking Tricks
 
-{% content-ref url="../../network-services-pentesting/pentesting-mssql-microsoft-sql-server/" %}
+
 [pentesting-mssql-microsoft-sql-server](../../network-services-pentesting/pentesting-mssql-microsoft-sql-server/)
-{% endcontent-ref %}
+
 
 ## MSSQL Trusted Links
 
@@ -168,9 +168,9 @@ Execute queries through the link (example: find more links in the new accessible
 select * from openquery("dcorp-sql1", 'select * from master..sysservers')
 ```
 
-{% hint style="warning" %}
+
 Check where double and single quotes are used, it's important to use them that way.
-{% endhint %}
+
 
 ![](<../../.gitbook/assets/image (169).png>)
 

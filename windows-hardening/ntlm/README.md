@@ -183,9 +183,9 @@ wce.exe -s <username>:<domain>:<hash_lm>:<hash_nt>
 
 ### Manual Windows remote execution with username and password
 
-{% content-ref url="../lateral-movement/" %}
+
 [lateral-movement](../lateral-movement/)
-{% endcontent-ref %}
+
 
 ## Extracting credentials from a Windows Host
 
@@ -195,9 +195,9 @@ wce.exe -s <username>:<domain>:<hash_lm>:<hash_nt>
 
 **Read more detailed guide on how to perform those attacks here:**
 
-{% content-ref url="../../generic-methodologies-and-resources/pentesting-network/spoofing-llmnr-nbt-ns-mdns-dns-and-wpad-and-relay-attacks.md" %}
+
 [spoofing-llmnr-nbt-ns-mdns-dns-and-wpad-and-relay-attacks.md](../../generic-methodologies-and-resources/pentesting-network/spoofing-llmnr-nbt-ns-mdns-dns-and-wpad-and-relay-attacks.md)
-{% endcontent-ref %}
+
 
 ## Parse NTLM challenges from a network capture
 

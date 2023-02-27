@@ -282,13 +282,13 @@ You must **configure a DKIM for the new domain**. If you don't know what is a DM
 
 This tutorial is based on: [https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-dkim-with-postfix-on-debian-wheezy](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-dkim-with-postfix-on-debian-wheezy)
 
-{% hint style="info" %}
+
 You need to concatenate both B64 values that the DKIM key generates:
 
 ```
 v=DKIM1; h=sha256; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0wPibdqPtzYk81njjQCrChIcHzxOp8a1wjbsoNtka2X9QXCZs+iXkvw++QsWDtdYu3q0Ofnr0Yd/TmG/Y2bBGoEgeE+YTUG2aEgw8Xx42NLJq2D1pB2lRQPW4IxefROnXu5HfKSm7dyzML1gZ1U0pR5X4IZCH0wOPhIq326QjxJZm79E1nTh3xj" "Y9N/Dt3+fVnIbMupzXE216TdFuifKM6Tl6O/axNsbswMS1TH812euno8xRpsdXJzFlB9q3VbMkVWig4P538mHolGzudEBg563vv66U8D7uuzGYxYT4WS8NVm3QBMg0QKPWZaKp+bADLkOSB9J2nUpk4Aj9KB5swIDAQAB
 ```
-{% endhint %}
+
 
 ### Test your email configuration score
 
@@ -339,10 +339,10 @@ The page www.mail-tester.com can indicate you if you your domain is being blocke
 
 ![](<../../.gitbook/assets/image (253) (1) (2) (1) (1) (2) (2) (3) (3) (5) (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (10) (18).png>)
 
-{% hint style="info" %}
+
 It's recommended to use the "**Send Test Email**" functionality to test that everything is working.\
 I would recommend to **send the test emails to 10min mails addresses** in order to avoid getting blacklisted making tests.
-{% endhint %}
+
 
 ### Email Template
 
@@ -380,9 +380,9 @@ Note that **in order to increase the credibility of the email**, it's recommende
 
 ![](<../../.gitbook/assets/image (67) (1).png>)
 
-{% hint style="info" %}
+
 The Email Template also allows to **attach files to send**. If you would also like to steal NTLM challenges using some specially crafted files/documents [read this page](../../windows-hardening/ntlm/places-to-steal-ntlm-creds.md).
-{% endhint %}
+
 
 ### Landing Page
 
@@ -393,14 +393,14 @@ The Email Template also allows to **attach files to send**. If you would also li
 
 ![](<../../.gitbook/assets/image (394).png>)
 
-{% hint style="info" %}
+
 Usually you will need to modify the HTML code of the page and make some tests in local (maybe using some Apache server) **until you like the results.** Then, write that HTML code in the box.\
 Note that if you need to **use some static resources** for the HTML (maybe some CSS and JS pages) you can save them in _**/opt/gophish/static/endpoint**_ and then access them from _**/static/\<filename>**_
-{% endhint %}
 
-{% hint style="info" %}
+
+
 For the redirection you could **redirect the users to the legit main web page** of the victim, or redirect them to _/static/migration.html_ for example, put some **spinning wheel (**[**https://loading.io/**](https://loading.io)**) for 5 seconds and then indicate that the process was successful**.
-{% endhint %}
+
 
 ### Users & Groups
 
@@ -417,9 +417,9 @@ Note that the **Sending Profile allow to send a test email to see how will the f
 
 ![](<../../.gitbook/assets/image (396).png>)
 
-{% hint style="info" %}
+
 I would recommend to **send the test emails to 10min mails addresses** in order to avoid getting blacklisted making tests.
-{% endhint %}
+
 
 Once everything is ready, just launch the campaign!
 
@@ -427,18 +427,18 @@ Once everything is ready, just launch the campaign!
 
 If for any reason you want to clone the website check the following page:
 
-{% content-ref url="clone-a-website.md" %}
+
 [clone-a-website.md](clone-a-website.md)
-{% endcontent-ref %}
+
 
 ## Backdoored Documents & Files
 
 In some phishing assessments (mainly for Red Teams) you will want to also **send files containing some kind of backdoor** (maybe a C2 or maybe just something that will trigger an authentication).\
 Check out the following page for some examples:
 
-{% content-ref url="phishing-documents.md" %}
+
 [phishing-documents.md](phishing-documents.md)
-{% endcontent-ref %}
+
 
 ## Phishing MFA
 
@@ -465,9 +465,9 @@ One easy way to check if you domain appears in any blacklist is to use [https://
 
 However, there are other ways to know if the victim is **actively looking for suspicions phishing activity in the wild** as explained in:
 
-{% content-ref url="detecting-phising.md" %}
+
 [detecting-phising.md](detecting-phising.md)
-{% endcontent-ref %}
+
 
 You can **buy a domain with a very similar name** to the victims domain **and/or generate a certificate** for a **subdomain** of a domain controlled by you **containing** the **keyword** of the victim's domain. If the **victim** perform any kind of **DNS or HTTP interaction** with them, you will know that **he is actively looking** for suspicious domains and you will need to be very stealth.
 

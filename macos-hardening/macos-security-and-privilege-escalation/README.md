@@ -19,15 +19,15 @@ This [**crypto bounty alone**](https://hackenproof.com/jungle/jungle-smart-contr
 Check out the [**top-paying bounties**](https://hackenproof.com/programs) among crypto projects.\
 [**Sign up on HackenProof**](https://hackenproof.com/register?referral_code=i_E6M25i_Um9gB56o-XsIA) to get rewarded without delays and become the web3 hacker legend.
 
-{% embed url="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fwww.hackenproof.com%2F&screen_name=hackenproof" %}
+
 
 ## Linux Privesc
 
 First of all, please note that **most of the tricks about privilege escalation affecting Linux/Unix will affect also MacOS** machines. So see:
 
-{% content-ref url="../../linux-hardening/privilege-escalation/" %}
+
 [privilege-escalation](../../linux-hardening/privilege-escalation/)
-{% endcontent-ref %}
+
 
 ## Basic MacOS
 
@@ -175,33 +175,33 @@ printf "\nThe following services are OFF if '0', or ON otherwise:\nScreen Sharin
 
 ### MacOS Architecture
 
-{% content-ref url="mac-os-architecture.md" %}
+
 [mac-os-architecture.md](mac-os-architecture.md)
-{% endcontent-ref %}
+
 
 ### MacOS Serial Number
 
-{% content-ref url="macos-serial-number.md" %}
+
 [macos-serial-number.md](macos-serial-number.md)
-{% endcontent-ref %}
+
 
 ### MacOS MDM
 
-{% content-ref url="macos-mdm/" %}
+
 [macos-mdm](macos-mdm/)
-{% endcontent-ref %}
+
 
 ### MacOS Protocols
 
-{% content-ref url="macos-protocols.md" %}
+
 [macos-protocols.md](macos-protocols.md)
-{% endcontent-ref %}
+
 
 ### MacOS - Inspecting, Debugging and Fuzzing
 
-{% content-ref url="macos-apps-inspecting-debugging-and-fuzzing.md" %}
+
 [macos-apps-inspecting-debugging-and-fuzzing.md](macos-apps-inspecting-debugging-and-fuzzing.md)
-{% endcontent-ref %}
+
 
 ## MacOS Security Mechanisms
 
@@ -223,13 +223,13 @@ Gatekeeper builds upon **File Quarantine.**\
 Upon download of an application, a particular **extended file attribute** ("quarantine flag") can be **added** to the **downloaded** **file**. This attribute **is added by the application that downloads the file**, such as a **web** **browser** or email client, but is not usually added by others like common BitTorrent client software.\
 When a user executes a "quarantined" file, **Gatekeeper** is the one that **performs the mentioned actions** to allow the execution of the file.
 
-{% hint style="info" %}
+
 **Checking** the **validity** of code signatures is a **resource-intensive** process that includes generating cryptographic **hashes** of the code and all its bundled resources. Furthermore, checking certificate validity involves doing an **online check** to Apple's servers to see if it has been revoked after it was issued. For these reasons, a full code signature and notarization check is **impractical to run every time an app is launched**.
 
 Therefore, these checks are **only run when executing apps with the quarantined attribute.**
 
 **Safari and other web browsers and applications are the ones that**
-{% endhint %}
+
 
 It's possible to **check it's status and enable/disable** (root required) with:
 
@@ -345,9 +345,9 @@ To start an application with a sandbox config you can use:
 sandbox-exec -f example.sb /Path/To/The/Application
 ```
 
-{% hint style="info" %}
+
 Note that the **Apple-authored** **software** that runs on **Windows** **doesn’t have additional security precautions**, such as application sandboxing.
-{% endhint %}
+
 
 Bypasses examples:
 
@@ -460,7 +460,7 @@ This [**crypto bounty alone**](https://hackenproof.com/jungle/jungle-smart-contr
 Check out the [**top-paying bounties**](https://hackenproof.com/programs) among crypto projects.\
 [**Sign up on HackenProof**](https://hackenproof.com/register?referral_code=i_E6M25i_Um9gB56o-XsIA) to get rewarded without delays and become the web3 hacker legend.
 
-{% embed url="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fwww.hackenproof.com%2F&screen_name=hackenproof" %}
+
 
 ## Auto Start Extensibility Point (ASEP)
 
@@ -504,12 +504,12 @@ The **main difference between agents and daemons is that agents are loaded when 
 
 There are cases where an **agent needs to be executed before the user logins**, these are called **PreLoginAgents**. For example, this is useful to provide assistive technology at login. They can be found also in `/Library/LaunchAgents`(see [**here**](https://github.com/HelmutJ/CocoaSampleCode/tree/master/PreLoginAgents) an example).
 
-{% hint style="info" %}
+
 New Daemons or Agents config files will be **loaded after next reboot or using** `launchctl load <target.plist>` It's **also possible to load .plist files without that extension** with `launchctl -F <file>` (however those plist files won't be automatically loaded after reboot).\
 It's also possible to **unload** with `launchctl unload <target.plist>` (the process pointed by it will be terminated),
 
 To **ensure** that there isn't **anything** (like an override) **preventing** an **Agent** or **Daemon** **from** **running** run: `sudo launchctl load -w /System/Library/LaunchDaemos/com.apple.smdb.plist`
-{% endhint %}
+
 
 List all the agents and daemons loaded by the current user:
 
@@ -639,15 +639,15 @@ This little-known service may **not be much use to a Mac admin**, but to a threa
 ls -l /private/var/db/emondClients
 ```
 
-{% hint style="danger" %}
+
 **As this isn't used much, anything in that folder should be suspicious**
-{% endhint %}
+
 
 ### Startup Items
 
-{% hint style="danger" %}
+
 **This is deprecated, so nothing should be found in the following directories.**
-{% endhint %}
+
 
 A **StartupItem** is a **directory** that gets **placed** in one of these two folders. `/Library/StartupItems/` or `/System/Library/StartupItems/`
 
@@ -695,9 +695,9 @@ RunService "$1"
 
 ### /etc/rc.common
 
-{% hint style="danger" %}
+
 **This isn't working in modern MacOS versions**
-{% endhint %}
+
 
 It's also possible to place here **commands that will be executed at startup.** Example os regular rc.common script:
 
@@ -900,9 +900,9 @@ sudo vmmap <securityd PID> | grep MALLOC_TINY
 sudo ./keychaindump
 ```
 
-{% hint style="danger" %}
+
 Based on this comment [https://github.com/juuso/keychaindump/issues/10#issuecomment-751218760](https://github.com/juuso/keychaindump/issues/10#issuecomment-751218760) it looks like these tools aren't working anymore in Big Sur.
-{% endhint %}
+
 
 ### chainbreaker
 
@@ -1006,13 +1006,13 @@ This is like the [**LD\_PRELOAD on Linux**](../../linux-hardening/privilege-esca
 
 This technique may be also **used as an ASEP technique** as every application installed has a plist called "Info.plist" that allows for the **assigning of environmental variables** using a key called `LSEnvironmental`.
 
-{% hint style="info" %}
+
 Since 2012 when [OSX.FlashBack.B](https://www.f-secure.com/v-descs/trojan-downloader\_osx\_flashback\_b.shtml) \[22] abused this technique, **Apple has drastically reduced the “power”** of the DYLD\_INSERT\_LIBRARIES.
 
 For example the dynamic loader (dyld) ignores the DYLD\_INSERT\_LIBRARIES environment variable in a wide range of cases, such as setuid and platform binaries. And, starting with macOS Catalina, only 3rd-party applications that are not compiled with the hardened runtime (which “protects the runtime integrity of software” \[22]), or have an exception such as the com.apple.security.cs.allow-dyld-environment-variables entitlement) are susceptible to dylib insertions.
 
 For more details on the security features afforded by the hardened runtime, see Apple’s documentation: “[Hardened Runtime](https://developer.apple.com/documentation/security/hardened\_runtime)”
-{% endhint %}
+
 
 ## Interesting Information in Databases
 
@@ -1132,9 +1132,9 @@ However, there are still some tools that can be used to understand this kind of 
 
 Red Teaming in **environments where MacOS** is used instead of Windows can be very **different**. In this guide you will find some interesting tricks for this kind of assessments:
 
-{% content-ref url="macos-red-teaming.md" %}
+
 [macos-red-teaming.md](macos-red-teaming.md)
-{% endcontent-ref %}
+
 
 ## MacOS Automatic Enumeration Tools
 
@@ -1267,7 +1267,7 @@ This [**crypto bounty alone**](https://hackenproof.com/jungle/jungle-smart-contr
 Check out the [**top-paying bounties**](https://hackenproof.com/programs) among crypto projects.\
 [**Sign up on HackenProof**](https://hackenproof.com/register?referral_code=i_E6M25i_Um9gB56o-XsIA) to get rewarded without delays and become the web3 hacker legend.
 
-{% embed url="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fwww.hackenproof.com%2F&screen_name=hackenproof" %}
+
 
 <details>
 

@@ -46,9 +46,9 @@ Ext has optional features that your OS may or may not support, there are 3 possi
 
 If there are **incompatible** features you won't be able to mount the filesystem as the OS won't know how the access the data.
 
-{% hint style="info" %}
+
 A suspected attacker might have non-standard extensions
-{% endhint %}
+
 
 **Any utility** that reads the **superblock** will be able to indicate the **features** of an **Ext filesystem**, but you could also use `file -sL /dev/sd*`
 
@@ -149,9 +149,9 @@ Special inodes:
 | 10    | Replica inode                                        |
 | 11    | First non-reserved inode (often lost + found)        |
 
-{% hint style="info" %}
+
 Not that the creation time only appears in Ext4.
-{% endhint %}
+
 
 By knowing the inode number you can easily find its index:
 

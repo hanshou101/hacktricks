@@ -16,9 +16,9 @@
 
 For more info about how 125kHz tags work check:
 
-{% content-ref url="../../../radio-hacking/pentesting-rfid.md" %}
+
 [pentesting-rfid.md](../../../radio-hacking/pentesting-rfid.md)
-{% endcontent-ref %}
+
 
 ## Actions
 
@@ -28,9 +28,9 @@ For more info about these types of tags [**read this intro**](../../../radio-hac
 
 Tries to **read** the card info. Then it can **emulate** them.
 
-{% hint style="warning" %}
+
 Note that some intercoms try to protect themselves from key duplication by sending a write command prior to reading. If the write succeeds, that tag is considered fake. When Flipper emulates RFID there is no way for the reader to distinguish it from the original one, so no such problems occur.
-{% endhint %}
+
 
 ### Add Manually
 

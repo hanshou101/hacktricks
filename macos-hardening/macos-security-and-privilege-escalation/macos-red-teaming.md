@@ -25,31 +25,31 @@ If you manage to **compromise admin credentials** to access the management platf
 
 For red teaming in MacOS environments it's highly recommended to have some understanding of how the MDMs work:
 
-{% content-ref url="macos-mdm/" %}
+
 [macos-mdm](macos-mdm/)
-{% endcontent-ref %}
+
 
 And also about **MacOS** "special" **network** **protocols**:
 
-{% content-ref url="macos-protocols.md" %}
+
 [macos-protocols.md](macos-protocols.md)
-{% endcontent-ref %}
+
 
 ## Active Directory
 
 In some occasions you will find that the **MacOS computer is connected to an AD**. In this scenario you should try to **enumerate** the active directory as you are use to it. Find some **help** in the following pages:
 
-{% content-ref url="../../network-services-pentesting/pentesting-ldap.md" %}
+
 [pentesting-ldap.md](../../network-services-pentesting/pentesting-ldap.md)
-{% endcontent-ref %}
 
-{% content-ref url="../../windows-hardening/active-directory-methodology/" %}
+
+
 [active-directory-methodology](../../windows-hardening/active-directory-methodology/)
-{% endcontent-ref %}
 
-{% content-ref url="../../network-services-pentesting/pentesting-kerberos-88/" %}
+
+
 [pentesting-kerberos-88](../../network-services-pentesting/pentesting-kerberos-88/)
-{% endcontent-ref %}
+
 
 Some **local MacOS tool** that may also help you is `dscl`:
 

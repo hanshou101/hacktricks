@@ -16,15 +16,15 @@
 
 For info about RFID and NFC check the following page:
 
-{% content-ref url="../../../radio-hacking/pentesting-rfid.md" %}
+
 [pentesting-rfid.md](../../../radio-hacking/pentesting-rfid.md)
-{% endcontent-ref %}
+
 
 ## Supported NFC cards <a href="#9wrzi" id="9wrzi"></a>
 
-{% hint style="danger" %}
+
 Apart from NFC cards Flipper Zero supports **other type of High-frequency cards** such as several **Mifare** Classic and Ultralight and **NTAG**.
-{% endhint %}
+
 
 New types of NFC cards will be added to the list of supported cards. Flipper Zero supports the following **NFC cards type A** (ISO 14443A):
 

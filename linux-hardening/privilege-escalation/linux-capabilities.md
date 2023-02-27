@@ -16,7 +16,7 @@
 
 ​​​​​​​​​[**RootedCON**](https://www.rootedcon.com/) is the most relevant cybersecurity event in **Spain** and one of the most important in **Europe**. With **the mission of promoting technical knowledge**, this congress is a boiling meeting point for technology and cybersecurity professionals in every discipline.\\
 
-{% embed url="https://www.rootedcon.com/" %}
+
 
 ## Why capabilities?
 
@@ -294,9 +294,9 @@ capsh --print
 Current: = cap_net_admin,cap_net_raw,cap_sys_nice+eip
 ```
 
-{% hint style="danger" %}
+
 You can **only add capabilities that are present** in both the permitted and the inheritable sets.
-{% endhint %}
+
 
 ### Capability-aware/Capability-dumb binaries
 
@@ -338,7 +338,7 @@ docker run --rm -it  --cap-drop=ALL --cap-add=SYS_PTRACE r.j3ss.co/amicontained 
 
 ​​​​​​​​​​[**RootedCON**](https://www.rootedcon.com/) is the most relevant cybersecurity event in **Spain** and one of the most important in **Europe**. With **the mission of promoting technical knowledge**, this congress is a boiling meeting point for technology and cybersecurity professionals in every discipline.
 
-{% embed url="https://www.rootedcon.com/" %}
+
 
 ## Privesc/Container Escape
 
@@ -728,9 +728,9 @@ clean:
 ```
 {% endcode %}
 
-{% hint style="warning" %}
+
 The blank char before each make word in the Makefile **must be a tab, not spaces**!
-{% endhint %}
+
 
 Execute `make` to compile it.
 
@@ -961,9 +961,9 @@ int main(int argc,char* argv[] )
 }
 ```
 
-{% hint style="warning" %}
+
 I exploit needs to find a pointer to something mounted on the host. The original exploit used the file /.dockerinit and this modified version uses /etc/hostname. If the exploit isn't working maybe you need to set a different file. To find a file that is mounted in the host just execute mount command:
-{% endhint %}
+
 
 ![](<../../.gitbook/assets/image (407) (1).png>)
 
@@ -975,7 +975,7 @@ I exploit needs to find a pointer to something mounted on the host. The original
 
 ​​​​​​​​​​​[**RootedCON**](https://www.rootedcon.com/) is the most relevant cybersecurity event in **Spain** and one of the most important in **Europe**. With **the mission of promoting technical knowledge**, this congress is a boiling meeting point for technology and cybersecurity professionals in every discipline.
 
-{% embed url="https://www.rootedcon.com/" %}
+
 
 ## CAP\_DAC\_OVERRIDE
 
@@ -1294,9 +1294,9 @@ if(status == 0):
 python setcapability.py /usr/bin/python2.7
 ```
 
-{% hint style="warning" %}
+
 Note that if you set a new capability to the binary with CAP\_SETFCAP, you will lose this cap.
-{% endhint %}
+
 
 Once you have [SETUID capability](linux-capabilities.md#cap\_setuid) you can go to its section to see how to escalate privileges.
 
@@ -1366,9 +1366,9 @@ kill -s SIGUSR1 <nodejs-ps>
 # After an URL to access the debugger will appear. e.g. ws://127.0.0.1:9229/45ea962a-29dd-4cdd-be08-a6827840553d
 ```
 
-{% content-ref url="electron-cef-chromium-debugger-abuse.md" %}
+
 [electron-cef-chromium-debugger-abuse.md](electron-cef-chromium-debugger-abuse.md)
-{% endcontent-ref %}
+
 
 ​
 
@@ -1376,7 +1376,7 @@ kill -s SIGUSR1 <nodejs-ps>
 
 ​​​​​​​​​​​​[**RootedCON**](https://www.rootedcon.com/) is the most relevant cybersecurity event in **Spain** and one of the most important in **Europe**. With **the mission of promoting technical knowledge**, this congress is a boiling meeting point for technology and cybersecurity professionals in every discipline.
 
-{% embed url="https://www.rootedcon.com/" %}
+
 
 ## CAP\_NET\_BIND\_SERVICE
 
@@ -1526,14 +1526,14 @@ f=open("/path/to/file.sh",'a+')
 f.write('New content for the file\n')
 ```
 
-{% hint style="info" %}
+
 Note that usually this immutable attribute is set and remove using:
 
 ```bash
 sudo chattr +i file.txt
 sudo chattr -i file.txt
 ```
-{% endhint %}
+
 
 ## CAP\_SYS\_CHROOT
 
@@ -1624,7 +1624,7 @@ The attacker can now read, dump, copy the device /dev/sda from unprivileged user
 
 [**RootedCON**](https://www.rootedcon.com/) is the most relevant cybersecurity event in **Spain** and one of the most important in **Europe**. With **the mission of promoting technical knowledge**, this congress is a boiling meeting point for technology and cybersecurity professionals in every discipline.
 
-{% embed url="https://www.rootedcon.com/" %}
+
 
 <details>
 

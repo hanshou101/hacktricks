@@ -44,9 +44,9 @@ For information about how these keys works check the page [https://blog.flipperz
 
 iButtons can be attacked with Flipper Zero:
 
-{% content-ref url="flipper-zero/fz-ibutton.md" %}
+
 [fz-ibutton.md](flipper-zero/fz-ibutton.md)
-{% endcontent-ref %}
+
 
 ## References
 

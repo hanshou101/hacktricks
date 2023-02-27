@@ -24,7 +24,7 @@ This [**crypto bounty alone**](https://hackenproof.com/jungle/jungle-smart-contr
 Check out the [**top-paying bounties**](https://hackenproof.com/programs) among crypto projects.\
 [**Sign up on HackenProof**](https://hackenproof.com/register?referral_code=i_E6M25i_Um9gB56o-XsIA) to get rewarded without delays and become the web3 hacker legend.
 
-{% embed url="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fwww.hackenproof.com%2F&screen_name=hackenproof" %}
+
 
 
 # ASREPRoast
@@ -59,9 +59,9 @@ Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github
 ```
 {% endcode %}
 
-{% hint style="warning" %}
+
 AS-REP Roasting with Rubeus will generate a 4768 with an encryption type of 0x17 and preauth type of 0.
-{% endhint %}
+
 
 ## Cracking
 
@@ -89,7 +89,7 @@ This [**crypto bounty alone**](https://hackenproof.com/jungle/jungle-smart-contr
 Check out the [**top-paying bounties**](https://hackenproof.com/programs) among crypto projects.\
 [**Sign up on HackenProof**](https://hackenproof.com/register?referral_code=i_E6M25i_Um9gB56o-XsIA) to get rewarded without delays and become the web3 hacker legend.
 
-{% embed url="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fwww.hackenproof.com%2F&screen_name=hackenproof" %}
+
 
 
 <details>

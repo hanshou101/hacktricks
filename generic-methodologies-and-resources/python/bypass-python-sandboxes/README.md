@@ -6,7 +6,7 @@
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 <details>
 
@@ -61,9 +61,9 @@ system('ls')
 
 Remember that the _**open**_ and _**read**_ functions can be useful to **read files** inside the python sandbox and to **write some code** that you could **execute** to **bypass** the sandbox.
 
-{% hint style="danger" %}
+
 **Python2 input()** function allows executing python code before the program crashes.
-{% endhint %}
+
 
 Python try to **load libraries from the current directory first** (the following command will print where is python loading modules from): `python3 -c 'import sys; print(sys.path)'`
 
@@ -107,15 +107,15 @@ You can download the package to create the reverse shell here. Please, note that
 
 {% file src="../../../.gitbook/assets/reverse.tar.gz" %}
 
-{% hint style="info" %}
+
 This package is called `Reverse`. However, it was specially crafted so that when you exit the reverse shell the rest of the installation will fail, so you **won't leave any extra python package installed on the server** when you leave.
-{% endhint %}
+
 
 ## Eval-ing python code
 
-{% hint style="warning" %}
+
 Note that exec allows multiline strings and ";", but eval doesn't (check walrus operator)
-{% endhint %}
+
 
 If certain characters are forbidden you can use the **hex/octal/B64** representation to **bypass** the restriction:
 
@@ -354,7 +354,7 @@ with (a as b):
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ## Builtins
 
@@ -608,9 +608,9 @@ __builtins__: _ModuleLock, _DummyModuleLock, _ModuleLockManager, ModuleSpec, Fil
 
 ## Recursive Search of Builtins, Globals...
 
-{% hint style="warning" %}
+
 This is just **awesome**. If you are **looking for an object like globals, builtins, open or anything** just use this script to **recursively find places where you can find that object.**
-{% endhint %}
+
 
 ```python
 import os, sys # Import these to find more gadgets
@@ -730,9 +730,9 @@ if __name__ == "__main__":
 
 You can check the output of this script on this page:
 
-{% content-ref url="output-searching-python-internals.md" %}
+
 [output-searching-python-internals.md](output-searching-python-internals.md)
-{% endcontent-ref %}
+
 
 ![](<../../../.gitbook/assets/image (9) (1) (2).png>)
 
@@ -740,16 +740,16 @@ You can check the output of this script on this page:
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+
 
 ## Python Format String
 
 If you **send** a **string** to python that is going to be **formatted**, you can use `{}` to access **python internal information.** You can use the previous examples to access globals or builtins for example.
 
-{% hint style="info" %}
+
 However, there is a **limitation**, you can only use the symbols `.[]`, so you **won't be able to execute arbitrary code**, just to read information.\
 _**If you know how to execute code through this vulnerability, please contact me.**_
-{% endhint %}
+
 
 ```python
 # Example from https://www.geeksforgeeks.org/vulnerability-in-str-format-in-python/
@@ -812,9 +812,9 @@ class HAL9000(object):
 
 ## Dissecting Python Objects
 
-{% hint style="info" %}
+
 If you want to **learn** about **python bytecode** in depth read this **awesome** post about the topic: [**https://towardsdatascience.com/understanding-python-bytecode-e7edaae8734d**](https://towardsdatascience.com/understanding-python-bytecode-e7edaae8734d)
-{% endhint %}
+
 
 In some CTFs you could be provided with the name of a **custom function where the flag** resides and you need to see the **internals** of the **function** to extract it.
 
@@ -1016,7 +1016,7 @@ mydict['__builtins__'] = __builtins__
 function_type(code_obj, mydict, None, None, None)("secretcode")
 ```
 
-{% hint style="info" %}
+
 Depending on the python version the **parameters** of `code_type` may have a **different order**. The best way to know the order of the params in the python version you are running is to run:
 
 ```
@@ -1024,13 +1024,13 @@ import types
 types.CodeType.__doc__
 'code(argcount, posonlyargcount, kwonlyargcount, nlocals, stacksize,\n      flags, codestring, constants, names, varnames, filename, name,\n      firstlineno, lnotab[, freevars[, cellvars]])\n\nCreate a code object.  Not for the faint of heart.'
 ```
-{% endhint %}
+
 
 ### Recreating a leaked function
 
-{% hint style="warning" %}
+
 In the following example, we are going to take all the data needed to recreate the function from the function code object directly. In a **real example**, all the **values** to execute the function **`code_type`** is what **you will need to leak**.
-{% endhint %}
+
 
 ```python
 fc = get_flag.__code__
@@ -1093,9 +1093,9 @@ Using tools like [**https://www.decompiler.com/**](https://www.decompiler.com) o
 
 **Check out this tutorial**:
 
-{% content-ref url="../../../forensics/basic-forensic-methodology/specific-software-file-type-tricks/.pyc.md" %}
+
 [.pyc.md](../../../forensics/basic-forensic-methodology/specific-software-file-type-tricks/.pyc.md)
-{% endcontent-ref %}
+
 
 ## Misc Python
 
@@ -1142,4 +1142,4 @@ will be bypassed
 Use [**Trickest**](https://trickest.com/?utm\_campaign=hacktrics\&utm\_medium=banner\&utm\_source=hacktricks) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
+

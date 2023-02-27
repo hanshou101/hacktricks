@@ -28,9 +28,9 @@ Flipper Zero has a built-in sub-1 GHz module based on a [﻿](https://www.st.com
 
 ### Frequency Analyser
 
-{% hint style="info" %}
+
 How to find which frequency is the remote using
-{% endhint %}
+
 
 When analysing, Flipper Zero is scanning signals strength (RSSI) at all the frequencies available in frequency configuration. Flipper Zero displays the frequency with the highest RSSI value, with signal strength higher than -90 [dBm](https://en.wikipedia.org/wiki/DBm).
 
@@ -43,9 +43,9 @@ To determine the remote's frequency, do the following:
 
 ### Read
 
-{% hint style="info" %}
+
 Find info about the frequency used (also another way to find which frequency is used)
-{% endhint %}
+
 
 The **Read** option **listens on the configured frequency** on the indicated modulation: 433.92 AM by default. If **something is found** when reading, **info is given** in the screen. This info could be use to replicate the signal in the future.
 
@@ -56,15 +56,15 @@ At this moment it has **4 modulations** (AM270, AM650, FM328 and FM476), and **s
 
 You can set **any that interests you**, however, if you are **not sure which frequency** could be the one used by the remote you have, **set Hopping to ON** (Off by default), and press the button several times until Flipper captures it and give you the info you need to set the frequency.
 
-{% hint style="danger" %}
+
 Switching between frequencies takes some time, therefore signals transmitted at the time of switching can be missed. For better signal reception, set a fixed frequency determined by Frequency Analyzer.
-{% endhint %}
+
 
 ### **Read Raw**
 
-{% hint style="info" %}
+
 Steal (and replay) a signal in the configured frequency
-{% endhint %}
+
 
 The **Read Raw** option **records signals** send in the listening frequency. This can be used to **steal** a signal and **repeat** it.
 
@@ -76,9 +76,9 @@ If you know the protocol used for example by the garage door it's possible to g*
 
 ### Add Manually
 
-{% hint style="info" %}
+
 Add signals from a configured list of protocols
-{% endhint %}
+
 
 #### List of [supported protocols](https://docs.flipperzero.one/sub-ghz/add-new-remote) <a href="#3iglu" id="3iglu"></a>
 
@@ -109,9 +109,9 @@ Check the list in [https://docs.flipperzero.one/sub-ghz/frequencies](https://doc
 
 ### Test
 
-{% hint style="info" %}
+
 Get dBms of the saved frequencies
-{% endhint %}
+
 
 ## Reference
 

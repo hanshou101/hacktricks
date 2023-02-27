@@ -20,9 +20,9 @@
 * **`euid`**: This is the **effective user ID**, is what the system looks to when deciding **what privileges the process should have**. In most cases, the `euid` will be the same as the `ruid`, but a SetUID binary is an example of a case where they differ. When a **SetUID** binary starts, the **`euid` is set to the owner of the file**, which allows these binaries to function.
 * `suid`: This is the **saved user ID,** it's used when a privileged process (most cases running as root) needs to **drop privileges** to do some behavior, but needs to then **come back** to the privileged state.
 
-{% hint style="info" %}
+
 If a **non-root process** wants to **change it’s `euid`**, it can only **set** it to the current values of **`ruid`**, **`euid`**, or **`suid`**.
-{% endhint %}
+
 
 ## set\*uid
 

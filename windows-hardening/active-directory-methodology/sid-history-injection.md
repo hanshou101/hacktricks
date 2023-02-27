@@ -51,9 +51,9 @@ mimikatz.exe "kerberos::golden /user:Administrator /domain:<current_domain> /sid
 
 For more info about golden tickets check:
 
-{% content-ref url="golden-ticket.md" %}
+
 [golden-ticket.md](golden-ticket.md)
-{% endcontent-ref %}
+
 
 ### Diamond Ticket (Rubeus + KRBTGT-AES256)
 
@@ -71,9 +71,9 @@ Rubeus.exe golden /rc4:<krbtgt hash> /domain:<child_domain> /sid:<child_domain_s
 
 For more info about diamond tickets check:
 
-{% content-ref url="diamond-ticket.md" %}
+
 [diamond-ticket.md](diamond-ticket.md)
-{% endcontent-ref %}
+
 
 {% code overflow="wrap" %}
 ```bash
@@ -101,9 +101,9 @@ schtasks /Run /S mcorp-dc.moneycorp.local /TN "STCheck114"
 
 With the acquired permissions from the attack you can execute for example a DCSync attack in the new domain:
 
-{% content-ref url="dcsync.md" %}
+
 [dcsync.md](dcsync.md)
-{% endcontent-ref %}
+
 
 ### From linux
 

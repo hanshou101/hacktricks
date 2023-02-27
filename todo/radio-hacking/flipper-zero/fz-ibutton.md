@@ -16,9 +16,9 @@
 
 For more info about what is an iButton check:
 
-{% content-ref url="../ibutton.md" %}
+
 [ibutton.md](../ibutton.md)
-{% endcontent-ref %}
+
 
 ## Design
 
@@ -40,9 +40,9 @@ It's possible to **add manually** an iButton of type: **Dallas, Cyfral, and Meta
 
 It's possible to **emulate** saved iButtons (read or manually added).
 
-{% hint style="info" %}
+
 If you cannot make the expected contacts of the Flipper Zero touch the reader you can **use the external GPIO:**
-{% endhint %}
+
 
 <figure><img src="../../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
 

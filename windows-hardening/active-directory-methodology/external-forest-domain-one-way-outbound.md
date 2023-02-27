@@ -52,9 +52,9 @@ Invoke-Mimikatz -Command '"lsadump::trust /patch"' -ComputerName dc.my.domain.lo
 
 The risk is because of trust account B$ is enabled, **B$’s Primary Group is Domain Users of domain A**, any permission granted to Domain Users applies to B$, and it is possible to use B$’s credentials to authenticate against domain A.
 
-{% hint style="warning" %}
+
 Therefore, f**rom the trusting domain it's possible to obtain a user inside the trusted domain**. This user won't have a lot of permissions (just Domain Users probably) but you will be able to **enumerate the external domain**.
-{% endhint %}
+
 
 In this example the trusting domain is `ext.local` and the trusted one is `root.local`. Therefore, a user called `EXT$` is created inside `root.local`.
 

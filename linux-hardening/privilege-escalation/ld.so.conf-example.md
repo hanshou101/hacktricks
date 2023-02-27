@@ -119,9 +119,9 @@ $ whoami
 ubuntu
 ```
 
-{% hint style="info" %}
+
 Note that in this example we haven't escalated privileges, but modifying the commands executed and **waiting for root or other privileged user to execute the vulnerable binary** we will be able to escalate privileges.
-{% endhint %}
+
 
 ### Other misconfigurations - Same vuln
 
@@ -155,9 +155,9 @@ ldd sharedvuln
 
 **As you can see, having sudo privileges over `ldconfig` you can exploit the same vulnerability.**
 
-{% hint style="info" %}
+
 I **didn't find** a reliable way to exploit this vuln if `ldconfig` is configured with the **suid bit**. The following error appear: `/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied`
-{% endhint %}
+
 
 ## References
 
