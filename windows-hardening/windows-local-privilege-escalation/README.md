@@ -204,7 +204,7 @@ In orther to exploit this vulnerabilities you can use tools like: [Wsuxploit](ht
 
 Read the research here:
 
-{% file src="../../.gitbook/assets/CTX_WSUSpect_White_Paper (1).pdf" %}
+
 
 **WSUS CVE-2020-1013**
 

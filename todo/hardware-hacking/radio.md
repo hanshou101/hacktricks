@@ -79,7 +79,7 @@ If you are checking a signal there are different ways to try to figure out what 
 
 ## AM Example
 
-{% file src="../../.gitbook/assets/sigdigger_20220308_165547Z_2560000_433500000_float32_iq.raw" %}
+
 
 ### Uncovering AM
 
@@ -156,7 +156,7 @@ Also, use **codifications** such as **Manchester**, and **up+down** can be **1 o
 
 ## FM Example
 
-{% file src="../../.gitbook/assets/sigdigger_20220308_170858Z_2560000_433500000_float32_iq.raw" %}
+
 
 ### Uncovering FM
 
